@@ -28,6 +28,7 @@ const ForgotPassword = ({ navigation }) => {
                             placeholderTextColor='#808080'
                             onChangeText={(text) => setNumber(text)}
                             value={number}
+                            keyboardType="numeric"
                         />
                     </View>
                 </View>

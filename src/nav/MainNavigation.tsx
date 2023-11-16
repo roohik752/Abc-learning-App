@@ -131,6 +131,8 @@ import ForgotPassword from 'src/screens/ForgotPassword';
 import OTP from 'src/screens/OTP';
 import Congo from 'src/screens/Congo';
 import OTP2 from 'src/screens/OTP2';
+import Home from 'src/screens/Home';
+import MenuScreen from 'src/screens/MenuScreen';
 
 const MainNavigation = () => {
   return (
@@ -151,6 +153,7 @@ const MainNavigation = () => {
           <Screen name={ROUTERS.OTP} component={OTP} options={{ headerShown: false }} />
           <Screen name={ROUTERS.OTP2} component={OTP2} options={{ headerShown: false }} />
           <Screen name={ROUTERS.Congo} component={Congo} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.MenuScreen} component={MenuScreen} options={{ headerShown: false }} />
         </Navigator>
       </NavigationContainer>
     </ApplicationProvider>

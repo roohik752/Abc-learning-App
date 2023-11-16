@@ -6,15 +6,15 @@ const Navigator = Stack.Navigator;
 const Screen = Stack.Screen;
 
 const ROUTERS = {
-  Home: 'Home',
-  Intro: 'Intro',
-  Learn: 'Learn',
-  PlayGame: 'PlayGame',
-  Result: 'Result',
-  LearnAlphabet: 'LearnAlphabet',
-  LearnNumber: 'LearnNumber',
-  AnimalWithAlphabet: 'AnimalWithAlphabet',
-  Draw: 'Draw',
+  // Home: 'Home',
+  // Intro: 'Intro',
+  // Learn: 'Learn',
+  // PlayGame: 'PlayGame',
+  // Result: 'Result',
+  // LearnAlphabet: 'LearnAlphabet',
+  // LearnNumber: 'LearnNumber',
+  // AnimalWithAlphabet: 'AnimalWithAlphabet',
+  // Draw: 'Draw',
   Splash: 'Splash',
   Language: 'Language',
   UserFlow: 'UserFlow',
@@ -24,6 +24,8 @@ const ROUTERS = {
   OTP: 'OTP',
   OTP2: 'OTP2',
   Congo: 'Congo',
+  Home: 'Home',
+  MenuScreen: 'MenuScreen'
 };
 
 export { Stack, NavigationContainer, Navigator, Screen, ROUTERS };

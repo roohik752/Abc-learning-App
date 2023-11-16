@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { ROUTERS } from 'src/ultis/navigations';
 
-const Congo = () => {
+const Congo = ({navigation}) => {
     return (
         <LinearGradient
             colors={['#FFFFFF', '#4CBB17']}
@@ -17,6 +18,7 @@ const Congo = () => {
             </View>
             <TouchableOpacity
                 style={styles.button}
+                onPress={()=>navigation.navigate(ROUTERS.MenuScreen)}
             >
                 <Text style={styles.text}>Continue</Text>
             </TouchableOpacity>

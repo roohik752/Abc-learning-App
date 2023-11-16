@@ -19,7 +19,7 @@ const OTP2 = ({ navigation }) => {
                 <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
                 <View style={{ marginTop: 10 }}>
                     <Text style={styles.Heading1}>Enter the phone number on which OTP will be</Text>
-                    <Text style={styles.Heading1}>shared to reset your password</Text>
+                    <Text style={styles.Heading1}>shared for registration</Text>
                     <View style={styles.box}>
                         <Image source={require('../assets/img/Phone.png')} style={styles.icon} />
                         <TextInput
@@ -28,6 +28,7 @@ const OTP2 = ({ navigation }) => {
                             placeholderTextColor='#808080'
                             onChangeText={(text) => setNumber(text)}
                             value={number}
+                            keyboardType="numeric"
                         />
                     </View>
                 </View>

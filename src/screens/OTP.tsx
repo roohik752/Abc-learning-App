@@ -33,7 +33,7 @@ const OTP = ({navigation}) => {
                 </View>
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => navigation.navigate('Congo')}
+                    onPress={() => navigation.navigate('Login')}
                 >
                     <Text style={styles.text}>Verify</Text>
                 </TouchableOpacity>

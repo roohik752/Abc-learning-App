@@ -7,6 +7,7 @@ const Registration = ({ navigation }) => {
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const [password, setPassword] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
@@ -39,8 +40,20 @@ const Registration = ({ navigation }) => {
             placeholderTextColor='#808080'
             onChangeText={(number) => setNumber(number)}
             value={number}
+            keyboardType="numeric"
           />
         </View>
+        <View style={styles.box}>
+                    <Image source={require('../assets/img/Key.png')} style={styles.icon} />
+                    <TextInput
+                        style={styles.textInput}
+                        placeholder="Password"
+                        placeholderTextColor='#808080'
+                        onChangeText={(text) => setPassword(text)}
+                        value={password}
+                    />
+                    <Image source={require('../assets/img/Eye.png')} style={styles.icon} />
+                </View>
         <View>
           <GenderSelection />
         </View>
@@ -69,8 +82,9 @@ const Registration = ({ navigation }) => {
               style={styles.textInput1}
               placeholder="Pin Code"
               placeholderTextColor='#808080'
-              onChangeText={(number) => setNumber(number)}
+              onChangeText={(number) => setPincode(number)}
               value={pincode}
+              keyboardType="numeric"
             />
           </View>
         </View>
@@ -97,7 +111,7 @@ const Registration = ({ navigation }) => {
       </View>
       <TouchableOpacity
         style={styles.button}
-        onPress={()=>navigation.navigate('Login')}
+        onPress={()=>navigation.navigate('OTP2')}
       >
         <Text style={styles.text}>Submit</Text>
       </TouchableOpacity>
@@ -125,6 +139,7 @@ const styles = StyleSheet.create({
     borderColor: '#808080',
     borderRadius: 10,
     paddingLeft: 20,
+    paddingRight: 10,
     marginBottom: 10
   },
   icon: {
@@ -134,7 +149,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40,
-    width: 290,
+    width: 270,
     color: '#818589',
     fontSize: 18,
     paddingLeft: 10,
