@@ -4,7 +4,6 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Home = ({ navigation }) => {
 
-
     return (
         <LinearGradient
             colors={['#FFFFFF', '#4CBB17']}
@@ -12,40 +11,50 @@ const Home = ({ navigation }) => {
             start={{ x: 0.4, y: 0.4 }}
         >
             <View style={{ flexDirection: 'row', padding: 15, marginTop: 40, justifyContent: 'space-between' }}>
-                <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity
+                    style={{ flexDirection: 'row' }}
+                    onPress={() => navigation.navigate('Profile')}
+                >
                     <Image source={require('../assets/img/boy1.png')} style={styles.image} />
                     <Text style={styles.text}>Hi</Text><Text style={styles.text1}>Charlie</Text>
-                </View>
+                </TouchableOpacity>
                 <View>
-                    <TouchableOpacity 
-                    onPress={() => {
-                        navigation.openDrawer();
-                    }}>
-                    <Image source={require('../assets/img/bars.png')} style={styles.image1} />
+                    <TouchableOpacity
+                        onPress={() => navigation.getParent('RightDrawer').openDrawer()}
+                    >
+                        <Image source={require('../assets/img/bars.png')} style={styles.image1} />
                     </TouchableOpacity>
                 </View>
             </View>
             <View style={{ height: 1, width: '100%', backgroundColor: '#808080' }}></View>
             <View style={{ flexDirection: 'row', padding: 15, justifyContent: 'space-between' }}>
-                <TouchableOpacity style={styles.box}>
+                <TouchableOpacity style={styles.box}
+                    onPress={() => navigation.navigate('EnglishProduct')}
+                >
                     <Image source={require('../assets/img/pin1.png')} style={[styles.image2, styles.positionImage2]} />
                     <Image source={require('../assets/img/alphabets.png')} style={styles.image3} />
                     <Text style={styles.text}>Alphabets</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.box}>
-                <Image source={require('../assets/img/pin1.png')} style={[styles.image2, styles.positionImage2]} />
+                <TouchableOpacity style={styles.box}
+                    onPress={() => navigation.navigate('Hindi')}
+                >
+                    <Image source={require('../assets/img/pin1.png')} style={[styles.image2, styles.positionImage2]} />
                     <Image source={require('../assets/img/alphabets.png')} style={styles.image3} />
                     <Text style={styles.text}>क ख ग</Text>
                 </TouchableOpacity>
             </View>
             <View style={{ flexDirection: 'row', padding: 15, justifyContent: 'space-between', marginTop: -10 }}>
-                <TouchableOpacity style={styles.box}>
-                <Image source={require('../assets/img/pin1.png')} style={[styles.image2, styles.positionImage2]} />
+                <TouchableOpacity style={styles.box}
+                    onPress={() => navigation.navigate('NumberProduct')}
+                >
+                    <Image source={require('../assets/img/pin1.png')} style={[styles.image2, styles.positionImage2]} />
                     <Image source={require('../assets/img/numbers.png')} style={styles.image3} />
                     <Text style={styles.text}>Numbers</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.box}>
-                <Image source={require('../assets/img/pin1.png')} style={[styles.image2, styles.positionImage2]} />
+                <TouchableOpacity style={styles.box}
+                    onPress={() => navigation.navigate('Urdu')}
+                >
+                    <Image source={require('../assets/img/pin1.png')} style={[styles.image2, styles.positionImage2]} />
                     <Image source={require('../assets/img/urdu.png')} style={styles.image4} />
                     <Text style={styles.text1}> ا ب پ ت</Text>
                 </TouchableOpacity>
@@ -86,7 +95,8 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         paddingLeft: 5,
         paddingRight: 5,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        fontFamily: 'Atma-Bold'
     },
     image1: {
         height: 30,
@@ -113,8 +123,8 @@ const styles = StyleSheet.create({
     },
     positionImage2: {
         position: 'absolute',
-        top: -10,
-        left: 120,
+        top: -15,
+        left: 115,
     },
     image3: {
         height: 100,
@@ -140,7 +150,7 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
     },
     text2: {
-        fontSize: 20,
+        fontSize: 24,
         color: '#000',
         fontWeight: '700',
         alignSelf: 'center',

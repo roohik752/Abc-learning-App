@@ -1,23 +1,24 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { TabRouter } from '@react-navigation/native';
 import React from 'react';
 import Home from 'src/screens/Home';
 import Sidebar from './Sidebars';
 
-
-const Drawer = createDrawerNavigator();
+const RightDrawer = createDrawerNavigator();
 
 const MenuScreen = () => {
   return (
-    <Drawer.Navigator drawerContent={props => <Sidebar {...props} />}>
-      <Drawer.Screen
-        name='Home'
-        component={Home}
-        options={{ headerShown: false }}
-      />
-    </Drawer.Navigator>
+    <RightDrawer.Navigator
+      useLegacyImplementation
+      id="RightDrawer"
+      drawerContent={(props) => <Sidebar {...props} />}
+      screenOptions={{
+        drawerPosition: 'right',
+        headerShown: false,
+      }}>
+      <RightDrawer.Screen name="Home" component={Home} />
+    </RightDrawer.Navigator>
   );
-};
+}
 
 export default MenuScreen;
 

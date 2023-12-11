@@ -6,7 +6,7 @@ const Splash = ({ navigation }) => {
 
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate('Language');
+            navigation.replace('Language');
         },6000)
     })
 

@@ -20,6 +20,34 @@
     {
       "path": "src/assets/fonts/Atma-SemiBold.ttf",
       "sha1": "30fd9747a3903710afbc53f671eb2f879284d936"
+    },
+    {
+      "path": "src/assets/fonts/NotoNastaliqUrdu-Bold.ttf",
+      "sha1": "db268cd0e4ef29f66fa1236f70578e5edd5e2bcc"
+    },
+    {
+      "path": "src/assets/fonts/NotoNastaliqUrdu-Medium.ttf",
+      "sha1": "fc7e9cb346e653d14e11bc0304cee401525ed269"
+    },
+    {
+      "path": "src/assets/fonts/NotoNastaliqUrdu-Regular.ttf",
+      "sha1": "9fc7cd62610ef380653a2f343df669d5b31a1ee4"
+    },
+    {
+      "path": "src/assets/fonts/NotoNastaliqUrdu-SemiBold.ttf",
+      "sha1": "a4f470e6e2584959bd12803103fe5a2eafaf565c"
+    },
+    {
+      "path": "src/assets/fonts/NotoNastaliqUrdu-VariableFont_wght.ttf",
+      "sha1": "cc260a81d8d6d2f2b4b5aac57c1a27c311569127"
+    },
+    {
+      "path": "src/assets/fonts/OFL.txt",
+      "sha1": "ee136735b29766f08fe7512e68ed7719dae29b94"
+    },
+    {
+      "path": "src/assets/fonts/README.txt",
+      "sha1": "3bb5aefb3929bc08df12e5bb4bb27bf9bb6ab63b"
     }
   ]
 }

@@ -19,6 +19,13 @@
 		D4DE4A98AFAE4E899843866D /* Atma-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96DF2E95FE4C4B228674AEED /* Atma-SemiBold.ttf */; };
 		EB35FECF186E44A49C1D3ACC /* Atma-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA1818548FD241A2B0CC20BE /* Atma-Light.ttf */; };
 		F0061C04C2EA4308B658DF5C /* Atma-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6619D28219B043A98E61A957 /* Atma-Regular.ttf */; };
+		58D81AEBD23B4DEAA6C44FB6 /* NotoNastaliqUrdu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8046B69385894AFC97B534F9 /* NotoNastaliqUrdu-Bold.ttf */; };
+		D32E877FF42A44179E2049D3 /* NotoNastaliqUrdu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE229C310E224E04889833BE /* NotoNastaliqUrdu-Medium.ttf */; };
+		24D975943023433881B048C6 /* NotoNastaliqUrdu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AFEBAB1D624428A8A6A7064 /* NotoNastaliqUrdu-Regular.ttf */; };
+		83DA1C624D5F45E18A3EB70A /* NotoNastaliqUrdu-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 312727FFF139458C91319360 /* NotoNastaliqUrdu-SemiBold.ttf */; };
+		A0E952A0EC724A2DA5B997C9 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4613790E7CE140CF8577F905 /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
+		504085A939F04350BFBB04A1 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 51236C0874BF43EF9772D8E9 /* OFL.txt */; };
+		5BB0ABC7490A4AA8BD9EB5D6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 636BD58D3F934B038F62C69B /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,13 @@
 		96DF2E95FE4C4B228674AEED /* Atma-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Atma-SemiBold.ttf"; path = "../src/assets/fonts/Atma-SemiBold.ttf"; sourceTree = "<group>"; };
 		EA1818548FD241A2B0CC20BE /* Atma-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Atma-Light.ttf"; path = "../src/assets/fonts/Atma-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		8046B69385894AFC97B534F9 /* NotoNastaliqUrdu-Bold.ttf */ = {isa = PBXFileReference; name = "NotoNastaliqUrdu-Bold.ttf"; path = "../src/assets/fonts/NotoNastaliqUrdu-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FE229C310E224E04889833BE /* NotoNastaliqUrdu-Medium.ttf */ = {isa = PBXFileReference; name = "NotoNastaliqUrdu-Medium.ttf"; path = "../src/assets/fonts/NotoNastaliqUrdu-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8AFEBAB1D624428A8A6A7064 /* NotoNastaliqUrdu-Regular.ttf */ = {isa = PBXFileReference; name = "NotoNastaliqUrdu-Regular.ttf"; path = "../src/assets/fonts/NotoNastaliqUrdu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		312727FFF139458C91319360 /* NotoNastaliqUrdu-SemiBold.ttf */ = {isa = PBXFileReference; name = "NotoNastaliqUrdu-SemiBold.ttf"; path = "../src/assets/fonts/NotoNastaliqUrdu-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4613790E7CE140CF8577F905 /* NotoNastaliqUrdu-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "NotoNastaliqUrdu-VariableFont_wght.ttf"; path = "../src/assets/fonts/NotoNastaliqUrdu-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51236C0874BF43EF9772D8E9 /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../src/assets/fonts/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		636BD58D3F934B038F62C69B /* README.txt */ = {isa = PBXFileReference; name = "README.txt"; path = "../src/assets/fonts/README.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +115,13 @@
 				61BED954CCBC4EA6A42E4598 /* Atma-Medium.ttf */,
 				6619D28219B043A98E61A957 /* Atma-Regular.ttf */,
 				96DF2E95FE4C4B228674AEED /* Atma-SemiBold.ttf */,
+				8046B69385894AFC97B534F9 /* NotoNastaliqUrdu-Bold.ttf */,
+				FE229C310E224E04889833BE /* NotoNastaliqUrdu-Medium.ttf */,
+				8AFEBAB1D624428A8A6A7064 /* NotoNastaliqUrdu-Regular.ttf */,
+				312727FFF139458C91319360 /* NotoNastaliqUrdu-SemiBold.ttf */,
+				4613790E7CE140CF8577F905 /* NotoNastaliqUrdu-VariableFont_wght.ttf */,
+				51236C0874BF43EF9772D8E9 /* OFL.txt */,
+				636BD58D3F934B038F62C69B /* README.txt */,
 			);
 			name = Resources;
 			path = "";
@@ -273,6 +294,13 @@
 				1ABD235CCDDE4935B653D377 /* Atma-Medium.ttf in Resources */,
 				F0061C04C2EA4308B658DF5C /* Atma-Regular.ttf in Resources */,
 				D4DE4A98AFAE4E899843866D /* Atma-SemiBold.ttf in Resources */,
+				58D81AEBD23B4DEAA6C44FB6 /* NotoNastaliqUrdu-Bold.ttf in Resources */,
+				D32E877FF42A44179E2049D3 /* NotoNastaliqUrdu-Medium.ttf in Resources */,
+				24D975943023433881B048C6 /* NotoNastaliqUrdu-Regular.ttf in Resources */,
+				83DA1C624D5F45E18A3EB70A /* NotoNastaliqUrdu-SemiBold.ttf in Resources */,
+				A0E952A0EC724A2DA5B997C9 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */,
+				504085A939F04350BFBB04A1 /* OFL.txt in Resources */,
+				5BB0ABC7490A4AA8BD9EB5D6 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

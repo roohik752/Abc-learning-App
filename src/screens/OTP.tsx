@@ -14,11 +14,11 @@ const OTP = ({navigation}) => {
             style={styles.linearGradient}
             start={{ x: 0.4, y: 0.4 }}
         >
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
                 <Text style={styles.Heading}>MadeInIndiaBook</Text>
                 <Text style={styles.Heading}>LearningApp</Text>
-                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
-                <View style={{ marginTop: 10 }}>
+                <View style={{ marginTop: 50 }}>
                     <Text style={styles.Heading1}>Please check your phone inbox and</Text>
                     <Text style={styles.Heading1}>enter the OTP below</Text>
                 </View>

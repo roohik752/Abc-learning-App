@@ -22,7 +22,7 @@ const Checkbox = ({ label, checked, onToggle }) => {
             }}
           />
         )}
-        <Text style={{ fontSize: 16, color: '#000' }}>{label}</Text>
+        <Text style={{ fontSize: 16, color: '#000', }}>{label}</Text>
       </View>
     </TouchableOpacity>
   );

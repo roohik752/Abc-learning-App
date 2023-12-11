@@ -10,9 +10,9 @@ const Congo = ({navigation}) => {
             style={styles.linearGradient}
             start={{ x: 0.4, y: 0.4 }}
         >
+            <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
             <Text style={styles.Heading}>MadeInIndiaBook</Text>
             <Text style={styles.Heading}>LearningApp</Text>
-            <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
             <View style={{ marginTop: 10 }}>
             <Text style={styles.Heading1}>You have successfully logged in</Text>
             </View>
@@ -39,11 +39,12 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 22,
         fontWeight: '900',
-        marginTop: -5,
+        // marginTop: -5,
     },
     image: {
         height: 240,
         width: 240,
+        marginBottom: 20
     },
     Heading1: {
         color: '#000',

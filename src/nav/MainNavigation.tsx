@@ -131,8 +131,19 @@ import ForgotPassword from 'src/screens/ForgotPassword';
 import OTP from 'src/screens/OTP';
 import Congo from 'src/screens/Congo';
 import OTP2 from 'src/screens/OTP2';
-import Home from 'src/screens/Home';
 import MenuScreen from 'src/screens/MenuScreen';
+import EnglishProduct from 'src/screens/Sidebar/EnglishProduct';
+import EnglishProductWithImage from 'src/screens/Sidebar/EnglishProductWithImage';
+import Hindi from 'src/screens/Sidebar/Hindi';
+import HindiProductWithImage from 'src/screens/Sidebar/HindiProductWithImage';
+import HindiConsonants from 'src/screens/Sidebar/HindiConsonants';
+import HindiVowels from 'src/screens/Sidebar/HindiVowels';
+import Urdu from 'src/screens/Sidebar/Urdu';
+import UrduAlphabets from 'src/screens/Sidebar/UrduAlphabets';
+import UrduNumbers from 'src/screens/Sidebar/UrduNumbers';
+import UrduProductWithImage from 'src/screens/Sidebar/UrduProductWithImage';
+import NumberProduct from 'src/screens/Sidebar/NumberProduct';
+import NumberProductWithImage from 'src/screens/Sidebar/NumberProductWithImage';
 
 const MainNavigation = () => {
   return (
@@ -154,6 +165,18 @@ const MainNavigation = () => {
           <Screen name={ROUTERS.OTP2} component={OTP2} options={{ headerShown: false }} />
           <Screen name={ROUTERS.Congo} component={Congo} options={{ headerShown: false }} />
           <Screen name={ROUTERS.MenuScreen} component={MenuScreen} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.EnglishProduct} component={EnglishProduct} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.EnglishProductWithImage} component={EnglishProductWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.Hindi} component={Hindi} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.HindiConsonants} component={HindiConsonants} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.HindiVowels} component={HindiVowels} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.HindiProductWithImage} component={HindiProductWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.NumberProduct} component={NumberProduct} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.NumberProductWithImage} component={NumberProductWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.Urdu} component={Urdu} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.UrduAlphabets} component={UrduAlphabets} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.UrduNumbers} component={UrduNumbers} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.UrduProductWithImage} component={UrduProductWithImage} options={{ headerShown: false }} />
         </Navigator>
       </NavigationContainer>
     </ApplicationProvider>

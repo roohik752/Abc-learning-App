@@ -13,22 +13,23 @@ const OTP2 = ({ navigation }) => {
             style={styles.linearGradient}
             start={{ x: 0.4, y: 0.4 }}
         >
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
                 <Text style={styles.Heading}>MadeInIndiaBook</Text>
                 <Text style={styles.Heading}>LearningApp</Text>
-                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
-                <View style={{ marginTop: 10 }}>
+                <View style={{ marginTop: 50 }}>
                     <Text style={styles.Heading1}>Enter the phone number on which OTP will be</Text>
                     <Text style={styles.Heading1}>shared for registration</Text>
                     <View style={styles.box}>
                         <Image source={require('../assets/img/Phone.png')} style={styles.icon} />
                         <TextInput
                             style={styles.textInput}
-                            placeholder="Number"
-                            placeholderTextColor='#808080'
+                            placeholder="Mobile Number"
+                            placeholderTextColor='#000'
                             onChangeText={(text) => setNumber(text)}
                             value={number}
                             keyboardType="numeric"
+                            maxLength={10}
                         />
                     </View>
                 </View>
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     box: {
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: '#808080',
+        borderColor: '#000',
         borderRadius: 10,
         paddingLeft: 20,
         paddingRight: 10,
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     textInput: {
         height: 40,
         width: 280,
-        color: '#818589',
+        color: '#000',
         fontSize: 18,
         paddingLeft: 10,
     },

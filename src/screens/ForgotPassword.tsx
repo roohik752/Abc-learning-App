@@ -13,22 +13,23 @@ const ForgotPassword = ({ navigation }) => {
             style={styles.linearGradient}
             start={{ x: 0.4, y: 0.4 }}
         >
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
                 <Text style={styles.Heading}>MadeInIndiaBook</Text>
                 <Text style={styles.Heading}>LearningApp</Text>
-                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
-                <View style={{ marginTop: 10 }}>
+                <View style={{ marginTop: 50 }}>
                     <Text style={styles.Heading1}>Enter the phone number on which OTP will be</Text>
                     <Text style={styles.Heading1}>shared to reset your password</Text>
                     <View style={styles.box}>
                         <Image source={require('../assets/img/Phone.png')} style={styles.icon} />
                         <TextInput
                             style={styles.textInput}
-                            placeholder="Number"
+                            placeholder="Mobile Number"
                             placeholderTextColor='#808080'
                             onChangeText={(text) => setNumber(text)}
                             value={number}
                             keyboardType="numeric"
+                            maxLength={10}
                         />
                     </View>
                 </View>

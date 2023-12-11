@@ -11,7 +11,7 @@ const GenderSelection = () => {
 
   return (
     <View style={{ flexDirection: 'row', marginTop: 10, marginBottom: 20, }}>
-      <Text style={{ fontSize: 18, color: '#808080' }}>Gender</Text>
+      <Text style={{ fontSize: 18, color: '#000' }}>Gender</Text>
       <RadioButton
         label="Male"
         selected={selectedGender === 'male'}
