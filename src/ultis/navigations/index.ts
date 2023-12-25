@@ -25,6 +25,7 @@ const ROUTERS = {
   OTP2: 'OTP2',
   Congo: 'Congo',
   Home: 'Home',
+  Profile: 'Profile',
   MenuScreen: 'MenuScreen',
   EnglishProduct: 'EnglishProduct',
   EnglishProductWithImage: 'EnglishProductWithImage',
@@ -38,6 +39,14 @@ const ROUTERS = {
   UrduNumbers: 'UrduNumbers',
   UrduAlphabets: 'UrduAlphabets',
   UrduProductWithImage: 'UrduProductWithImage',
+  AnimalsName: 'AnimalsName',
+  AnimalsNameWithImage: 'AnimalsNameWithImage',
+  FruitsName: 'FruitsName',
+  FruitsNameWithImage: 'FruitsNameWithImage',
+  ColoursName: 'ColoursName',
+  ColoursNameWithImage: 'ColoursNameWithImage',
+  ShapesName: 'ShapesName',
+  ShapesNameWithImage: 'ShapesNameWithImage',
 };
 
 export { Stack, NavigationContainer, Navigator, Screen, ROUTERS };

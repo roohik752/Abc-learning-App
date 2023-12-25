@@ -178,7 +178,7 @@ const Alphabets: Array<Alphabet> = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/Q.png'),
-    img2: require('../../assets/img/queen.png'),
+    img2: require('../../assets/img/queen1.png'),
   },
   {
     id: 17,
@@ -271,7 +271,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/अ.png'),
-    img2: require('../../assets/vowel/अ.png'),
+    img2: require('../../assets/vowel/a1.png'),
   },
   {
     id: 1,
@@ -280,7 +280,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/आ.png'),
-    img2: require('../../assets/vowel/आ.png'),
+    img2: require('../../assets/vowel/a2.png'),
   },
   {
     id: 2,
@@ -289,7 +289,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/इ.png'),
-    img2: require('../../assets/vowel/इ.png'),
+    img2: require('../../assets/vowel/a3.png'),
   },
   {
     id: 3,
@@ -298,7 +298,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ई.png'),
-    img2: require('../../assets/vowel/ई.png'),
+    img2: require('../../assets/vowel/a4.png'),
   },
   {
     id: 4,
@@ -307,7 +307,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/उ.png'),
-    img2: require('../../assets/vowel/उ.png'),
+    img2: require('../../assets/vowel/a5.png'),
   },
   {
     id: 5,
@@ -316,7 +316,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ऊ.png'),
-    img2: require('../../assets/vowel/ऊ.png'),
+    img2: require('../../assets/vowel/a6.png'),
   },
   {
     id: 6,
@@ -325,7 +325,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ऋ.png'),
-    img2: require('../../assets/vowel/ऋ.png'),
+    img2: require('../../assets/vowel/a7.png'),
   },
   {
     id: 7,
@@ -334,7 +334,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ए.png'),
-    img2: require('../../assets/vowel/ए.png'),
+    img2: require('../../assets/vowel/a8.png'),
   },
   {
     id: 8,
@@ -343,7 +343,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ऐ.png'),
-    img2: require('../../assets/vowel/ऐ.png'),
+    img2: require('../../assets/vowel/a9.png'),
   },
   {
     id: 9,
@@ -352,7 +352,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ओ.png'),
-    img2: require('../../assets/vowel/ओ.png'),
+    img2: require('../../assets/vowel/a10.png'),
   },
   {
     id: 10,
@@ -361,7 +361,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/औ.png'),
-    img2: require('../../assets/vowel/औ.png'),
+    img2: require('../../assets/vowel/a11.png'),
   },
   {
     id: 11,
@@ -370,7 +370,7 @@ export const HindiVowel = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/अं.png'),
-    img2: require('../../assets/vowel/अं.png'),
+    img2: require('../../assets/vowel/a12.png'),
   },
   {
     id: 12,
@@ -390,7 +390,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/क.png'),
-    img2: require('../../assets/consonant/क.png'),
+    img2: require('../../assets/consonant/b1.png'),
   },
   {
     id: 2,
@@ -399,7 +399,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ख.png'),
-    img2: require('../../assets/consonant/ख.png'),
+    img2: require('../../assets/consonant/b2.png'),
   },
   {
     id: 3,
@@ -408,16 +408,16 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ग.png'),
-    img2: require('../../assets/consonant/ग.png'),
+    img2: require('../../assets/consonant/b3.png'),
   },
   {
     id: 4,
     text1: 'घ',
-    text2: 'घ स घड़ीे',
+    text2: 'घ से घड़ीे',
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/घ.png'),
-    img2: require('../../assets/consonant/घ.png'),
+    img2: require('../../assets/consonant/b4.png'),
   },
   {
     id: 5,
@@ -434,7 +434,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/च.png'),
-    img2: require('../../assets/consonant/च.png'),
+    img2: require('../../assets/consonant/b6.png'),
   },
   {
     id: 7,
@@ -443,7 +443,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/छ.png'),
-    img2: require('../../assets/consonant/छ.png'),
+    img2: require('../../assets/consonant/b7.png'),
   },
   {
     id: 8,
@@ -452,7 +452,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ज.png'),
-    img2: require('../../assets/consonant/ज.png'),
+    img2: require('../../assets/consonant/b8.png'),
   },
   {
     id: 9,
@@ -461,7 +461,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/झ.png'),
-    img2: require('../../assets/consonant/झ.png'),
+    img2: require('../../assets/consonant/b9.png'),
   },
   {
     id: 10,
@@ -478,7 +478,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ट.png'),
-    img2: require('../../assets/consonant/ट.png'),
+    img2: require('../../assets/consonant/b11.png'),
   },
   {
     id: 12,
@@ -487,7 +487,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ठ.png'),
-    img2: require('../../assets/consonant/ठ.png'),
+    img2: require('../../assets/consonant/b12.png'),
   },
   {
     id: 13,
@@ -496,7 +496,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ड.png'),
-    img2: require('../../assets/consonant/ड.png'),
+    img2: require('../../assets/consonant/b13.png'),
   },
   {
     id: 14,
@@ -505,7 +505,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ढ.png'),
-    img2: require('../../assets/consonant/ढ.png'),
+    img2: require('../../assets/consonant/b14.png'),
   },
   {
     id: 15,
@@ -522,7 +522,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/त.png'),
-    img2: require('../../assets/consonant/त.png'),
+    img2: require('../../assets/consonant/b16.png'),
   },
   {
     id: 17,
@@ -531,7 +531,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/थ.png'),
-    img2: require('../../assets/consonant/थ.png'),
+    img2: require('../../assets/consonant/b17.png'),
   },
   {
     id: 18,
@@ -540,7 +540,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/द.png'),
-    img2: require('../../assets/consonant/द.png'),
+    img2: require('../../assets/consonant/b18.png'),
   },
   {
     id: 19,
@@ -549,7 +549,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ध.png'),
-    img2: require('../../assets/consonant/ध.png'),
+    img2: require('../../assets/consonant/b19.png'),
   },
   {
     id: 20,
@@ -558,7 +558,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/न.png'),
-    img2: require('../../assets/consonant/न.png'),
+    img2: require('../../assets/consonant/b20.png'),
   },
   {
     id: 21,
@@ -567,7 +567,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/प.png'),
-    img2: require('../../assets/consonant/प.png'),
+    img2: require('../../assets/consonant/b21.png'),
   },
   {
     id: 22,
@@ -576,7 +576,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/फ.png'),
-    img2: require('../../assets/consonant/फ.png'),
+    img2: require('../../assets/consonant/b22.png'),
   },
   {
     id: 23,
@@ -585,7 +585,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ब.png'),
-    img2: require('../../assets/consonant/ब.png'),
+    img2: require('../../assets/consonant/b23.png'),
   },
   {
     id: 24,
@@ -594,7 +594,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/भ.png'),
-    img2: require('../../assets/consonant/भ.png'),
+    img2: require('../../assets/consonant/b24.png'),
   },
   {
     id: 25,
@@ -603,7 +603,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/म.png'),
-    img2: require('../../assets/consonant/म.png'),
+    img2: require('../../assets/consonant/b25.png'),
   },
   {
     id: 26,
@@ -612,7 +612,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/य.png'),
-    img2: require('../../assets/consonant/य.png'),
+    img2: require('../../assets/consonant/b26.png'),
   },
   {
     id: 27,
@@ -621,7 +621,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/र.png'),
-    img2: require('../../assets/consonant/र.png'),
+    img2: require('../../assets/consonant/b27.png'),
   },
   {
     id: 28,
@@ -630,7 +630,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ल.png'),
-    img2: require('../../assets/consonant/ल.png'),
+    img2: require('../../assets/consonant/b28.png'),
   },
   {
     id: 29,
@@ -639,7 +639,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/व.png'),
-    img2: require('../../assets/consonant/व.png'),
+    img2: require('../../assets/consonant/b29.png'),
   },
   {
     id: 30,
@@ -648,7 +648,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/श.png'),
-    img2: require('../../assets/consonant/श.png'),
+    img2: require('../../assets/consonant/b30.png'),
   },
   {
     id: 31,
@@ -657,7 +657,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ष.png'),
-    img2: require('../../assets/consonant/ष.png'),
+    img2: require('../../assets/consonant/b31.png'),
   },
   {
     id: 32,
@@ -666,7 +666,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/स.png'),
-    img2: require('../../assets/consonant/स.png'),
+    img2: require('../../assets/consonant/b32.png'),
   },
   {
     id: 33,
@@ -675,7 +675,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ह.png'),
-    img2: require('../../assets/consonant/ह.png'),
+    img2: require('../../assets/consonant/b33.png'),
   },
   {
     id: 34,
@@ -684,7 +684,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/क्ष.png'),
-    img2: require('../../assets/consonant/क्ष.png'),
+    img2: require('../../assets/consonant/b34.png'),
   },
   {
     id: 35,
@@ -693,7 +693,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/त्र.png'),
-    img2: require('../../assets/consonant/त्र.png'),
+    img2: require('../../assets/consonant/b35.png'),
   },
   {
     id: 36,
@@ -702,7 +702,7 @@ export const HindiConsonant = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ज्ञ.png'),
-    img2: require('../../assets/consonant/ज्ञ.png'),
+    img2: require('../../assets/consonant/b36.png'),
   },
 ];
 
@@ -714,7 +714,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ا.png'),
-    img2: require('../../assets/urdu/ا.png'),
+    img2: require('../../assets/urdu/Alif.png'),
   },
   {
     id: 2,
@@ -723,7 +723,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ب.png'),
-    img2: require('../../assets/urdu/ب.png'),
+    img2: require('../../assets/urdu/Bay.png'),
   },
   {
     id: 3,
@@ -732,7 +732,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/پ.png'),
-    img2: require('../../assets/urdu/پ.png'),
+    img2: require('../../assets/urdu/Pay.png'),
   },
   {
     id: 4,
@@ -741,7 +741,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ت.png'),
-    img2: require('../../assets/urdu/ت.png'),
+    img2: require('../../assets/urdu/Tay.png'),
   },
   {
     id: 5,
@@ -750,7 +750,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ٹ.png'),
-    img2: require('../../assets/urdu/ٹ.png'),
+    img2: require('../../assets/urdu/T’ay.png'),
   },
   {
     id: 6,
@@ -759,7 +759,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ث.png'),
-    img2: require('../../assets/urdu/ث.png'),
+    img2: require('../../assets/urdu/Say.png'),
   },
   {
     id: 7,
@@ -768,7 +768,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ج.png'),
-    img2: require('../../assets/urdu/ج.png'),
+    img2: require('../../assets/urdu/Jeem.png'),
   },
   {
     id: 8,
@@ -777,7 +777,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/چ.png'),
-    img2: require('../../assets/urdu/چ.png'),
+    img2: require('../../assets/urdu/Cheem.png'),
   },
   {
     id: 9,
@@ -786,7 +786,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ح.png'),
-    img2: require('../../assets/urdu/ح.png'),
+    img2: require('../../assets/urdu/Hae.png'),
   },
   {
     id: 10,
@@ -795,7 +795,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/خ.png'),
-    img2: require('../../assets/urdu/خ.png'),
+    img2: require('../../assets/urdu/Qhae.png'),
   },
   {
     id: 11,
@@ -804,7 +804,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/د.png'),
-    img2: require('../../assets/urdu/د.png'),
+    img2: require('../../assets/urdu/Daal.png'),
   },
   {
     id: 12,
@@ -813,7 +813,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ڈ.png'),
-    img2: require('../../assets/urdu/ڈ.png'),
+    img2: require('../../assets/urdu/da.png'),
   },
   {
     id: 13,
@@ -822,7 +822,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ز.png'),
-    img2: require('../../assets/urdu/ز.png'),
+    img2: require('../../assets/urdu/Zaal.png'),
   },
   {
     id: 14,
@@ -831,7 +831,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ر.png'),
-    img2: require('../../assets/urdu/ر.png'),
+    img2: require('../../assets/urdu/Rey.png'),
   },
   {
     id: 15,
@@ -840,7 +840,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ڑ.png'),
-    img2: require('../../assets/urdu/ڑ.png'),
+    img2: require('../../assets/urdu/D’ey.png'),
   },
   {
     id: 16,
@@ -849,7 +849,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ز1.png'),
-    img2: require('../../assets/urdu/ز1.png'),
+    img2: require('../../assets/urdu/Zey.png'),
   },
   {
     id: 17,
@@ -858,7 +858,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ژ.png'),
-    img2: require('../../assets/urdu/ژ.png'),
+    img2: require('../../assets/urdu/Zsbe.png'),
   },
   {
     id: 18,
@@ -867,7 +867,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/س.png'),
-    img2: require('../../assets/urdu/س.png'),
+    img2: require('../../assets/urdu/Seen.png'),
   },
   {
     id: 19,
@@ -876,7 +876,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ش.png'),
-    img2: require('../../assets/urdu/ش.png'),
+    img2: require('../../assets/urdu/Sheen.png'),
   },
   {
     id: 20,
@@ -885,7 +885,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ص.png'),
-    img2: require('../../assets/urdu/ص.png'),
+    img2: require('../../assets/urdu/Suad.png'),
   },
   {
     id: 21,
@@ -894,7 +894,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ض.png'),
-    img2: require('../../assets/urdu/ض.png'),
+    img2: require('../../assets/urdu/Zuad.png'),
   },
   {
     id: 22,
@@ -903,7 +903,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ط.png'),
-    img2: require('../../assets/urdu/ط.png'),
+    img2: require('../../assets/urdu/Toe.png'),
   },
   {
     id: 23,
@@ -912,7 +912,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ظ.png'),
-    img2: require('../../assets/urdu/ظ.png'),
+    img2: require('../../assets/urdu/Zoe.png'),
   },
   {
     id: 24,
@@ -921,7 +921,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ع.png'),
-    img2: require('../../assets/urdu/ع.png'),
+    img2: require('../../assets/urdu/Aaen.png'),
   },
   {
     id: 25,
@@ -930,7 +930,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/غ.png'),
-    img2: require('../../assets/urdu/غ.png'),
+    img2: require('../../assets/urdu/Ghain.png'),
   },
   {
     id: 26,
@@ -939,7 +939,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ف.png'),
-    img2: require('../../assets/urdu/ف.png'),
+    img2: require('../../assets/urdu/Fay.png'),
   },
   {
     id: 27,
@@ -948,7 +948,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ق.png'),
-    img2: require('../../assets/urdu/ق.png'),
+    img2: require('../../assets/urdu/Qhaaf.png'),
   },
   {
     id: 28,
@@ -957,7 +957,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ک.png'),
-    img2: require('../../assets/urdu/ک.png'),
+    img2: require('../../assets/urdu/Kaaf.png'),
   },
   {
     id: 29,
@@ -966,7 +966,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/گ.png'),
-    img2: require('../../assets/urdu/گ.png'),
+    img2: require('../../assets/urdu/Gaaf.png'),
   },
   {
     id: 30,
@@ -975,7 +975,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ل.png'),
-    img2: require('../../assets/urdu/ل.png'),
+    img2: require('../../assets/urdu/Laam.png'),
   },
   {
     id: 31,
@@ -984,7 +984,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/م.png'),
-    img2: require('../../assets/urdu/م.png'),
+    img2: require('../../assets/urdu/Meem.png'),
   },
   {
     id: 32,
@@ -993,7 +993,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ن.png'),
-    img2: require('../../assets/urdu/ن.png'),
+    img2: require('../../assets/urdu/Noon.png'),
   },
   {
     id: 33,
@@ -1002,7 +1002,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/و.png'),
-    img2: require('../../assets/urdu/و.png'),
+    img2: require('../../assets/urdu/Wao.png'),
   },
   {
     id: 34,
@@ -1011,7 +1011,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ہ.png'),
-    img2: require('../../assets/urdu/ہ.png'),
+    img2: require('../../assets/urdu/Hey.png'),
   },
   {
     id: 35,
@@ -1020,7 +1020,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ی.png'),
-    img2: require('../../assets/urdu/ی.png'),
+    img2: require('../../assets/urdu/Choti Yea.png'),
   },
   {
     id: 36,
@@ -1029,7 +1029,7 @@ export const UrduAlphabet = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/ے.png'),
-    img2: require('../../assets/urdu/ے.png'),
+    img2: require('../../assets/urdu/Badi Yea.png'),
   },
 ];
 
@@ -1041,7 +1041,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/(۰).png'),
-    img2: require('../../assets/number/(۰).png'),
+    img2: require('../../assets/number/n0.png'),
   },
   {
     id: 2,
@@ -1050,7 +1050,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱.png'),
-    img2: require('../../assets/number/۱.png'),
+    img2: require('../../assets/number/n1.png'),
   },
   {
     id: 3,
@@ -1059,7 +1059,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲.png'),
-    img2: require('../../assets/number/۲.png'),
+    img2: require('../../assets/number/n2.png'),
   },
   {
     id: 4,
@@ -1068,7 +1068,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳.png'),
-    img2: require('../../assets/number/۳.png'),
+    img2: require('../../assets/number/n3.png'),
   },
   {
     id: 5,
@@ -1077,7 +1077,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴.png'),
-    img2: require('../../assets/number/۴.png'),
+    img2: require('../../assets/number/n4.png'),
   },
   {
     id: 6,
@@ -1086,7 +1086,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵.png'),
-    img2: require('../../assets/number/۵.png'),
+    img2: require('../../assets/number/n5.png'),
   },
   {
     id: 7,
@@ -1095,7 +1095,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶.png'),
-    img2: require('../../assets/number/۶.png'),
+    img2: require('../../assets/number/n6.png'),
   },
   {
     id: 8,
@@ -1104,7 +1104,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷.png'),
-    img2: require('../../assets/number/۷.png'),
+    img2: require('../../assets/number/n7.png'),
   },
   {
     id: 9,
@@ -1113,7 +1113,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸.png'),
-    img2: require('../../assets/number/۸.png'),
+    img2: require('../../assets/number/n8.png'),
   },
   {
     id: 10,
@@ -1122,7 +1122,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹.png'),
-    img2: require('../../assets/number/۹.png'),
+    img2: require('../../assets/number/n9.png'),
   },
   {
     id: 11,
@@ -1131,7 +1131,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۰.png'),
-    img2: require('../../assets/number/۱۰.png'),
+    img2: require('../../assets/number/n10.png'),
   },
   {
     id: 12,
@@ -1140,7 +1140,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۱.png'),
-    img2: require('../../assets/number/۱۱.png'),
+    img2: require('../../assets/number/n11.png'),
   },
   {
     id: 13,
@@ -1149,7 +1149,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۲.png'),
-    img2: require('../../assets/number/۱۲.png'),
+    img2: require('../../assets/number/n12.png'),
   },
   {
     id: 14,
@@ -1158,7 +1158,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۳.png'),
-    img2: require('../../assets/number/۱۳.png'),
+    img2: require('../../assets/number/n13.png'),
   },
   {
     id: 15,
@@ -1167,7 +1167,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۴.png'),
-    img2: require('../../assets/number/۱۴.png'),
+    img2: require('../../assets/number/n14.png'),
   },
   {
     id: 16,
@@ -1176,7 +1176,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۵.png'),
-    img2: require('../../assets/number/۱۵.png'),
+    img2: require('../../assets/number/n15.png'),
   },
   {
     id: 17,
@@ -1185,7 +1185,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۶.png'),
-    img2: require('../../assets/number/۱۶.png'),
+    img2: require('../../assets/number/n16.png'),
   },
   {
     id: 18,
@@ -1194,7 +1194,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۷.png'),
-    img2: require('../../assets/number/۱۷.png'),
+    img2: require('../../assets/number/n17.png'),
   },
   {
     id: 19,
@@ -1203,7 +1203,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۸.png'),
-    img2: require('../../assets/number/۱۸.png'),
+    img2: require('../../assets/number/n18.png'),
   },
   {
     id: 20,
@@ -1212,7 +1212,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۹.png'),
-    img2: require('../../assets/number/۱۹.png'),
+    img2: require('../../assets/number/n19.png'),
   },
   {
     id: 21,
@@ -1221,7 +1221,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۰.png'),
-    img2: require('../../assets/number/۲۰.png'),
+    img2: require('../../assets/number/n20.png'),
   },
   {
     id: 22,
@@ -1230,7 +1230,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۱.png'),
-    img2: require('../../assets/number/۲۱.png'),
+    img2: require('../../assets/number/n21.png'),
   },
   {
     id: 23,
@@ -1239,7 +1239,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۲.png'),
-    img2: require('../../assets/number/۲۲.png'),
+    img2: require('../../assets/number/n22.png'),
   },
   {
     id: 24,
@@ -1248,7 +1248,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۳.png'),
-    img2: require('../../assets/number/۲۳.png'),
+    img2: require('../../assets/number/n23.png'),
   },
   {
     id: 25,
@@ -1257,7 +1257,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۴.png'),
-    img2: require('../../assets/number/۲۴.png'),
+    img2: require('../../assets/number/n24.png'),
   },
   {
     id: 26,
@@ -1266,7 +1266,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۵.png'),
-    img2: require('../../assets/number/۲۵.png'),
+    img2: require('../../assets/number/n25.png'),
   },
   {
     id: 27,
@@ -1275,7 +1275,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۶.png'),
-    img2: require('../../assets/number/۲۶.png'),
+    img2: require('../../assets/number/n26.png'),
   },
   {
     id: 28,
@@ -1284,7 +1284,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۷.png'),
-    img2: require('../../assets/number/۲۷.png'),
+    img2: require('../../assets/number/n27.png'),
   },
   {
     id: 29,
@@ -1293,7 +1293,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۸.png'),
-    img2: require('../../assets/number/۲۸.png'),
+    img2: require('../../assets/number/n28.png'),
   },
   {
     id: 30,
@@ -1302,7 +1302,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۲۹.png'),
-    img2: require('../../assets/number/۲۹.png'),
+    img2: require('../../assets/number/n29.png'),
   },
   {
     id: 31,
@@ -1311,7 +1311,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۰.png'),
-    img2: require('../../assets/number/۳۰.png'),
+    img2: require('../../assets/number/n30.png'),
   },
   {
     id: 32,
@@ -1320,7 +1320,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۱.png'),
-    img2: require('../../assets/number/۳۱.png'),
+    img2: require('../../assets/number/n31.png'),
   },
   {
     id: 33,
@@ -1329,7 +1329,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۲.png'),
-    img2: require('../../assets/number/۳۲.png'),
+    img2: require('../../assets/number/n32.png'),
   },
   {
     id: 34,
@@ -1338,7 +1338,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۳.png'),
-    img2: require('../../assets/number/۳۳.png'),
+    img2: require('../../assets/number/n33.png'),
   },
   {
     id: 35,
@@ -1347,7 +1347,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۴.png'),
-    img2: require('../../assets/number/۳۴.png'),
+    img2: require('../../assets/number/n34.png'),
   },
   {
     id: 36,
@@ -1356,7 +1356,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۵.png'),
-    img2: require('../../assets/number/۳۵.png'),
+    img2: require('../../assets/number/n35.png'),
   },
   {
     id: 37,
@@ -1365,7 +1365,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۶.png'),
-    img2: require('../../assets/number/۳۶.png'),
+    img2: require('../../assets/number/n36.png'),
   },
   {
     id: 38,
@@ -1374,7 +1374,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۷.png'),
-    img2: require('../../assets/number/۳۷.png'),
+    img2: require('../../assets/number/n37.png'),
   },
   {
     id: 39,
@@ -1383,7 +1383,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۸.png'),
-    img2: require('../../assets/number/۳۸.png'),
+    img2: require('../../assets/number/n38.png'),
   },
   {
     id: 40,
@@ -1392,7 +1392,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۳۹.png'),
-    img2: require('../../assets/number/۳۹.png'),
+    img2: require('../../assets/number/n39.png'),
   },
   {
     id: 41,
@@ -1401,7 +1401,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۰.png'),
-    img2: require('../../assets/number/۴۰.png'),
+    img2: require('../../assets/number/n40.png'),
   },
   {
     id: 42,
@@ -1410,7 +1410,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۱.png'),
-    img2: require('../../assets/number/۴۱.png'),
+    img2: require('../../assets/number/n41.png'),
   },
   {
     id: 43,
@@ -1419,7 +1419,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۲.png'),
-    img2: require('../../assets/number/۴۲.png'),
+    img2: require('../../assets/number/n42.png'),
   },
   {
     id: 44,
@@ -1428,7 +1428,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۳.png'),
-    img2: require('../../assets/number/۴۳.png'),
+    img2: require('../../assets/number/n43.png'),
   },
   {
     id: 45,
@@ -1437,7 +1437,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۴.png'),
-    img2: require('../../assets/number/۴۴.png'),
+    img2: require('../../assets/number/n44.png'),
   },
   {
     id: 46,
@@ -1446,7 +1446,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۵.png'),
-    img2: require('../../assets/number/۴۵.png'),
+    img2: require('../../assets/number/n45.png'),
   },
   {
     id: 47,
@@ -1455,7 +1455,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۶.png'),
-    img2: require('../../assets/number/۴۶.png'),
+    img2: require('../../assets/number/n46.png'),
   },
   {
     id: 48,
@@ -1464,7 +1464,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۷.png'),
-    img2: require('../../assets/number/۴۷.png'),
+    img2: require('../../assets/number/n47.png'),
   },
   {
     id: 49,
@@ -1473,7 +1473,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۸.png'),
-    img2: require('../../assets/number/۴۸.png'),
+    img2: require('../../assets/number/n48.png'),
   },
   {
     id: 50,
@@ -1482,7 +1482,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۴۹.png'),
-    img2: require('../../assets/number/۴۹.png'),
+    img2: require('../../assets/number/n49.png'),
   },
   {
     id: 51,
@@ -1491,7 +1491,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۰.png'),
-    img2: require('../../assets/number/۵۰.png'),
+    img2: require('../../assets/number/n50.png'),
   },
   {
     id: 52,
@@ -1500,7 +1500,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۱.png'),
-    img2: require('../../assets/number/۵۱.png'),
+    img2: require('../../assets/number/n51.png'),
   },
   {
     id: 53,
@@ -1509,16 +1509,16 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۲.png'),
-    img2: require('../../assets/number/۵۲.png'),
+    img2: require('../../assets/number/n52.png'),
   },
   {
     id: 54,
     text1: '۵۳',
-    text2: 'باون',
+    text2: 'ترپن',
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۳.png'),
-    img2: require('../../assets/number/۵۳.png'),
+    img2: require('../../assets/number/n53.png'),
   },
   {
     id: 55,
@@ -1527,7 +1527,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۴.png'),
-    img2: require('../../assets/number/۵۴.png'),
+    img2: require('../../assets/number/n54.png'),
   },
   {
     id: 56,
@@ -1536,7 +1536,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۵.png'),
-    img2: require('../../assets/number/۵۵.png'),
+    img2: require('../../assets/number/n55.png'),
   },
   {
     id: 57,
@@ -1545,7 +1545,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۶.png'),
-    img2: require('../../assets/number/۵۶.png'),
+    img2: require('../../assets/number/n56.png'),
   },
   {
     id: 58,
@@ -1554,7 +1554,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۷.png'),
-    img2: require('../../assets/number/۵۷.png'),
+    img2: require('../../assets/number/n57.png'),
   },
   {
     id: 59,
@@ -1563,7 +1563,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۸.png'),
-    img2: require('../../assets/number/۵۸.png'),
+    img2: require('../../assets/number/n58.png'),
   },
   {
     id: 60,
@@ -1572,7 +1572,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۵۹.png'),
-    img2: require('../../assets/number/۵۹.png'),
+    img2: require('../../assets/number/n59.png'),
   },
   {
     id: 61,
@@ -1581,7 +1581,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۰.png'),
-    img2: require('../../assets/number/۶۰.png'),
+    img2: require('../../assets/number/n60.png'),
   },
   {
     id: 62,
@@ -1590,7 +1590,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۱.png'),
-    img2: require('../../assets/number/۶۱.png'),
+    img2: require('../../assets/number/n61.png'),
   },
   {
     id: 63,
@@ -1599,7 +1599,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۲.png'),
-    img2: require('../../assets/number/۶۲.png'),
+    img2: require('../../assets/number/n62.png'),
   },
   {
     id: 64,
@@ -1608,7 +1608,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۳.png'),
-    img2: require('../../assets/number/۶۳.png'),
+    img2: require('../../assets/number/n63.png'),
   },
   {
     id: 65,
@@ -1617,7 +1617,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۴.png'),
-    img2: require('../../assets/number/۶۴.png'),
+    img2: require('../../assets/number/n64.png'),
   },
   {
     id: 66,
@@ -1626,16 +1626,16 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۵.png'),
-    img2: require('../../assets/number/۶۵.png'),
+    img2: require('../../assets/number/n65.png'),
   },
   {
     id: 67,
     text1: '۶۶',
-    text2: 'پینسٹھ',
+    text2: 'چھیاسٹھ',
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۶.png'),
-    img2: require('../../assets/number/۶۶.png'),
+    img2: require('../../assets/number/n66.png'),
   },
   {
     id: 68,
@@ -1644,7 +1644,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۷.png'),
-    img2: require('../../assets/number/۶۷.png'),
+    img2: require('../../assets/number/n67.png'),
   },
   {
     id: 69,
@@ -1653,7 +1653,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۸.png'),
-    img2: require('../../assets/number/۶۸.png'),
+    img2: require('../../assets/number/n68.png'),
   },
   {
     id: 70,
@@ -1662,7 +1662,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۶۹.png'),
-    img2: require('../../assets/number/۶۹.png'),
+    img2: require('../../assets/number/n69.png'),
   },
   {
     id: 71,
@@ -1671,7 +1671,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۰.png'),
-    img2: require('../../assets/number/۷۰.png'),
+    img2: require('../../assets/number/n70.png'),
   },
   {
     id: 72,
@@ -1680,7 +1680,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۱.png'),
-    img2: require('../../assets/number/۷۱.png'),
+    img2: require('../../assets/number/n71.png'),
   },
   {
     id: 73,
@@ -1689,16 +1689,16 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۲.png'),
-    img2: require('../../assets/number/۷۲.png'),
+    img2: require('../../assets/number/n72.png'),
   },
   {
     id: 74,
     text1: '۷۳',
-    text2: 'بہتر',
+    text2: 'تہتر',
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۳.png'),
-    img2: require('../../assets/number/۷۳.png'),
+    img2: require('../../assets/number/n73.png'),
   },
   {
     id: 75,
@@ -1707,7 +1707,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۴.png'),
-    img2: require('../../assets/number/۷۴.png'),
+    img2: require('../../assets/number/n74.png'),
   },
   {
     id: 76,
@@ -1716,7 +1716,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۵.png'),
-    img2: require('../../assets/number/۷۵.png'),
+    img2: require('../../assets/number/n75.png'),
   },
   {
     id: 77,
@@ -1725,7 +1725,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۶.png'),
-    img2: require('../../assets/number/۷۶.png'),
+    img2: require('../../assets/number/n76.png'),
   },
   {
     id: 78,
@@ -1734,7 +1734,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۷.png'),
-    img2: require('../../assets/number/۷۷.png'),
+    img2: require('../../assets/number/n77.png'),
   },
   {
     id: 79,
@@ -1743,7 +1743,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۸.png'),
-    img2: require('../../assets/number/۷۸.png'),
+    img2: require('../../assets/number/n78.png'),
   },
   {
     id: 80,
@@ -1752,7 +1752,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۷۹.png'),
-    img2: require('../../assets/number/۷۹.png'),
+    img2: require('../../assets/number/n79.png'),
   },
   {
     id: 81,
@@ -1761,7 +1761,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۰.png'),
-    img2: require('../../assets/number/۸۰.png'),
+    img2: require('../../assets/number/n80.png'),
   },
   {
     id: 82,
@@ -1770,7 +1770,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۱.png'),
-    img2: require('../../assets/number/۸۱.png'),
+    img2: require('../../assets/number/n81.png'),
   },
   {
     id: 83,
@@ -1779,7 +1779,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۲.png'),
-    img2: require('../../assets/number/۸۲.png'),
+    img2: require('../../assets/number/n82.png'),
   },
   {
     id: 84,
@@ -1788,7 +1788,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۳.png'),
-    img2: require('../../assets/number/۸۳.png'),
+    img2: require('../../assets/number/n83.png'),
   },
   {
     id: 85,
@@ -1797,7 +1797,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۴.png'),
-    img2: require('../../assets/number/۸۴.png'),
+    img2: require('../../assets/number/n84.png'),
   },
   {
     id: 86,
@@ -1806,7 +1806,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۵.png'),
-    img2: require('../../assets/number/۸۵.png'),
+    img2: require('../../assets/number/n85.png'),
   },
   {
     id: 87,
@@ -1815,7 +1815,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۶.png'),
-    img2: require('../../assets/number/۸۶.png'),
+    img2: require('../../assets/number/n86.png'),
   },
   {
     id: 88,
@@ -1824,7 +1824,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۷.png'),
-    img2: require('../../assets/number/۸۷.png'),
+    img2: require('../../assets/number/n87.png'),
   },
   {
     id: 89,
@@ -1833,7 +1833,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۸.png'),
-    img2: require('../../assets/number/۸۸.png'),
+    img2: require('../../assets/number/n88.png'),
   },
   {
     id: 90,
@@ -1842,7 +1842,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۸۹.png'),
-    img2: require('../../assets/number/۸۹.png'),
+    img2: require('../../assets/number/n89.png'),
   },
   {
     id: 91,
@@ -1851,7 +1851,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۰.png'),
-    img2: require('../../assets/number/۹۰.png'),
+    img2: require('../../assets/number/n90.png'),
   },
   {
     id: 92,
@@ -1860,7 +1860,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۱.png'),
-    img2: require('../../assets/number/۹۱.png'),
+    img2: require('../../assets/number/n91.png'),
   },
   {
     id: 93,
@@ -1869,7 +1869,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۲.png'),
-    img2: require('../../assets/number/۹۲.png'),
+    img2: require('../../assets/number/n92.png'),
   },
   {
     id: 94,
@@ -1878,7 +1878,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۳.png'),
-    img2: require('../../assets/number/۹۳.png'),
+    img2: require('../../assets/number/n93.png'),
   },
   {
     id: 95,
@@ -1887,16 +1887,16 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۴.png'),
-    img2: require('../../assets/number/۹۴.png'),
+    img2: require('../../assets/number/n94.png'),
   },
   {
     id: 96,
     text1: '۹۵',
-    text2: 'چورانوے',
+    text2: 'پچانوے',
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۵.png'),
-    img2: require('../../assets/number/۹۵.png'),
+    img2: require('../../assets/number/n95.png'),
   },
   {
     id: 97,
@@ -1905,7 +1905,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۶.png'),
-    img2: require('../../assets/number/۹۶.png'),
+    img2: require('../../assets/number/n96.png'),
   },
   {
     id: 98,
@@ -1914,7 +1914,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۷.png'),
-    img2: require('../../assets/number/۹۷.png'),
+    img2: require('../../assets/number/n97.png'),
   },
   {
     id: 99,
@@ -1923,7 +1923,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۸.png'),
-    img2: require('../../assets/number/۹۸.png'),
+    img2: require('../../assets/number/n98.png'),
   },
   {
     id: 100,
@@ -1932,7 +1932,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۹۹.png'),
-    img2: require('../../assets/number/۹۹.png'),
+    img2: require('../../assets/number/n99.png'),
   },
   {
     id: 101,
@@ -1941,7 +1941,7 @@ export const UrduNumber = [
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/۱۰۰.png'),
-    img2: require('../../assets/number/۱۰۰.png'),
+    img2: require('../../assets/number/n100.png'),
   },
 ];
 

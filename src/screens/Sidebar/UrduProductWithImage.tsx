@@ -174,11 +174,11 @@ const styles = StyleSheet.create({
     marginBottom: 'auto',
   },
   image3: {
-    fontSize: 200,
+    // fontSize: 100,
     color: '#fff',
     fontWeight: '900',
     justifyContent: 'center',
     alignSelf: 'center',
-    marginTop: 150
+    marginTop: 50
   },
 })

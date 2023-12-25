@@ -144,6 +144,14 @@ import UrduNumbers from 'src/screens/Sidebar/UrduNumbers';
 import UrduProductWithImage from 'src/screens/Sidebar/UrduProductWithImage';
 import NumberProduct from 'src/screens/Sidebar/NumberProduct';
 import NumberProductWithImage from 'src/screens/Sidebar/NumberProductWithImage';
+import AnimalsName from 'src/screens/Sidebar/AnimalsName';
+import AnimalsNameWithImage from 'src/screens/Sidebar/AnimalsNameWithImage';
+import FruitsName from 'src/screens/Sidebar/FruitsName';
+import FruitsNameWithImage from 'src/screens/Sidebar/FruitsNameWithImage';
+import ColoursName from 'src/screens/Sidebar/ColoursName';
+import ColoursNameWithImage from 'src/screens/Sidebar/ColoursNameWithImage';
+import ShapesName from 'src/screens/Sidebar/ShapesName';
+import ShapesNameWithImage from 'src/screens/Sidebar/ShapesNameWithImage';
 
 const MainNavigation = () => {
   return (
@@ -177,6 +185,14 @@ const MainNavigation = () => {
           <Screen name={ROUTERS.UrduAlphabets} component={UrduAlphabets} options={{ headerShown: false }} />
           <Screen name={ROUTERS.UrduNumbers} component={UrduNumbers} options={{ headerShown: false }} />
           <Screen name={ROUTERS.UrduProductWithImage} component={UrduProductWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.AnimalsName} component={AnimalsName} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.AnimalsNameWithImage} component={AnimalsNameWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.FruitsName} component={FruitsName} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.FruitsNameWithImage} component={FruitsNameWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.ColoursName} component={ColoursName} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.ColoursNameWithImage} component={ColoursNameWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.ShapesName} component={ShapesName} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.ShapesNameWithImage} component={ShapesNameWithImage} options={{ headerShown: false }} />
         </Navigator>
       </NavigationContainer>
     </ApplicationProvider>

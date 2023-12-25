@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     marginBottom: 'auto',
   },
   text3: {
-    fontSize: 200,
+    fontSize: 160,
     color: '#fff',
     fontWeight: '900',
     justifyContent: 'center',

@@ -17,6 +17,7 @@ import {
 
 const EnglishProductWithImage = ({ route, navigation }) => {
   const { selectedAlphabet } = route.params;
+  console.log('abc',route.params.selectedAlphabet)
 
   // // Animated values for bubble animation
   // const translateX = useSharedValue(0);
@@ -188,8 +189,8 @@ const styles = StyleSheet.create({
     // height: '70%',
     width: 300,
     alignSelf: 'center',
-    marginTop: 20,
-    // marginBottom: 'auto',
+    marginTop: 10,
+    marginBottom: 20,
   },
   text2: {
     fontSize: 40,

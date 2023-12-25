@@ -8,11 +8,15 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  Platform,
+  PermissionsAndroid,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import GenderSelection from './Components/GenderSelection';
 import axios from 'axios';
+import Geolocation from '@react-native-community/geolocation';
 import AsyncStorage from '@react-native-community/async-storage';
+import { encode, decode } from 'base-64';
 
 const API_BASE_URL = 'https://api.maple.com';
 const CITY_API_ENDPOINT = '/city';
@@ -29,16 +33,109 @@ const Registration = ({ navigation }) => {
   const [pincode, setPincode] = useState('');
   const [isVisible, setIsVisible] = useState(true);
   const [suggestions, setSuggestions] = useState([]);
+  const [districtSuggestions, setDistrictSuggestions] = useState([]);
+  const [location, setLocation] = useState({ latitude: null, longitude: null });
+  const [placeName, setPlaceName] = useState('');
+  const [data, setData] = useState(null);
+  const [searchData, setSearchData] = useState(null);
+
 
   useEffect(() => {
-    fetchData();
+    // Request location permission (only needed on Android)
+    if (Platform.OS === 'android') {
+      PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION)
+        .then(granted => {
+          if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+            getLocation();
+          } else {
+            console.log('Location permission denied');
+          }
+        })
+        .catch(err => console.warn(err));
+    } else {
+      getLocation();
+    }
   }, []);
+
+
+
+  // console.log('loc',location)
+
+  const getLocation = () => {
+    Geolocation.getCurrentPosition(
+      position => {
+        const { latitude, longitude } = position.coords;
+        setLocation({ latitude, longitude });
+        console.log('latitude', latitude, longitude)
+      },
+      error => {
+        console.log('Error getting location:', error);
+      },
+      { enableHighAccuracy: false, timeout: 15000, maximumAge: 1000 }
+    );
+  };
+
+  useEffect(() => {
+    console.log("useffCalled")
+    reverseGeocode()
+    generateToken()
+  }, [location])
+
+useEffect(()=>{
+       if(data){
+        if(data.locality){
+          setCity(`${data.locality}`)
+        }else{
+          setCity(`${data.city}`)
+        }
+        setDistrict(data.district);
+        setPincode(data.pincode);
+        setState(data.state);
+        setCountry(data.area)
+      }
+},[data])
+
+useEffect(()=>{
+  if(searchData){
+  console.log(">>>>>>>>>>>>>>>>>>>>copResults",searchData.copResults[0])
+
+    setCity(`${searchData.copResults[0].locality}`);
+  setDistrict(searchData.copResults[0].district);
+  setPincode(searchData.copResults[0].pincode);
+  setState(searchData.copResults[0].state);
+  // setState(searchData.copResults[0].state);
+}
+},[searchData])
+
+  const reverseGeocode = async () => {
+console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
+    const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
+    // // ======my credentials======
+    // const apiUrl = `https://apis.mappls.com/advancedmaps/v1/2d149d9a7b304e5aab5ce470bc6f8512/rev_geocode?lat=${location.latitude}&lng=${location.longitude}`
+    
+    // // ======Sandhya's credentials======
+    const apiUrl = `https://apis.mappls.com/advancedmaps/v1/7be3c6c9f3c138c7f6fe9f0d7f0746c2/rev_geocode?lat=${location.latitude}&lng=${location.longitude}`
+
+    try {
+      const response = await axios.get(apiUrl);
+
+      if (response.data.results.length > 0) {
+        setData(response.data.results[0])
+
+        console.log(pincode,'formattedAddress', response.data.results[0].pincode)
+      } else {
+        console.log('No results found');
+      }
+    } catch (error) {
+      console.log('Error fetching reverse geocoding data:', error);
+    }
+  };
 
   const fetchData = async () => {
     try {
-      const apiKey = 'b6a26826-cc23-4ea7-8d1f-2f15b57e8236';
+      const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
       const response = await fetch(
-        `https://atlas.mapmyindia.com/api/places/geocode?address=${city}&itemCount=7`,
+        `https://atlas.mapmyindia.com/api/places/geocode?address=${city}&itemCount=5`,
         {
           headers: {
             Authorization: `Bearer ${apiKey}`,
@@ -46,90 +143,20 @@ const Registration = ({ navigation }) => {
         }
       );
       const data = await response.json();
-      setDistrict(data.district);
-      setPincode(data.pincode);
-      setState(data.state);
-      setCountry(data.country);
+  
+      if (data.copResults) {
+        // setDistrict(data.copResults.district);
+        // setPincode(data.copResults.pincode);
+        // setState(data.copResults.state);
+        // setCountry(data.copResults.country);
+      } else {
+        console.log('No results found');
+      }
     } catch (error) {
       console.error('Error fetching geocode data:', error);
     }
   };
-
-  const handleCitySelect = async (selectedCity) => {
-    try {
-      setCity(selectedCity.placeName);
-      const apiKey = 'b6a26826-cc23-4ea7-8d1f-2f15b57e8236';
-      const geocodeResponse = await fetch(
-        `https://atlas.mapmyindia.com/api/places/geocode?address=${selectedCity.placeName}&itemCount=1`,
-        {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-      );
-      const geocodeData = await geocodeResponse.json();
-
-      if (geocodeData.error) {
-        console.error('Geocode API Error:', geocodeData.error);
-        return;
-      }
-
-      setDistrict(geocodeData.district);
-      setPincode(geocodeData.pincode);
-      setState(geocodeData.state);
-      setCountry(geocodeData.country);
-      await fetchData();
-    } catch (error) {
-      console.error('Error fetching geocode data for selected city:', error);
-    }
-
-    setSuggestions([]);
-  };
-
-  const handleCityChange = async (text) => {
-    setCity(text);
-    try {
-      const apiKey = 'b6a26826-cc23-4ea7-8d1f-2f15b57e8236';
-      const response = await fetch(
-        `https://atlas.mapmyindia.com/api/places/search/json?query=${text}&types=city&withDist=false&withPincode=false&withSTD=false&refLocation=28.6139,77.2090`,
-        {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-      );
-      const data = await response.json();
-      setSuggestions(data.suggestedLocations || []);
-    } catch (error) {
-      console.error('Error fetching city suggestions:', error);
-    }
-  };
-
-  const renderSuggestions = () => (
-    <FlatList
-      data={suggestions}
-      keyExtractor={(item) =>
-        item.placeId ? item.placeId.toString() : item.placeName
-      }
-      renderItem={({ item }) => (
-        <TouchableOpacity onPress={() => handleCitySelect(item)}>
-          <Text style={styles.suggestionText}>{item.placeName}</Text>
-        </TouchableOpacity>
-      )}
-    />
-  );
-
-  const generateToken = async () => {
-    try {
-      const response = await axios.post(`${API_BASE_URL}${TOKEN_API_ENDPOINT}`);
-      const newToken = response.data.token;
-      await AsyncStorage.setItem('mapleToken', newToken);
-      return newToken;
-    } catch (error) {
-      console.error('Error generating token:', error);
-      throw error;
-    }
-  };
+  
 
   const fetchCityData = async () => {
     try {
@@ -151,10 +178,227 @@ const Registration = ({ navigation }) => {
       }
     }
   };
-
-  const handleStateChange = async (text) => {
+  const handleCitySelect = async (selectedCity) => {
     try {
-      const apiKey = 'b6a26826-cc23-4ea7-8d1f-2f15b57e8236';
+      // setCity(selectedCity.placeName);
+
+      const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
+
+      // Fetch district information based on the selected city
+      const districtResponse = await fetch(
+        `https://atlas.mapmyindia.com/api/places/geocode?address=${selectedCity.placeName}&itemCount=5`,
+        {
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+
+      const districtData = await districtResponse.json();
+
+      if (districtData.error) {
+        console.error('Geocode API Error:', districtData.error);
+        return;
+      }
+
+      // Set both city and district
+     setSearchData(districtData)
+
+      // Fetch other information if needed
+      await fetchData();
+    } catch (error) {
+      console.error('Error handling city select:', error);
+    }
+
+    // Clear suggestions after selection
+    setSuggestions([]);
+  };
+
+  const handleCityChange = async (text) => {
+    setCity(text);
+    try {
+      const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
+      const response = await fetch(
+        `https://atlas.mapmyindia.com/api/places/search/json?query=${text}&types=city&withDist=false&withPincode=false&withSTD=false&refLocation=${location.latitude},${location.longitude}`,
+        {
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+      const data = await response.json();
+      console.log('data', data)
+      setSuggestions(data.suggestedLocations || []);
+    } catch (error) {
+      console.error('Error fetching city suggestions:', error);
+    }
+  };
+
+  const renderSuggestions = () => {
+    if (city && suggestions.length > 0) {
+      return (
+        <FlatList
+          data={suggestions}
+          keyExtractor={(item) =>
+            item.placeId ? item.placeId.toString() : item.placeName
+          }
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => handleCitySelect(item)}>
+              <Text style={styles.suggestionText}>{item.placeName}</Text>
+            </TouchableOpacity>
+          )}
+        />
+      );
+    }
+    return null;
+  };
+
+  const handleDistrictChange = async (text) => {
+    setDistrict(text);
+    try {
+      const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
+      const response = await fetch(
+        `https://atlas.mapmyindia.com/api/places/search/json?query=${text}&types=district&withDist=false&withPincode=false&withSTD=false&refLocation=${location.latitude},${location.longitude}`,
+        {
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+      const data = await response.json();
+      console.log('data', data)
+      setDistrictSuggestions(data.suggestedLocations || []);
+    } catch (error) {
+      console.error('Error fetching district suggestions:', error);
+    }
+  };
+  const handleDistrictSelect = async (selectedDistrict) => {
+    try {
+      setCity(selectedDistrict.placeName);
+      const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
+      const geocodeResponse = await fetch(
+        `https://atlas.mapmyindia.com/api/places/geocode?address=${selectedDistrict.placeName}&itemCount=5`,
+        {
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+      const geocodeData = await geocodeResponse.json();
+
+      if (geocodeData.error) {
+        console.error('Geocode API Error:', geocodeData.error);
+        return;
+      }
+      // console.log(geocodeData.copResults,'<<===')
+      setDistrict(geocodeData.copResults.district);
+      setPincode(geocodeData.copResults.pincode);
+      setState(geocodeData.copResults.state);
+      await fetchData();
+    } catch (error) {
+      console.error('Error fetching geocode data for selected city:', error);
+    }
+
+    setDistrictSuggestions([]);
+  };
+
+
+  const renderDistrictSuggestions = () => (
+    <FlatList
+      data={districtSuggestions}
+      keyExtractor={(item) =>
+        item.placeId ? item.placeId.toString() : item.placeName
+      }
+      renderItem={({ item }) => (
+        <TouchableOpacity onPress={() => handleDistrictSelect(item)}>
+          <Text style={styles.suggestionText}>{item.placeName}</Text>
+        </TouchableOpacity>
+      )}
+    />
+  );
+
+ 
+  const generateToken = async () => {
+    try {
+      const storedToken = '1fd297cf-9586-4d48-a5f7-09e009761c15'
+
+      // if (storedToken) {
+      //   // Check if the stored token is still valid (not expired)
+      //   const tokenData = JSON.parse(storedToken.split('.')[1]); // Decode JWT payload
+      //   const currentTimestamp = Math.floor(Date.now() / 1000);
+
+      //   if (tokenData.exp > currentTimestamp) {
+      //     console.log('Using stored token');
+      //     return storedToken;
+      //   }
+      // }
+
+      // // If the stored token is not available or expired, generate a new one
+      // // ======my credentials======
+      // const clientId = '96dHZVzsAut0qQrlc_W7HqmMZQAf0pBPO3dl_uXUnv_A8aZFC0D0IMRCQMms9tl6wMBCWI-oDjXLQYpTECLR_g==';
+      // const clientSecret = 'lrFxI-iSEg8phf4EHrj0255fM0f_KMrKjdv_7AWrKvrPGWdJrMOyQFmo-dv3MYoxO82xo9HhAZd7Ib-nri1LTEpzxUpjfQYA';
+
+      // // ======Sandhya's credentials======
+      const clientId = '96dHZVzsAuvlOQ-317cJmfIKRfLxEDJf452Hm2XGbSyu2nNPZkc-u4oliUcTutbx7lmgykfEaAACZqol1y7CNvZ-lFn7r7-V';
+      const clientSecret = 'lrFxI-iSEg_3Ch-rAkr7zYVigsWzs3qhck_fZ4bFmaRx1sLmkjpb8gvjBbbXsd9DGnxcRbDY5icqU7xokE6iDbN7chCS5rHJLEOv2bOQdmI=';
+
+      const response = await axios.post(
+        'https://outpost.mapmyindia.com/api/security/oauth/token',
+        `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`
+      );
+
+      const newToken = response.data.access_token;
+      const newTokenString = JSON.stringify(newToken);
+      console.log('Generated new token:', newToken);
+
+      // Save the new token to AsyncStorage
+
+      try {
+        await AsyncStorage.setItem('mapleToken', newTokenString);
+        // const token= await AsyncStorage.getItem('mapleToken')
+        // console.log('Token stored successfully!',token);
+      } catch (error) {
+        console.error('Error storing token:', error);
+      }
+
+
+      return newToken;
+    } catch (error) {
+      console.error('Error generating token:', error);
+      throw error;
+    }
+  };
+
+  const handlePincodeChange = async (text) => {
+    setPincode(text);
+    try {
+      const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
+      const response = await fetch(
+        `https://atlas.mapmyindia.com/api/places/search/json?query=${text}&types=postal_code&refLocation=${location.latitude},${location.longitude}`,
+        {
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+      const data = await response.json();
+      setPlaceName(data)
+      if (data.suggestedLocations && data.suggestedLocations.length > 0) {
+        const pincodeData = data.suggestedLocations[0];
+        setDistrict(pincodeData.district);
+        setCity(pincodeData.city);
+        setState(pincodeData.state);
+        setCountry(pincodeData.country);
+      }
+    } catch (error) {
+      console.error('Error fetching pincode suggestions:', error);
+    }
+  };
+  
+  const handleStateChange = async (text) => {
+    setState(text);
+    try {
+      const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
       const response = await fetch(
         `https://atlas.mapmyindia.com/api/places/search/json?query=${text}&types=state&withDist=false&withPincode=false&withSTD=false&refLocation=28.6139,77.2090`,
         {
@@ -164,27 +408,12 @@ const Registration = ({ navigation }) => {
         }
       );
       const data = await response.json();
-      setSuggestions(data.suggestedLocations || []);
+  
+      if (data.suggestedLocations && data.suggestedLocations.length > 0) {
+        setCountry(data.suggestedLocations[0].country);
+      }
     } catch (error) {
       console.error('Error fetching state suggestions:', error);
-    }
-  };
-
-  const handleDistrictChange = async (text) => {
-    try {
-      const apiKey = 'b6a26826-cc23-4ea7-8d1f-2f15b57e8236';
-      const response = await fetch(
-        `https://atlas.mapmyindia.com/api/places/search/json?query=${text}&types=district&withDist=false&withPincode=false&withSTD=false&refLocation=28.6139,77.2090`,
-        {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-      );
-      const data = await response.json();
-      setSuggestions(data.suggestedLocations || []);
-    } catch (error) {
-      console.error('Error fetching district suggestions:', error);
     }
   };
 
@@ -265,7 +494,9 @@ const Registration = ({ navigation }) => {
               value={city}
             />
           </View>
-          {suggestions.length > 0 && renderSuggestions()}
+          {/* {suggestions.length > 0 && renderSuggestions()} */}
+          {renderSuggestions()}
+          {districtSuggestions.length > 0 && renderDistrictSuggestions()}
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <View style={styles.box1}>
               <TextInput
@@ -276,12 +507,13 @@ const Registration = ({ navigation }) => {
                 value={district}
               />
             </View>
+
             <View style={styles.box1}>
               <TextInput
                 style={styles.textInput1}
                 placeholder="Pin Code"
                 placeholderTextColor="#000"
-                onChangeText={(number) => setPincode(number)}
+                onChangeText={handlePincodeChange}
                 value={pincode}
                 keyboardType="numeric"
                 maxLength={6}

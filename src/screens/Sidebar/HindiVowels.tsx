@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList, ImageBackground } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { HindiVowel, Alphabet } from '../../data/alphabets'; // Replace with the correct path
+// import { HindiVowel, Alphabet } from 'src/data/alphabets/vowels';
 import styled from 'styled-components/native';
 import {
   responsiveHeight,

@@ -19,12 +19,6 @@ const Splash = ({ navigation }) => {
             <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
             <Text style={styles.Heading}>MadeInIndiaBook</Text>
             <Text style={styles.Heading}>LearningApp</Text>
-            {/* <TouchableOpacity 
-            onPress={()=>navigation.navigate('Language')}
-            >
-                <Text style={styles.Heading}>MadeInIndiaBook</Text>
-                <Text style={styles.Heading}>LearningApp</Text>
-            </TouchableOpacity> */}
         </LinearGradient>
     )
 }

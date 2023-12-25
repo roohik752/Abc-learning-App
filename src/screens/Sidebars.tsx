@@ -59,18 +59,21 @@ const Sidebar = ({ navigation }) => {
                     <Text style={styles.text}>Family Relations</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    onPress={() => navigation.navigate('ColoursName')}
                     style={styles.row}
                 >
                     <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
                     <Text style={styles.text}>Colours</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    onPress={() => navigation.navigate('FruitsName')}
                     style={styles.row}
                 >
                     <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
                     <Text style={styles.text}>Fruits</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    onPress={() => navigation.navigate('AnimalsName')}
                     style={styles.row}
                 >
                     <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
@@ -123,6 +126,7 @@ const Sidebar = ({ navigation }) => {
                     <Text style={styles.text}>Balloon Blast</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    onPress={() => navigation.navigate('ShapesName')}
                     style={styles.row}
                 >
                     <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
@@ -131,7 +135,7 @@ const Sidebar = ({ navigation }) => {
             </View>
             <View style={{ marginTop: 15, paddingHorizontal: 15 }}>
                 <TouchableOpacity style={styles.row}>
-                    <Image source={require('../assets/img/logout.png')} style={styles.img3} />
+                    <Image source={require('../assets/img/logout1.png')} style={styles.img3} resizeMode='contain' />
                     <Text style={styles.text1}>Log out</Text>
                 </TouchableOpacity>
             </View>
@@ -173,9 +177,7 @@ const styles = StyleSheet.create({
     },
     img3: {
         height: 30,
-        width: 20,
-        position: 'relative',
-        bottom: 5
+        width: 30,
     },
     text1: {
         fontSize: 20,
