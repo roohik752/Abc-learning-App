@@ -17,7 +17,6 @@ import {
 
 const EnglishProductWithImage = ({ route, navigation }) => {
   const { selectedAlphabet } = route.params;
-  console.log('abc',route.params.selectedAlphabet)
 
   // // Animated values for bubble animation
   // const translateX = useSharedValue(0);
@@ -105,14 +104,14 @@ const EnglishProductWithImage = ({ route, navigation }) => {
                 </TouchableOpacity>
               </View>
               <TouchableOpacity onPress={handleSpeak} >
-                <Image source={selectedAlphabet.img2} style={styles.image4} resizeMode='contain' />
+                <Image source={selectedAlphabet.img2} style={styles.image3} resizeMode='contain' />
               </TouchableOpacity>
             </View>
             <View style={styles.box2}>
               {/* <Text style={styles.text2}>{selectedAlphabet.text1} for {selectedAlphabet.textEng}</Text> */}
               <Text style={styles.text2}>{selectedAlphabet.text2}</Text>
               <TouchableOpacity onPress={handleSpeak} >
-                <Image source={require('../../assets/img/speaker.png')} style={styles.image5} />
+                <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
               </TouchableOpacity>
             </View>
           </View>
@@ -185,12 +184,12 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     marginLeft: 25
   },
-  image4: {
+  image3: {
     // height: '70%',
     width: 300,
     alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 80,
+    // marginBottom: 20,
   },
   text2: {
     fontSize: 40,
@@ -199,7 +198,7 @@ const styles = StyleSheet.create({
     // marginLeft: 25,
     lineHeight: 100,
   },
-  image5: {
+  image4: {
     height: 50,
     width: 50,
     alignSelf: 'center',

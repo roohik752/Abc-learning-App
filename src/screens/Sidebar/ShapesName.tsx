@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { Shapes } from 'src/data/animals';
+import { Animal, Shapes } from 'src/data/animals';
 import styled from 'styled-components/native';
 import {
   responsiveHeight,
@@ -11,18 +11,18 @@ import {
 const ShapesName = ({ route, navigation }) => {
 
     const [showOuter, setShowOuter] = useState(false); // State to manage visibility
-    const [selectedShape, setSelectedShape] = useState(null);
+    const [selectedShape, setSelectedShape] = useState<Animal | null>(null);
   
-    const handleShapesClick = (shape) => {
+    const handleShapesClick = (shape : Animal) => {
       setShowOuter(!showOuter);
       setSelectedShape(shape);
       navigation.navigate('ShapesNameWithImage', { selectedShape: shape });
     };
   
-    const renderShapeItem = ({ item }) => (
+    const renderShapeItem = ({ item }: { item: Animal }) => (
       <View style={styles.box}>
         <TouchableOpacity onPress={() => handleShapesClick(item)} >
-          <Text style={styles.text1} >{item.id+1}&nbsp;&nbsp;&nbsp;{item.name}</Text>
+        <Image source={item.img2} style={styles.image3} />
         </TouchableOpacity>
       </View>
     );
@@ -53,7 +53,7 @@ const ShapesName = ({ route, navigation }) => {
               data={Shapes}
               renderItem={renderShapeItem}
               keyExtractor={(item) => item.id.toString()}
-              // numColumns={2}
+              numColumns={2}
             />
           </View>
         </Container>
@@ -102,18 +102,20 @@ const styles = StyleSheet.create({
     marginLeft: 70
   },
   boxContainer: {
+    // justifyContent: 'space-around',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: -15,
     padding: 15,
   },
   box: {
+    // flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  // image3: {
-  //   height: 180,
-  //   width: 166
-  // },
+  image3: {
+    height: 180,
+    width: 166
+  },
   text1: {
     fontSize: 25,
     color: '#000',

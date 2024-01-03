@@ -11,35 +11,35 @@ import {
 const AnimalsNameWithImage = ({ route, navigation }) => {
   const { selectedAnimal } = route.params;
 
-    useEffect(() => {
-        // Initialize Tts when the component mounts
-        Tts.setDefaultRate(0.5);
-        Tts.setDefaultPitch(1.0);
-        // Tts.setDefaultLanguage('');
-        Tts.setDefaultLanguage('en');
-    
-        // Add event listener for TTS start
-        const ttsStartListener = (event) => {
-          if (event && event.eventName === 'tts-start') {
-            console.log('TTS Engine Started');
-          }
-        };
-    
-        Tts.addEventListener('tts-start', ttsStartListener);
-    
-        return () => {
-          // Remove event listener when the component unmounts
-          Tts.removeEventListener('tts-start', ttsStartListener);
-        };
-      }, []);
-    
-      const handleSpeak = () => {
-        if (selectedAnimal) {
-          Tts.speak(selectedAnimal.name)
-            .then(() => console.log('Text-to-speech started'))
-            .catch((error) => console.log('Error starting text-to-speech:', error));
-        }
-      };
+  useEffect(() => {
+    // Initialize Tts when the component mounts
+    Tts.setDefaultRate(0.5);
+    Tts.setDefaultPitch(1.0);
+    // Tts.setDefaultLanguage('');
+    Tts.setDefaultLanguage('en');
+
+    // Add event listener for TTS start
+    const ttsStartListener = (event) => {
+      if (event && event.eventName === 'tts-start') {
+        console.log('TTS Engine Started');
+      }
+    };
+
+    Tts.addEventListener('tts-start', ttsStartListener);
+
+    return () => {
+      // Remove event listener when the component unmounts
+      Tts.removeEventListener('tts-start', ttsStartListener);
+    };
+  }, []);
+
+  const handleSpeak = () => {
+    if (selectedAnimal) {
+      Tts.speak(selectedAnimal.name)
+        .then(() => console.log('Text-to-speech started'))
+        .catch((error) => console.log('Error starting text-to-speech:', error));
+    }
+  };
   return (
     <LinearGradient
       colors={['#FFFFFF', '#4CBB17']}
@@ -63,14 +63,14 @@ const AnimalsNameWithImage = ({ route, navigation }) => {
         <Container>
           <View style={styles.outer}>
             <View style={styles.box1}>
-            {/* <TouchableOpacity
-              style={{alignSelf: 'flex-end'}}
+              <TouchableOpacity
+                style={{ alignSelf: 'flex-end' }}
                 onPress={() => navigation.goBack()}
               >
                 <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
-              </TouchableOpacity> */}
+              </TouchableOpacity>
               <TouchableOpacity onPress={handleSpeak} >
-                <Image source={selectedAnimal.img} style={styles.image3} resizeMode='contain' />
+                <Image source={selectedAnimal.img1} style={styles.image3} resizeMode='contain' />
               </TouchableOpacity>
             </View>
             <View style={styles.box2}>
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    paddingTop: 50
+    // paddingTop: 50
   },
   box2: {
     flexDirection: 'row',
@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
   image3: {
     width: 300,
     alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 30,
+    // marginBottom: 20,
   },
   text1: {
     fontSize: 40,

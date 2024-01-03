@@ -25,7 +25,8 @@ const OTP2 = ({ navigation }) => {
                         <TextInput
                             style={styles.textInput}
                             placeholder="Mobile Number"
-                            placeholderTextColor='#000'
+                            // placeholderTextColor='#000'
+                            placeholderTextColor='rgba(0,0,0,0.5)'
                             onChangeText={(text) => setNumber(text)}
                             value={number}
                             keyboardType="numeric"
@@ -76,7 +77,8 @@ const styles = StyleSheet.create({
     box: {
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: '#000',
+        // borderColor: '#000',
+        borderColor: 'rgba(0,0,0,0.5)',
         borderRadius: 10,
         paddingLeft: 20,
         paddingRight: 10,

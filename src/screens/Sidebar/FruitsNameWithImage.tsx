@@ -63,14 +63,14 @@ const FruitsNameWithImage = ({ route, navigation }) => {
         <Container>
           <View style={styles.outer}>
             <View style={styles.box1}>
-              {/* <TouchableOpacity
+              <TouchableOpacity
                 style={{ alignSelf: 'flex-end' }}
                 onPress={() => navigation.goBack()}
               >
                 <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
-              </TouchableOpacity> */}
+              </TouchableOpacity>
               <TouchableOpacity onPress={handleSpeak} >
-                <Image source={selectedFruit.img} style={styles.image3} resizeMode='contain' />
+                <Image source={selectedFruit.img1} style={styles.image3} resizeMode='contain' />
               </TouchableOpacity>
             </View>
             <View style={styles.box2}>
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    paddingTop: 50
+    // paddingTop: 50
   },
   box2: {
     flexDirection: 'row',
@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
   image3: {
     width: 300,
     alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 30,
+    // marginBottom: 20,
   },
   text1: {
     fontSize: 40,

@@ -8,7 +8,7 @@ const Login = ({ navigation }) => {
     const [number, setNumber] = useState('');
     const [password, setPassword] = useState('');
     const [isChecked, setIsChecked] = useState(false);
-    const [isVisible, setIsVisible] = useState(true); // Added state for password visibility
+    const [isVisible, setIsVisible] = useState(false); // Added state for password visibility
 
     const handleCheckboxToggle = () => {
         setIsChecked(!isChecked);
@@ -31,7 +31,8 @@ const Login = ({ navigation }) => {
                         <TextInput
                             style={styles.textInput}
                             placeholder="Mobile Number"
-                            placeholderTextColor='#000'
+                            // placeholderTextColor='#000'
+                            placeholderTextColor='rgba(0,0,0,0.5)'
                             onChangeText={(text) => setNumber(text)}
                             value={number}
                             keyboardType="numeric"
@@ -43,13 +44,14 @@ const Login = ({ navigation }) => {
                         <TextInput
                             style={styles.textInput}
                             placeholder="Password"
-                            placeholderTextColor='#000'
+                            // placeholderTextColor='#000'
+                            placeholderTextColor='rgba(0,0,0,0.5)'
                             onChangeText={(text) => setPassword(text)}
                             value={password}
                             secureTextEntry={!isVisible}
                         />
                         <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
-                            <Image source={isVisible ? require('../assets/img/visible.png') : require('../assets/img/hide.png')} style={styles.icon} />
+                            <Image source={isVisible ? require('../assets/img/hide.png') : require('../assets/img/Eye.png')} style={styles.icon} />
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -72,7 +74,7 @@ const Login = ({ navigation }) => {
                     <Text style={styles.text}>Log in</Text>
                 </TouchableOpacity>
                 <View style={{ flexDirection: 'row', alignSelf: 'flex-end', marginRight: 17 }}>
-                    <Text style={styles.text1}>Don't have an Account ? </Text>
+                    <Text style={styles.text3}>Don't have an Account ? </Text>
                     <TouchableOpacity style={{ borderBottomWidth: 1.8, borderColor: '#000' }}
                         onPress={() => navigation.navigate('Registration')}
                     >
@@ -114,7 +116,8 @@ const styles = StyleSheet.create({
     box: {
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: '#000',
+        // borderColor: '#000',
+        borderColor: 'rgba(0,0,0,0.5)',
         borderRadius: 10,
         paddingLeft: 20,
         paddingRight: 10,
@@ -156,7 +159,17 @@ const styles = StyleSheet.create({
     },
     text1: {
         fontSize: 16,
-        color: '#818589',
+        // color: '#818589',
+        // color: '#1F1C17',
+        color: 'rgba(0,0,0,0.5)',
+        fontWeight: '700'
+    },
+    text3: {
+        fontSize: 16,
+        // color: '#818589',
+        // color: '#1F1C17',
+        color: 'rgba(0,0,0,0.75)',
+        fontWeight: '700'
     },
     text2: {
         fontSize: 16,

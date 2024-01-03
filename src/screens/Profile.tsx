@@ -1,8 +1,38 @@
-import React from 'react';
-import { StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, Image, View, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import styled from 'styled-components/native';
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
+
 
 const Profile = ({ navigation }) => {
+  const [selectedProfile, setSelectedProfile] = useState(null);
+
+  const profiles = [
+    require('../assets/faces/b3.png'),
+    require('../assets/faces/g4.png'),
+  ];
+
+  const renderProfile = ({ item }) => {
+    const isSelected = item === selectedProfile;
+
+    return (
+      <View>
+        <TouchableOpacity
+          style={[
+            styles.box,
+            isSelected && { borderColor: 'green', borderWidth: 3, }
+          ]}
+          onPress={() => setSelectedProfile(item)}
+        >
+          <Image source={item} style={styles.image2} resizeMode='contain' />
+        </TouchableOpacity>
+      </View>
+    );
+  };
 
   return (
     <LinearGradient
@@ -13,7 +43,7 @@ const Profile = ({ navigation }) => {
       <View style={{ flexDirection: 'row', padding: 15, marginTop: 40, justifyContent: 'space-between' }}>
         <TouchableOpacity
           style={{ flexDirection: 'row' }}
-          // onPress={() => navigation.navigate('Profile')}
+        // onPress={() => navigation.navigate('Profile')}
         >
           <Image source={require('../assets/img/boy1.png')} style={styles.image} />
           <Text style={styles.text}>Hi</Text><Text style={styles.text1}>Charlie</Text>
@@ -26,19 +56,18 @@ const Profile = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={{ height: 1, width: '100%', backgroundColor: '#808080' }}></View>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 190 }}>
-        <TouchableOpacity
-          style={styles.box}
-        >
-          <Image source={require('../assets/faces/b3.png')} style={styles.image2} resizeMode='contain' />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.box}
-        >
-          <Image source={require('../assets/faces/g4.png')} style={styles.image2} resizeMode='contain' />
-        </TouchableOpacity>
-      </View>
+      <View style={{ height: 1, width: '100%', backgroundColor: 'rgba(0, 54, 159, 0.25)' }}></View>
+      <Container>
+        <View style={styles.boxContainer}>
+          <FlatList
+            data={profiles}
+            renderItem={renderProfile}
+            keyExtractor={(item, index) => index.toString()}
+            numColumns={2}
+            contentContainerStyle={{ marginTop: 30 }}
+          />
+        </View>
+      </Container>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('MaleProfile')}
@@ -50,6 +79,17 @@ const Profile = ({ navigation }) => {
 }
 
 export default Profile;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
   linearGradient: {
@@ -82,18 +122,22 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     alignSelf: 'center'
   },
+  boxContainer: {
+    alignItems: 'center',
+    marginVertical: 150,
+    justifyContent: 'space-between'
+  },
   box: {
     height: 150,
     width: 150,
     backgroundColor: '#000',
-    borderRadius: 100,
+    borderRadius: 100
   },
   image2: {
     height: 120,
-    width: 120,
-    position: 'relative',
-    top: 16,
-    alignSelf: 'center'
+    width: 105,
+    alignSelf: 'center',
+    marginVertical: 5,
   },
   button: {
     height: 40,
@@ -102,7 +146,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    marginTop: -220
   },
   text2: {
     fontSize: 18,

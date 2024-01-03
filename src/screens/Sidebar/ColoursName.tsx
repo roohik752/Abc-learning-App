@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { Colours } from 'src/data/animals';
+import { Animal, Colours } from 'src/data/animals';
 import styled from 'styled-components/native';
 import {
   responsiveHeight,
@@ -11,18 +11,18 @@ import {
 const ColoursName = ({ route, navigation }) => {
 
     const [showOuter, setShowOuter] = useState(false); // State to manage visibility
-    const [selectedColour, setSelectedColour] = useState(null);
+    const [selectedColour, setSelectedColour] = useState<Animal | null>(null);
   
-    const handleColourClick = (colour) => {
+    const handleColourClick = (colour  : Animal) => {
       setShowOuter(!showOuter);
       setSelectedColour(colour);
       navigation.navigate('ColoursNameWithImage', { selectedColour: colour });
     };
   
-    const renderColourItem = ({ item }) => (
+    const renderColourItem = ({ item }: { item: Animal }) => (
       <View style={styles.box}>
         <TouchableOpacity onPress={() => handleColourClick(item)} >
-          <Text style={styles.text1} >{item.id+1}&nbsp;&nbsp;&nbsp;{item.name}</Text>
+        <Image source={item.img2} style={styles.image3} />
         </TouchableOpacity>
       </View>
     );
@@ -53,7 +53,7 @@ const ColoursName = ({ route, navigation }) => {
               data={Colours}
               renderItem={renderColourItem}
               keyExtractor={(item) => item.id.toString()}
-              // numColumns={2}
+              numColumns={2}
             />
           </View>
         </Container>
@@ -102,18 +102,20 @@ const styles = StyleSheet.create({
     marginLeft: 70
   },
   boxContainer: {
+    // justifyContent: 'space-around',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: -15,
     padding: 15,
   },
   box: {
+    // flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  // image3: {
-  //   height: 180,
-  //   width: 166
-  // },
+  image3: {
+    height: 180,
+    width: 166
+  },
   text1: {
     fontSize: 25,
     color: '#000',

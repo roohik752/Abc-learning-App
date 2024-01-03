@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { Fruits } from 'src/data/animals';
+import { Animal, Fruits } from 'src/data/animals';
 import styled from 'styled-components/native';
 import {
   responsiveHeight,
@@ -11,18 +11,18 @@ import {
 const FruitsName = ({ route, navigation }) => {
 
     const [showOuter, setShowOuter] = useState(false); // State to manage visibility
-    const [selectedFruit, setSelectedFruit] = useState(null);
+    const [selectedFruit, setSelectedFruit] = useState<Animal | null>(null);
   
-    const handleFruitClick = (fruit) => {
+    const handleFruitClick = (fruit : Animal) => {
       setShowOuter(!showOuter);
       setSelectedFruit(fruit);
       navigation.navigate('FruitsNameWithImage', { selectedFruit: fruit });
     };
   
-    const renderFruitItem = ({ item }) => (
+    const renderFruitItem = ({ item }: { item: Animal }) => (
       <View style={styles.box}>
-        <TouchableOpacity onPress={() => handleFruitClick(item)} >
-          <Text style={styles.text1} >{item.id+1}&nbsp;&nbsp;&nbsp;{item.name}</Text>
+        <TouchableOpacity onPress={() => handleFruitClick(item)}>
+          <Image source={item.img2} style={styles.image3} />
         </TouchableOpacity>
       </View>
     );
@@ -53,7 +53,7 @@ const FruitsName = ({ route, navigation }) => {
               data={Fruits}
               renderItem={renderFruitItem}
               keyExtractor={(item) => item.id.toString()}
-              // numColumns={2}
+              numColumns={2}
             />
           </View>
         </Container>
@@ -99,21 +99,23 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     marginTop: -7.4,
-    marginLeft: 70
+    marginLeft: 80
   },
   boxContainer: {
+    // justifyContent: 'space-around',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: -15,
     padding: 15,
   },
   box: {
+    // flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  // image3: {
-  //   height: 180,
-  //   width: 166
-  // },
+  image3: {
+    height: 180,
+    width: 166
+  },
   text1: {
     fontSize: 25,
     color: '#000',

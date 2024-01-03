@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     // height: '70%',
     width: 300,
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: 30
     // marginBottom: 'auto',
   },
   text2: {

@@ -92,7 +92,7 @@ const HindiProductWithImage = ({ route, navigation }) => {
             </View>
               <TouchableOpacity onPress={handleSpeak} >
                 {selectedAlphabet.img2?
-                <FastImage source={selectedAlphabet.img2} style={styles.image4} resizeMode='contain' />
+                <FastImage source={selectedAlphabet.img2} style={styles.image3} resizeMode='contain' />
                 :<Text style={styles.text3}>{selectedAlphabet.text1}</Text>}
               </TouchableOpacity>
             </View>
@@ -100,7 +100,7 @@ const HindiProductWithImage = ({ route, navigation }) => {
               {/* <Text style={styles.text2}>{selectedAlphabet.text1} for {selectedAlphabet.textEng}</Text> */}
               <Text style={styles.text2}>{selectedAlphabet.text2}</Text>
               <TouchableOpacity onPress={handleSpeak} >
-                <Image source={require('../../assets/img/speaker.png')} style={styles.image5} />
+                <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
               </TouchableOpacity>
             </View>
           </View>
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     marginLeft: 25
   },
-  image4: {
+  image3: {
     height: '80%',
     width: 300,
     alignSelf: 'center',
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     // marginLeft: 25,
     lineHeight: 100,
   },
-  image5: {
+  image4: {
     height: 50,
     width: 50,
     alignSelf: 'center',
@@ -201,6 +201,6 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     justifyContent: 'center',
     alignSelf: 'center',
-    marginTop: 50
+    // marginTop: 10
   },
 })

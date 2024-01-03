@@ -7,7 +7,7 @@ const Checkbox = ({ label, checked, onToggle }) => {
       <View style={{ flexDirection: 'row', alignItems: 'center',marginLeft: 2 }}>
         {checked ? (
           <Image
-            source={require('../../assets/img/charm_tick.png')}
+            source={require('../../assets/img/charm_tick2.png')}
             style={{ width: 20, height: 20, marginRight: 10, borderWidth: 1, borderColor: '#000', backgroundColor: '#000' }}
           />
         ) : (

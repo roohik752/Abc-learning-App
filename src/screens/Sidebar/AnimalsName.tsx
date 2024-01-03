@@ -22,7 +22,7 @@ const AnimalsName = ({ route, navigation }) => {
     const renderAnimalItem = ({ item }: { item: Animal }) => (
       <View style={styles.box}>
         <TouchableOpacity onPress={() => handleAnimalClick(item)} >
-          <Text style={styles.text1} >{item.id+1}&nbsp;&nbsp;&nbsp;{item.name}</Text>
+        <Image source={item.img2} style={styles.image3} />
         </TouchableOpacity>
       </View>
     );
@@ -53,7 +53,7 @@ const AnimalsName = ({ route, navigation }) => {
               data={Animals}
               renderItem={renderAnimalItem}
               keyExtractor={(item) => item.id.toString()}
-              // numColumns={2}
+              numColumns={2}
             />
           </View>
         </Container>
@@ -102,18 +102,20 @@ const styles = StyleSheet.create({
     marginLeft: 70
   },
   boxContainer: {
+    // justifyContent: 'space-around',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: -15,
     padding: 15,
   },
   box: {
+    // flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  // image3: {
-  //   height: 180,
-  //   width: 166
-  // },
+  image3: {
+    height: 180,
+    width: 166
+  },
   text1: {
     fontSize: 25,
     color: '#000',

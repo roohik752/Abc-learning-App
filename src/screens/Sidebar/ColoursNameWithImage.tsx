@@ -63,15 +63,14 @@ const ColoursNameWithImage = ({ route, navigation }) => {
         <Container>
           <View style={styles.outer}>
             <View style={[styles.box1, { backgroundColor: selectedColour.name === 'Black' ? '#FFF' : '#000' }]}>
-              {/* <TouchableOpacity
+              <TouchableOpacity
                 style={{ alignSelf: 'flex-end' }}
                 onPress={() => navigation.goBack()}
               >
                 <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
-              </TouchableOpacity> */}
+              </TouchableOpacity>
               <TouchableOpacity onPress={handleSpeak} >
-                <Image source={selectedColour.img} 
-                // style={styles.image3} 
+                <Image source={selectedColour.img1} 
                 style={styles.image3}
                 resizeMode='contain' />
               </TouchableOpacity>
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    paddingTop: 50
+    // paddingTop: 50
   },
   box2: {
     flexDirection: 'row',

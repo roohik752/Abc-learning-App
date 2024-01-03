@@ -22,7 +22,7 @@ const Congo = ({navigation}) => {
             >
                 <Text style={styles.text}>Continue</Text>
             </TouchableOpacity>
-            <Image source={require('../assets/img/Welcome.png')} style={styles.image1} />
+            <Image source={require('../assets/img/Welcome2.png')} style={styles.image1} />
         </LinearGradient>
     )
 }
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     Heading1: {
         color: '#000',
         fontSize: 20,
-        fontWeight: '700',
+        fontWeight: '900',
         marginTop: 50
     },
     button: {

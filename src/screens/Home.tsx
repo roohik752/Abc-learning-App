@@ -26,7 +26,7 @@ const Home = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={{ height: 1, width: '100%', backgroundColor: '#808080' }}></View>
+            <View style={{ height: 1, width: '100%', backgroundColor: 'rgba(0, 54, 159, 0.25)' }}></View>
             <View style={{ flexDirection: 'row', padding: 15, justifyContent: 'space-between' }}>
                 <TouchableOpacity style={styles.box}
                     onPress={() => navigation.navigate('EnglishProduct')}

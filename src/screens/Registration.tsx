@@ -31,7 +31,7 @@ const Registration = ({ navigation }) => {
   const [country, setCountry] = useState('');
   const [district, setDistrict] = useState('');
   const [pincode, setPincode] = useState('');
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const [districtSuggestions, setDistrictSuggestions] = useState([]);
   const [location, setLocation] = useState({ latitude: null, longitude: null });
@@ -434,7 +434,8 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
             <TextInput
               style={styles.textInput}
               placeholder="Name"
-              placeholderTextColor="#000"
+              // placeholderTextColor="#000"
+              placeholderTextColor='rgba(0,0,0,0.5)'
               onChangeText={(text) => setName(text)}
               value={name}
             />
@@ -447,7 +448,8 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
             <TextInput
               style={styles.textInput}
               placeholder="Mobile Number"
-              placeholderTextColor="#000"
+              // placeholderTextColor="#000"
+              placeholderTextColor='rgba(0,0,0,0.5)'
               onChangeText={(number) => setNumber(number)}
               value={number}
               keyboardType="numeric"
@@ -462,7 +464,8 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
             <TextInput
               style={styles.textInput}
               placeholder="Password"
-              placeholderTextColor="#000"
+              // placeholderTextColor="#000"
+              placeholderTextColor='rgba(0,0,0,0.5)'
               onChangeText={(text) => setPassword(text)}
               value={password}
               secureTextEntry={!isVisible}
@@ -471,8 +474,8 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
               <Image
                 source={
                   isVisible
-                    ? require('../assets/img/visible.png')
-                    : require('../assets/img/hide.png')
+                    ? require('../assets/img/hide.png')
+                    : require('../assets/img/Eye.png')
                 }
                 style={styles.icon}
               />
@@ -489,7 +492,8 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
             <TextInput
               style={styles.textInput}
               placeholder="City"
-              placeholderTextColor="#000"
+              // placeholderTextColor="#000"
+              placeholderTextColor='rgba(0,0,0,0.5)'
               onChangeText={handleCityChange}
               value={city}
             />
@@ -502,7 +506,8 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
               <TextInput
                 style={styles.textInput1}
                 placeholder="District"
-                placeholderTextColor="#000"
+                // placeholderTextColor="#000"
+                placeholderTextColor='rgba(0,0,0,0.5)'
                 onChangeText={handleDistrictChange}
                 value={district}
               />
@@ -512,7 +517,8 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
               <TextInput
                 style={styles.textInput1}
                 placeholder="Pin Code"
-                placeholderTextColor="#000"
+                // placeholderTextColor="#000"
+                placeholderTextColor='rgba(0,0,0,0.5)'
                 onChangeText={handlePincodeChange}
                 value={pincode}
                 keyboardType="numeric"
@@ -528,20 +534,22 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
             <TextInput
               style={styles.textInput}
               placeholder="State"
-              placeholderTextColor="#000"
+              // placeholderTextColor="#000"
+              placeholderTextColor='rgba(0,0,0,0.5)'
               onChangeText={handleStateChange}
               value={state}
             />
           </View>
           <View style={styles.box}>
             <Image
-              source={require('../assets/img/Country.png')}
+              source={require('../assets/img/Country2.png')}
               style={styles.icon}
             />
             <TextInput
               style={styles.textInput}
               placeholder="Country"
-              placeholderTextColor="#000"
+              // placeholderTextColor="#000"
+              placeholderTextColor='rgba(0,0,0,0.5)'
               onChangeText={(text) => setCountry(text)}
               value={country}
             />
@@ -576,7 +584,8 @@ const styles = StyleSheet.create({
   box: {
     flexDirection: 'row',
     borderWidth: 1,
-    borderColor: '#000',
+    // borderColor: '#000',
+    borderColor: 'rgba(0,0,0,0.5)',
     borderRadius: 10,
     paddingLeft: 20,
     paddingRight: 10,
@@ -586,6 +595,7 @@ const styles = StyleSheet.create({
     height: 19,
     width: 19,
     marginTop: 9,
+    // fontWeight: 'bold',
   },
   textInput: {
     height: 40,
@@ -597,7 +607,8 @@ const styles = StyleSheet.create({
   box1: {
     flexDirection: 'row',
     borderWidth: 1,
-    borderColor: '#000',
+    // borderColor: '#000',
+    borderColor: 'rgba(0,0,0,0.5)',
     borderRadius: 10,
     marginBottom: 10,
   },

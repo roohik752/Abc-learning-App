@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import styled from 'styled-components/native';
+import {
+    responsiveHeight,
+    responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 const MaleProfile = ({ navigation }) => {
     const [selectedProfile, setSelectedProfile] = useState(null);
@@ -18,11 +23,11 @@ const MaleProfile = ({ navigation }) => {
         const isSelected = item === selectedProfile;
 
         return (
-            <View style={styles.row}>
+            <View>
                 <TouchableOpacity
                     style={[
                         styles.box,
-                        isSelected && { borderColor: 'green', borderWidth: 2 },
+                        isSelected && { borderColor: 'green', borderWidth: 3, }
                     ]}
                     onPress={() => setSelectedProfile(item)}
                 >
@@ -41,7 +46,7 @@ const MaleProfile = ({ navigation }) => {
             <View style={{ flexDirection: 'row', padding: 15, marginTop: 40, justifyContent: 'space-between' }}>
                 <TouchableOpacity
                     style={{ flexDirection: 'row' }}
-                //   onPress={() => navigation.navigate('Profile')}
+                  onPress={() => navigation.navigate('Profile')}
                 >
                     <Image source={require('../assets/img/boy1.png')} style={styles.image} />
                     <Text style={styles.text}>Hi</Text><Text style={styles.text1}>Charlie</Text>
@@ -54,14 +59,18 @@ const MaleProfile = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={{ height: 1, width: '100%', backgroundColor: '#808080' }}></View>
-            <FlatList
-                data={profiles}
-                renderItem={renderProfile}
-                keyExtractor={(item, index) => index.toString()}
-                numColumns={2}
-                contentContainerStyle={{ marginTop: 30 }}
-            />
+            <View style={{ height: 1, width: '100%', backgroundColor: 'rgba(0, 54, 159, 0.25)' }}></View>
+            <Container>
+                <View style={styles.boxContainer}>
+                    <FlatList
+                        data={profiles}
+                        renderItem={renderProfile}
+                        keyExtractor={(item, index) => index.toString()}
+                        numColumns={2}
+                        contentContainerStyle={{ marginTop: 30 }}
+                    />
+                </View>
+            </Container>
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => navigation.navigate('MaleProfile')}
@@ -73,6 +82,17 @@ const MaleProfile = ({ navigation }) => {
 }
 
 export default MaleProfile;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
     linearGradient: {
@@ -105,20 +125,20 @@ const styles = StyleSheet.create({
         fontWeight: '900',
         alignSelf: 'center'
     },
-    row: {
-        flexDirection: 'row',
-        // justifyContent: 'space-around',
-        // alignItems: 'center'
+    boxContainer: {
+        alignItems: 'center',
+        marginVertical: 10,
+        justifyContent: 'space-between'
     },
     box: {
         height: 150,
         width: 150,
         backgroundColor: '#000',
-        borderRadius: 100,
+        borderRadius: 100
     },
     image2: {
         height: 120,
-        width: 110,
+        width: 105,
         alignSelf: 'center',
         marginVertical: 5,
     },
@@ -130,7 +150,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        marginBottom: 40
+        marginBottom: 40,
+        marginTop: -200
     },
     text2: {
         fontSize: 18,

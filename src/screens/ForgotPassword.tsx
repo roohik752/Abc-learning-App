@@ -25,7 +25,8 @@ const ForgotPassword = ({ navigation }) => {
                         <TextInput
                             style={styles.textInput}
                             placeholder="Mobile Number"
-                            placeholderTextColor='#808080'
+                            // placeholderTextColor='#000'
+                            placeholderTextColor='rgba(0,0,0,0.5)'
                             onChangeText={(text) => setNumber(text)}
                             value={number}
                             keyboardType="numeric"
@@ -76,7 +77,8 @@ const styles = StyleSheet.create({
     box: {
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: '#808080',
+        // borderColor: '#000',
+        borderColor: 'rgba(0,0,0,0.5)',
         borderRadius: 10,
         paddingLeft: 20,
         paddingRight: 10,
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
     textInput: {
         height: 40,
         width: 280,
-        color: '#818589',
+        color: '#000',
         fontSize: 18,
         paddingLeft: 10,
     },

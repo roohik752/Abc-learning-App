@@ -3,119 +3,142 @@ import {AnimationObject} from 'src/data/alphabets';
 export interface Animal {
     id: number;
     name: string;
-    img?: any
+    img1?: any
+    img2?: any
 }
 
 const Animals: Array<Animal> = [
     {
         id: 0,
         name: 'Ant',
-        img: require('../../assets/animal2/ant.png')
+        img1: require('../../assets/animal2/ant.png'),
+        img2: require('../../assets/animal2/ant1.png')
     },
     {
         id: 1,
         name: 'Buffalo',
-        img: require('../../assets/animal2/buffalo.png')
+        img1: require('../../assets/animal2/buffalo.png'),
+        img2: require('../../assets/animal2/buffalo1.png')
     },
     {
         id: 2,
         name: 'Cat',
-        img: require('../../assets/animal2/cat.png')
+        img1: require('../../assets/animal2/cat.png'),
+        img2: require('../../assets/animal2/cat1.png')
     },
     {
         id: 3,
         name: 'Dog',
-        img: require('../../assets/animal2/dog.png')
+        img1: require('../../assets/animal2/dog.png'),
+        img2: require('../../assets/animal2/dog1.png')
     },
     {
         id: 4,
         name: 'Elephant',
-        img: require('../../assets/animal2/elephant.png')
+        img1: require('../../assets/animal2/elephant.png'),
+        img2: require('../../assets/animal2/elephant1.png')
     },
     {
         id: 5,
         name: 'Fish',
-        img: require('../../assets/animal2/fish.png')
+        img1: require('../../assets/animal2/fish.png'),
+        img2: require('../../assets/animal2/fish1.png')
     },
     {
         id: 6,
         name: 'Goat',
-        img: require('../../assets/animal2/goat.png')
+        img1: require('../../assets/animal2/goat.png'),
+        img2: require('../../assets/animal2/goat1.png')
     },
     {
         id: 7,
         name: 'Horse',
-        img: require('../../assets/animal2/horse.png')
+        img1: require('../../assets/animal2/horse.png'),
+        img2: require('../../assets/animal2/horse1.png')
     },
     {
         id: 8,
         name: 'Jaguar',
-        img: require('../../assets/animal2/jaguar.png')
+        img1: require('../../assets/animal2/jaguar.png'),
+        img2: require('../../assets/animal2/jaguar1.png')
     },
     {
         id: 9,
         name: 'Kangaroo',
-        img: require('../../assets/animal2/kangaroo.png')
+        img1: require('../../assets/animal2/kangaroo.png'),
+        img2: require('../../assets/animal2/kangaroo1.png')
     },
     {
         id: 10,
         name: 'Lion',
-        img: require('../../assets/animal2/lion.png')
+        img1: require('../../assets/animal2/lion.png'),
+        img2: require('../../assets/animal2/lion1.png')
     },
     {
         id: 11,
         name: 'Monkey',
-        img: require('../../assets/animal2/monkey.png')
+        img1: require('../../assets/animal2/monkey.png'),
+        img2: require('../../assets/animal2/monkey1.png')
     },
     {
         id: 12,
         name: 'Owl',
-        img: require('../../assets/animal2/owl.png')
+        img1: require('../../assets/animal2/owl.png'),
+        img2: require('../../assets/animal2/owl1.png')
     },
     {
         id: 13,
         name: 'Peacock',
-        img: require('../../assets/animal2/peacock.png')
+        img1: require('../../assets/animal2/peacock.png'),
+        img2: require('../../assets/animal2/peacock1.png')
     },
     {
         id: 14,
         name: 'Rat',
-        img: require('../../assets/animal2/rat.png')
+        img1: require('../../assets/animal2/rat.png'),
+        img2: require('../../assets/animal2/rat1.png'),
     },
     {
         id: 15,
         name: 'Squirrel',
-        img: require('../../assets/animal2/squirrel.png')
+        img1: require('../../assets/animal2/squirrel.png'),
+        img2: require('../../assets/animal2/squirrel1.png'),
     },
     {
         id: 16,
         name: 'Tiger',
-        img: require('../../assets/animal2/tiger.png')
+        img1: require('../../assets/animal2/tiger.png'),
+        img2: require('../../assets/animal2/tiger1.png')
     },
     {
         id: 17,
         name: 'Unicorn',
-        img: require('../../assets/animal2/unicorn.png')
+        img1: require('../../assets/animal2/unicorn.png'),
+        img2: require('../../assets/animal2/unicorn1.png')
     },
     {
         id: 18,
         name: 'Vulture',
-        img: require('../../assets/animal2/vulture.png')
+        img1: require('../../assets/animal2/vulture.png'),
+        img2: require('../../assets/animal2/vulture1.png')
     },
     {
         id: 19,
         name: 'Wolf',
-        img: require('../../assets/animal2/wolf.png')
+        img1: require('../../assets/animal2/wolf.png'),
+        img2: require('../../assets/animal2/wolf1.png')
     },
     {
         id: 20,
         name: 'Yak',
-        img: require('../../assets/animal2/yak.png')
+        img1: require('../../assets/animal2/yak.png'),
+        img2: require('../../assets/animal2/yak1.png')
     },
     {
         id: 21,
         name: 'Zebra',
-        img: require('../../assets/animal2/zebra.png')
+        img1: require('../../assets/animal2/zebra.png'),
+        img2: require('../../assets/animal2/zebra1.png')
     },
 ];
 
@@ -123,102 +146,122 @@ export const Colours = [
     {
         id: 0,
         name: 'Blue',
-        img: require('../../assets/colours/blue.png')
+        img1: require('../../assets/colours/blue.png'),
+        img2: require('../../assets/colours/blue1.png')
     },
     {
         id: 1,
         name: 'Red',
-        img: require('../../assets/colours/red.png')
+        img1: require('../../assets/colours/red.png'),
+        img2: require('../../assets/colours/red1.png')
     },
     {
         id: 2,
         name: 'Green',
-        img: require('../../assets/colours/green.png')
+        img1: require('../../assets/colours/green.png'),
+        img2: require('../../assets/colours/green1.png'),
     },
     {
         id: 3,
         name: 'Black',
-        img: require('../../assets/colours/black.png')
+        img1: require('../../assets/colours/black.png'),
+        img2: require('../../assets/colours/black2.png')
     },
     {
         id: 4,
         name: 'Yellow',
-        img: require('../../assets/colours/yellow.png')
+        img1: require('../../assets/colours/yellow.png'),
+        img2: require('../../assets/colours/yellow1.png')
     },
     {
         id: 5,
         name: 'Orange',
-        img: require('../../assets/colours/orange.png')
+        img1: require('../../assets/colours/orange.png'),
+        img2: require('../../assets/colours/orange1.png')
     },
     {
         id: 6,
         name: 'Pink',
-        img: require('../../assets/colours/pink.png')
+        img1: require('../../assets/colours/pink.png'),
+        img2: require('../../assets/colours/pink1.png')
     },
     {
         id: 7,
         name: 'Purple',
-        img: require('../../assets/colours/purple.png')
+        img1: require('../../assets/colours/purple.png'),
+        img2: require('../../assets/colours/purple1.png')
     },
     {
         id: 8,
         name: 'Brown',
-        img: require('../../assets/colours/brown.png')
+        img1: require('../../assets/colours/brown.png'),
+        img2: require('../../assets/colours/brown1.png')
     },
     {
         id: 9,
         name: 'White',
-        img: require('../../assets/colours/white.png')
+        img1: require('../../assets/colours/white.png'),
+        img2: require('../../assets/colours/white1.png')
     },
     {
         id: 10,
-        name: 'Gray',
-        img: require('../../assets/colours/gray.png')
+        name: 'Grey',
+        img1: require('../../assets/colours/grey.png'),
+        img2: require('../../assets/colours/grey1.png')
     },
     {
         id: 11,
         name: 'Golden',
-        img: require('../../assets/colours/golden.png')
+        img1: require('../../assets/colours/golden.png'),
+        img2: require('../../assets/colours/golden1.png')
     },
     {
         id: 12,
-        name: 'Voilet',
-        img: require('../../assets/colours/voilet.png')
+        name: 'Violet',
+        img1: require('../../assets/colours/violet.png'),
+        img2: require('../../assets/colours/violet1.png')
     },
     {
         id: 13,
         name: 'Olive',
-        img: require('../../assets/colours/olive.png')
+        img1: require('../../assets/colours/olive.png'),
+        img2: require('../../assets/colours/olive1.png')
     },
     {
         id: 14,
         name: 'Lime',
-        img: require('../../assets/colours/lime.png')
+        img1: require('../../assets/colours/lime.png'),
+        img2: require('../../assets/colours/lime1.png')
     },
     {
         id: 15,
         name: 'Salmon',
-        img: require('../../assets/colours/salmon.png')
+        img1: require('../../assets/colours/salmon.png'),
+        img2: require('../../assets/colours/salmon1.png')
     },
     {
         id: 16,
         name: 'Indigo',
-        img: require('../../assets/colours/indigo.png')
+        img1: require('../../assets/colours/indigo.png'),
+        img2: require('../../assets/colours/indigo1.png')
     },
     {
         id: 17,
         name: 'Cream',
-        img: require('../../assets/colours/cream.png')
+        img1: require('../../assets/colours/cream.png'),
+        img2: require('../../assets/colours/cream1.png')
     },
     {
         id: 18,
         name: 'Navy Blue',
-        img: require('../../assets/colours/navy-blue.png')
+        img1: require('../../assets/colours/navy-blue.png'),
+        img2: require('../../assets/colours/navy-blue1.png')
     },
     {
         id: 19,
         name: 'Cyan',
-        img: require('../../assets/colours/cyan.png')
+        img1: require('../../assets/colours/cyan.png'),
+        img2: require('../../assets/colours/cyan1.png')
     }, 
 ]
 
@@ -226,102 +269,122 @@ export const Fruits = [
     {
         id: 0,
         name: 'Apple',
-        img: require('../../assets/fruits/apple.png')
+        img1: require('../../assets/fruits/apple.png'),
+        img2: require('../../assets/fruits/apple1.png')
     },
     {
         id: 1,
         name: 'Banana',
-        img: require('../../assets/fruits/banana.png')
+        img1: require('../../assets/fruits/banana.png'),
+        img2: require('../../assets/fruits/banana1.png')
     },
     {
         id: 2,
         name: 'Cherry',
-        img: require('../../assets/fruits/cherry.png')
+        img1: require('../../assets/fruits/cherry.png'),
+        img2: require('../../assets/fruits/cherry1.png')
     },
     {
         id: 3,
         name: 'Dragon fruit',
-        img: require('../../assets/fruits/dragon-fruit.png')
+        img1: require('../../assets/fruits/dragon-fruit.png'),
+        img2: require('../../assets/fruits/dragon-fruit1.png')
     },
     {
         id: 4,
         name: 'Figs',
-        img: require('../../assets/fruits/figs.png')
+        img1: require('../../assets/fruits/figs.png'),
+        img2: require('../../assets/fruits/figs1.png')
     },
     {
         id: 5,
         name: 'Grapes',
-        img: require('../../assets/fruits/grapes.png')
+        img1: require('../../assets/fruits/grapes.png'),
+        img2: require('../../assets/fruits/grapes1.png')
     },
     {
         id: 6,
         name: 'Honey dew',
-        img: require('../../assets/fruits/honey-dew.png')
+        img1: require('../../assets/fruits/honey-dew.png'),
+        img2: require('../../assets/fruits/honey-dew1.png')
     },
     {
         id: 7,
         name: 'Jamun',
-        img: require('../../assets/fruits/jamun.png')
+        img1: require('../../assets/fruits/jamun.png'),
+        img2: require('../../assets/fruits/jamun1.png')
     },
     {
         id: 8,
         name: 'Kiwi',
-        img: require('../../assets/fruits/kiwi.png')
+        img1: require('../../assets/fruits/kiwi.png'),
+        img2: require('../../assets/fruits/kiwi1.png')
     },
     {
         id: 9,
         name: 'Litchi',
-        img: require('../../assets/fruits/litchi.png')
+        img1: require('../../assets/fruits/litchi.png'),
+        img2: require('../../assets/fruits/litchi1.png')
     },
     {
         id: 10,
         name: 'Mango',
-        img: require('../../assets/fruits/mango.png')
+        img1: require('../../assets/fruits/mango.png'),
+        img2: require('../../assets/fruits/mango1.png')
     },
     {
         id: 11,
         name: 'Nere fruit',
-        img: require('../../assets/fruits/nere-fruit.png')
+        img1: require('../../assets/fruits/nere-fruit.png'),
+        img2: require('../../assets/fruits/nere-fruit1.png')
     },
     {
         id: 12,
         name: 'Orange',
-        img: require('../../assets/fruits/orange.png')
+        img1: require('../../assets/fruits/orange.png'),
+        img2: require('../../assets/fruits/orange1.png')
     },
     {
         id: 13,
         name: 'Pineapple',
-        img: require('../../assets/fruits/pine-apple.png')
+        img1: require('../../assets/fruits/pine-apple.png'),
+        img2: require('../../assets/fruits/pine-apple1.png')
     },
     {
         id: 14,
         name: 'Raspberry',
-        img: require('../../assets/fruits/raspberry.png')
+        img1: require('../../assets/fruits/raspberry.png'),
+        img2: require('../../assets/fruits/raspberry1.png')
     },
     {
         id: 15,
         name: 'Strawberry',
-        img: require('../../assets/fruits/strawberry.png')
+        img1: require('../../assets/fruits/strawberry.png'),
+        img2: require('../../assets/fruits/strawberry1.png')
     },
     {
         id: 16,
         name: 'Tamarind',
-        img: require('../../assets/fruits/tamarind.png')
+        img1: require('../../assets/fruits/tamarind.png'),
+        img2: require('../../assets/fruits/tamarind1.png')
     },
     {
         id: 17,
         name: 'Ugni Berry',
-        img: require('../../assets/fruits/ugni-berry.png')
+        img1: require('../../assets/fruits/ugni-berry.png'),
+        img2: require('../../assets/fruits/ugni-berry1.png')
     },
     {
         id: 18,
         name: 'Water melon',
-        img: require('../../assets/fruits/water-melon.png')
+        img1: require('../../assets/fruits/water-melon.png'),
+        img2: require('../../assets/fruits/water-melon1.png')
     },
     {
         id: 19,
-        name: 'Yellow Guava',
-        img: require('../../assets/fruits/yellow-guava.png')
+        name: 'Guava',
+        img1: require('../../assets/fruits/guava.png'),
+        img2: require('../../assets/fruits/guava1.png')
     }, 
 ]
 
@@ -329,104 +392,497 @@ export const Shapes = [
     {
         id: 0,
         name: 'Square',
-        img: require('../../assets/shapes/square.png')
+        img1: require('../../assets/shapes/square.png'),
+        img2: require('../../assets/shapes/square1.png')
     },
     {
         id: 1,
         name: 'Rectangle',
-        img: require('../../assets/shapes/rectangle.png')
+        img1: require('../../assets/shapes/rectangle.png'),
+        img2: require('../../assets/shapes/rectangle1.png')
     },
     {
         id: 2,
         name: 'Circle',
-        img: require('../../assets/shapes/circle.png')
+        img1: require('../../assets/shapes/circle.png'),
+        img2: require('../../assets/shapes/circle1.png')
     },
     {
         id: 3,
         name: 'Star',
-        img: require('../../assets/shapes/star.png')
+        img1: require('../../assets/shapes/star.png'),
+        img2: require('../../assets/shapes/star1.png')
     },
     {
         id: 4,
         name: 'Sphere',
-        img: require('../../assets/shapes/sphere.png')
+        img1: require('../../assets/shapes/sphere.png'),
+        img2: require('../../assets/shapes/sphere1.png')
     },
     {
         id: 5,
         name: 'Cone',
-        img: require('../../assets/shapes/cone.png')
+        img1: require('../../assets/shapes/cone.png'),
+        img2: require('../../assets/shapes/cone1.png')
     },
     {
         id: 6,
         name: 'Pentagon',
-        img: require('../../assets/shapes/pentagon.png')
+        img1: require('../../assets/shapes/pentagon.png'),
+        img2: require('../../assets/shapes/pentagon1.png')
     },
     {
         id: 7,
         name: 'Pyramid',
-        img: require('../../assets/shapes/pyramid.png')
+        img1: require('../../assets/shapes/pyramid.png'),
+        img2: require('../../assets/shapes/pyramid1.png')
     },
     {
         id: 8,
         name: 'Cuboid',
-        img: require('../../assets/shapes/cuboid.png')
+        img1: require('../../assets/shapes/cuboid.png'),
+        img2: require('../../assets/shapes/cuboid2.png')
     },
     {
         id: 9,
         name: 'Cylinder',
-        img: require('../../assets/shapes/cylinder.png')
+        img1: require('../../assets/shapes/cylinder.png'),
+        img2: require('../../assets/shapes/cylinder1.png')
     },
     {
         id: 10,
         name: 'Triangle',
-        img: require('../../assets/shapes/triangle.png')
+        img1: require('../../assets/shapes/triangle.png'),
+        img2: require('../../assets/shapes/triangle1.png')
     },
     {
         id: 11,
         name: 'Heart',
-        img: require('../../assets/shapes/heart.png')
+        img1: require('../../assets/shapes/heart.png'),
+        img2: require('../../assets/shapes/heart1.png')
     },
     {
         id: 12,
         name: 'Ring',
-        img: require('../../assets/shapes/ring.png')
+        img1: require('../../assets/shapes/ring.png'),
+        img2: require('../../assets/shapes/ring1.png')
     },
     {
         id: 13,
         name: 'Hexagon',
-        img: require('../../assets/shapes/hexagon.png')
+        img1: require('../../assets/shapes/hexagon.png'),
+        img2: require('../../assets/shapes/hexagon1.png')
     },
     {
         id: 14,
         name: 'Oval',
-        img: require('../../assets/shapes/oval.png')
+        img1: require('../../assets/shapes/oval.png'),
+        img2: require('../../assets/shapes/oval1.png')
     },
     {
         id: 15,
         name: 'Arrow',
-        img: require('../../assets/shapes/arrow.png')
+        img1: require('../../assets/shapes/arrow.png'),
+        img2: require('../../assets/shapes/arrow1.png')
     },
     {
         id: 16,
         name: 'Rhombus',
-        img: require('../../assets/shapes/rhombus.png')
+        img1: require('../../assets/shapes/rhombus.png'),
+        img2: require('../../assets/shapes/rhombus1.png')
     },
     {
         id: 17,
         name: 'Crescent',
-        img: require('../../assets/shapes/crescent.png')
+        img1: require('../../assets/shapes/crescent.png'),
+        img2: require('../../assets/shapes/crescent1.png')
     },
     {
         id: 18,
         name: 'Cross',
-        img: require('../../assets/shapes/cross.png')
+        img1: require('../../assets/shapes/cross.png'),
+        img2: require('../../assets/shapes/cross1.png')
     },
     {
         id: 19,
         name: 'Diamond',
-        img: require('../../assets/shapes/diamond.png')
+        img1: require('../../assets/shapes/diamond.png'),
+        img2: require('../../assets/shapes/diamond1.png')
     }, 
 ]
+
+export const Table = [
+    {
+        id: 0,
+        name: '1x',
+        img1: require('../../assets/table/table1.png'),
+    },
+    {
+        id: 1,
+        name: '2x',
+        img1: require('../../assets/table/table2.png'),
+    },
+    {
+        id: 2,
+        name: '3x',
+        img1: require('../../assets/table/table3.png'),
+    },
+    {
+        id: 3,
+        name: '4x',
+        img1: require('../../assets/table/table4.png'),
+    },
+    {
+        id: 4,
+        name: '5x',
+        img1: require('../../assets/table/table5.png'),
+    },
+    {
+        id: 5,
+        name: '6x',
+        img1: require('../../assets/table/table6.png'),
+    },
+    {
+        id: 6,
+        name: '7x',
+        img1: require('../../assets/table/table7.png'),
+    },
+    {
+        id: 7,
+        name: '8x',
+        img1: require('../../assets/table/table8.png'),
+    },
+    {
+        id: 8,
+        name: '9x',
+        img1: require('../../assets/table/table9.png'),
+    },
+    {
+        id: 9,
+        name: '10x',
+        img1: require('../../assets/table/table10.png'),
+    },
+    {
+        id: 10,
+        name: '11x',
+        img1: require('../../assets/table/table11.png'),
+    },
+    {
+        id: 11,
+        name: '12x',
+        img1: require('../../assets/table/table12.png'),
+    },
+    {
+        id: 12,
+        name: '13x',
+        img1: require('../../assets/table/table13.png'),
+    },
+    {
+        id: 13,
+        name: '14x',
+        img1: require('../../assets/table/table14.png'),
+    },
+    {
+        id: 14,
+        name: '15x',
+        img1: require('../../assets/table/table15.png'),
+    },
+    {
+        id: 15,
+        name: '16x',
+        img1: require('../../assets/table/table16.png'),
+    },
+    {
+        id: 16,
+        name: '17x',
+        img1: require('../../assets/table/table17.png'),
+    },
+    {
+        id: 17,
+        name: '18x',
+        img1: require('../../assets/table/table18.png'),
+    },
+    {
+        id: 18,
+        name: '19x',
+        img1: require('../../assets/table/table19.png'),
+    },
+    {
+        id: 19,
+        name: '20x',
+        img1: require('../../assets/table/table20.png'),
+    },
+];
+
+export const MaleBodyParts = [
+    {
+        id: 0,
+        name: 'Hairs',
+        img1: require('../../assets/male body parts/hairs.png'),
+        img2: require('../../assets/male body parts/hairs1.png')
+    },
+    {
+        id: 1,
+        name: 'Eyes',
+        img1: require('../../assets/male body parts/eyes.png'),
+        img2: require('../../assets/male body parts/eyes1.png')
+    },
+    {
+        id: 2,
+        name: 'Forehead',
+        img1: require('../../assets/male body parts/forehead.png'),
+        img2: require('../../assets/male body parts/forehead1.png')
+    },
+    {
+        id: 3,
+        name: 'Nose',
+        img1: require('../../assets/male body parts/nose.png'),
+        img2: require('../../assets/male body parts/nose1.png')
+    },
+    {
+        id: 4,
+        name: 'Ear',
+        img1: require('../../assets/male body parts/ear.png'),
+        img2: require('../../assets/male body parts/ear1.png')
+    },
+    {
+        id: 5,
+        name: 'Teeth',
+        img1: require('../../assets/male body parts/teeth.png'),
+        img2: require('../../assets/male body parts/teeth1.png')
+    },
+    {
+        id: 6,
+        name: 'Tongue',
+        img1: require('../../assets/male body parts/tongue.png'),
+        img2: require('../../assets/male body parts/tongue1.png')
+    },
+    {
+        id: 7,
+        name: 'Chin',
+        img1: require('../../assets/male body parts/chin.png'),
+        img2: require('../../assets/male body parts/chin1.png')
+    },
+    {
+        id: 8,
+        name: 'Lips',
+        img1: require('../../assets/male body parts/lips.png'),
+        img2: require('../../assets/male body parts/lips1.png')
+    },
+    {
+        id: 9,
+        name: 'Chest',
+        img1: require('../../assets/male body parts/chest.png'),
+        img2: require('../../assets/male body parts/chest1.png')
+    },
+    {
+        id: 10,
+        name: 'Hips',
+        img1: require('../../assets/male body parts/hips.png'),
+        img2: require('../../assets/male body parts/hips1.png')
+    },
+    {
+        id: 11,
+        name: 'Hand',
+        img1: require('../../assets/male body parts/hand.png'),
+        img2: require('../../assets/male body parts/hand1.png')
+    },
+    {
+        id: 12,
+        name: 'Arm',
+        img1: require('../../assets/male body parts/arm.png'),
+        img2: require('../../assets/male body parts/arm1.png')
+    },
+    {
+        id: 13,
+        name: 'Legs',
+        img1: require('../../assets/male body parts/legs.png'),
+        img2: require('../../assets/male body parts/legs1.png')
+    },
+    {
+        id: 14,
+        name: 'Foot',
+        img1: require('../../assets/male body parts/foot.png'),
+        img2: require('../../assets/male body parts/foot1.png'),
+    },
+    {
+        id: 15,
+        name: 'Eyebrow',
+        img1: require('../../assets/male body parts/eyebrow.png'),
+        img2: require('../../assets/male body parts/eyebrow1.png'),
+    },
+    {
+        id: 16,
+        name: 'Thumb',
+        img1: require('../../assets/male body parts/thumb.png'),
+        img2: require('../../assets/male body parts/thumb1.png')
+    },
+    {
+        id: 17,
+        name: 'Knees',
+        img1: require('../../assets/male body parts/knees.png'),
+        img2: require('../../assets/male body parts/knees1.png')
+    },
+    {
+        id: 18,
+        name: 'Finger',
+        img1: require('../../assets/male body parts/finger.png'),
+        img2: require('../../assets/male body parts/finger1.png')
+    },
+    {
+        id: 19,
+        name: 'Neck',
+        img1: require('../../assets/male body parts/neck.png'),
+        img2: require('../../assets/male body parts/neck1.png')
+    },
+    {
+        id: 20,
+        name: 'Stomach',
+        img1: require('../../assets/male body parts/stomach.png'),
+        img2: require('../../assets/male body parts/stomach1.png')
+    },
+    {
+        id: 21,
+        name: 'Elbow',
+        img1: require('../../assets/male body parts/elbow.png'),
+        img2: require('../../assets/male body parts/elbow1.png')
+    },
+];
+
+export const FemaleBodyParts = [
+    {
+        id: 0,
+        name: 'Hairs',
+        img1: require('../../assets/female body parts/hairs.png'),
+        img2: require('../../assets/female body parts/hairs1.png')
+    },
+    {
+        id: 1,
+        name: 'Eyes',
+        img1: require('../../assets/female body parts/eyes.png'),
+        img2: require('../../assets/female body parts/eyes1.png')
+    },
+    {
+        id: 2,
+        name: 'Forehead',
+        img1: require('../../assets/female body parts/forehead.png'),
+        img2: require('../../assets/female body parts/forehead1.png')
+    },
+    {
+        id: 3,
+        name: 'Nose',
+        img1: require('../../assets/female body parts/nose.png'),
+        img2: require('../../assets/female body parts/nose1.png')
+    },
+    {
+        id: 4,
+        name: 'Ear',
+        img1: require('../../assets/female body parts/ear.png'),
+        img2: require('../../assets/female body parts/ear1.png')
+    },
+    {
+        id: 5,
+        name: 'Teeth',
+        img1: require('../../assets/female body parts/teeth.png'),
+        img2: require('../../assets/female body parts/teeth1.png')
+    },
+    {
+        id: 6,
+        name: 'Tongue',
+        img1: require('../../assets/female body parts/tongue.png'),
+        img2: require('../../assets/female body parts/tongue1.png')
+    },
+    {
+        id: 7,
+        name: 'Chin',
+        img1: require('../../assets/female body parts/chin.png'),
+        img2: require('../../assets/female body parts/chin1.png')
+    },
+    {
+        id: 8,
+        name: 'Lips',
+        img1: require('../../assets/female body parts/lips.png'),
+        img2: require('../../assets/female body parts/lips1.png')
+    },
+    {
+        id: 9,
+        name: 'Chest',
+        img1: require('../../assets/female body parts/chest.png'),
+        img2: require('../../assets/female body parts/chest1.png')
+    },
+    {
+        id: 10,
+        name: 'Cheeks',
+        img1: require('../../assets/female body parts/cheeks.png'),
+        img2: require('../../assets/female body parts/cheeks1.png')
+    },
+    {
+        id: 11,
+        name: 'Hand',
+        img1: require('../../assets/female body parts/hand.png'),
+        img2: require('../../assets/female body parts/hand1.png')
+    },
+    {
+        id: 12,
+        name: 'Arm',
+        img1: require('../../assets/female body parts/arm.png'),
+        img2: require('../../assets/female body parts/arm1.png')
+    },
+    {
+        id: 13,
+        name: 'Legs',
+        img1: require('../../assets/female body parts/legs.png'),
+        img2: require('../../assets/female body parts/legs1.png')
+    },
+    {
+        id: 14,
+        name: 'Foot',
+        img1: require('../../assets/female body parts/foot.png'),
+        img2: require('../../assets/female body parts/foot1.png'),
+    },
+    {
+        id: 15,
+        name: 'Eyebrow',
+        img1: require('../../assets/female body parts/eyebrow.png'),
+        img2: require('../../assets/female body parts/eyebrow1.png'),
+    },
+    {
+        id: 16,
+        name: 'Thumb',
+        img1: require('../../assets/female body parts/thumb.png'),
+        img2: require('../../assets/female body parts/thumb1.png')
+    },
+    {
+        id: 17,
+        name: 'Knees',
+        img1: require('../../assets/female body parts/knees.png'),
+        img2: require('../../assets/female body parts/knees1.png')
+    },
+    {
+        id: 18,
+        name: 'Finger',
+        img1: require('../../assets/female body parts/finger.png'),
+        img2: require('../../assets/female body parts/finger1.png')
+    },
+    {
+        id: 19,
+        name: 'Neck',
+        img1: require('../../assets/female body parts/neck.png'),
+        img2: require('../../assets/female body parts/neck1.png')
+    },
+    {
+        id: 20,
+        name: 'Stomach',
+        img1: require('../../assets/female body parts/stomach.png'),
+        img2: require('../../assets/female body parts/stomach1.png')
+    },
+    {
+        id: 21,
+        name: 'Elbow',
+        img1: require('../../assets/female body parts/elbow.png'),
+        img2: require('../../assets/female body parts/elbow1.png')
+    },
+];
 
 
 export default Animals;
