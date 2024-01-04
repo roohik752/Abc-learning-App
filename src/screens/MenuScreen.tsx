@@ -4,18 +4,24 @@ import Home from 'src/screens/Home';
 import Sidebar from './Sidebars';
 import Profile from './Profile';
 import MaleProfile from './MaleProfile';
+import { Dimensions } from 'react-native';
 
 const RightDrawer = createDrawerNavigator();
 
 const MenuScreen = () => {
+  const screenWidth = Dimensions.get('window').width; 
   return (
     <RightDrawer.Navigator
       useLegacyImplementation
       id="RightDrawer"
-      drawerContent={(props) => <Sidebar {...props} />}
+      drawerContent={(props) => <Sidebar  {...props} />}
       screenOptions={{
+        drawerStyle: {
+          width: screenWidth,
+        },
         drawerPosition: 'right',
         headerShown: false,
+        drawerType: 'front',
       }}>
       <RightDrawer.Screen name="Home" component={Home} />
       <RightDrawer.Screen name="Profile" component={Profile} />
