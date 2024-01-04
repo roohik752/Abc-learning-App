@@ -47,6 +47,13 @@ const ROUTERS = {
   ColoursNameWithImage: 'ColoursNameWithImage',
   ShapesName: 'ShapesName',
   ShapesNameWithImage: 'ShapesNameWithImage',
+  TableList: 'TableList',
+  TableWithSound: 'TableWithSound',
+  BodyParts: 'BodyParts',
+  MaleBodyParts: 'MaleBodyParts',
+  MaleBodyPartsWithImage: 'MaleBodyPartsWithImage',
+  FemaleBodyParts: 'FemaleBodyParts',
+  FemaleBodyPartsWithImage: 'FemaleBodyPartsWithImage',
 };
 
 export { Stack, NavigationContainer, Navigator, Screen, ROUTERS };

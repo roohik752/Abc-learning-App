@@ -49,6 +49,7 @@ const Sidebar = ({ navigation }) => {
                             <Text style={styles.text}>Alphabets 1 2 3</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
+                            onPress={() => navigation.navigate('TableList')}
                             style={styles.row}
                         >
                             <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
@@ -82,6 +83,7 @@ const Sidebar = ({ navigation }) => {
                             <Text style={styles.text}>Animals</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
+                            onPress={() => navigation.navigate('BodyParts')}
                             style={styles.row}
                         >
                             <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
@@ -204,8 +206,8 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     box: {
-        height: 610, 
-        width: 157, 
+        height: 610,
+        width: 157,
         backgroundColor: 'rgba(217, 217, 217, 1)',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 4 },
