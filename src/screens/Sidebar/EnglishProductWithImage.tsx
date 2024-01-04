@@ -8,6 +8,7 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
+
 // import { PanGestureHandler, State } from 'react-native-gesture-handler';
 // import Animated, {
 //   useSharedValue,
@@ -41,10 +42,11 @@ const EnglishProductWithImage = ({ route, navigation }) => {
 
   useEffect(() => {
     // Initialize Tts when the component mounts
-    Tts.setDefaultRate(0.5);
-    Tts.setDefaultPitch(1.0);
+    Tts.setDefaultRate(0.3);
+    Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
+    // Tts.setDefaultPitch(2);
     // Tts.setDefaultLanguage('');
-    Tts.setDefaultLanguage('hi');
+    // Tts.setDefaultLanguage('hi-IN');
 
     // Add event listener for TTS start
     const ttsStartListener = (event) => {
@@ -75,6 +77,7 @@ const EnglishProductWithImage = ({ route, navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
+      
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
           <TouchableOpacity
@@ -90,6 +93,7 @@ const EnglishProductWithImage = ({ route, navigation }) => {
           </View>
         </View>
         <Container>
+       
           {/* <PanGestureHandler onGestureEvent={handleBubblePress}>
             <Animated.View style={[styles.bubble, animatedStyle]} />
           </PanGestureHandler> */}
