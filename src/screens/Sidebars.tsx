@@ -18,7 +18,7 @@ const Sidebar = ({ navigation }) => {
                         <Image source={require('../assets/img/close.png')} style={styles.icon} />
                     </TouchableOpacity>
                 </View>
-                <View style={{ flexDirection: 'row', marginTop: 25, justifyContent: 'space-between' }}>
+                <View style={{ flexDirection: 'row', marginTop: 25, justifyContent: 'space-around' }}>
                     <View>
                         <TouchableOpacity
                             onPress={() => navigation.navigate('EnglishProduct')}
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
-        marginLeft: 8,
+        marginLeft: -8,
     },
     text: {
         fontSize: 18,
@@ -207,12 +207,12 @@ const styles = StyleSheet.create({
     },
     box: {
         height: 610,
-        width: 157,
+        width: 107,
         backgroundColor: 'rgba(217, 217, 217, 1)',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 4 },
         shadowRadius: 4,
-        shadowOpacity: 0.25, // Set the shadow opacity here
+        shadowOpacity: 1, // Set the shadow opacity here
         elevation: 5, // Required for Android
     }
 })
