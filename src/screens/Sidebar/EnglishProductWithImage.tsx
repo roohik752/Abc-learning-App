@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Alphabets, { Alphabet } from '../../data/alphabets'; // Replace with the correct path
 import Tts from 'react-native-tts';
 import styled from 'styled-components/native';
+import LottieView from 'lottie-react-native';
 import {
   responsiveHeight,
   responsiveWidth,
@@ -93,7 +94,13 @@ const EnglishProductWithImage = ({ route, navigation }) => {
           </View>
         </View>
         <Container>
+        <LottieView
+        source={require('../../assets/gif/purpleBubble.json')} // Replace with the correct path
+        autoPlay
+        loop
        
+        style={{position:'absolute',zIndex:100, pointerEvents: 'none'}}
+      />
           {/* <PanGestureHandler onGestureEvent={handleBubblePress}>
             <Animated.View style={[styles.bubble, animatedStyle]} />
           </PanGestureHandler> */}
