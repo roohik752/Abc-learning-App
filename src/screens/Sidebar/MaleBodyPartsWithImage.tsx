@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, } from 're
 import LinearGradient from 'react-native-linear-gradient';
 import Tts from 'react-native-tts';
 import styled from 'styled-components/native';
+import LottieView from 'lottie-react-native';
 import {
   responsiveHeight,
   responsiveWidth,
@@ -10,9 +11,9 @@ import {
 
 const MaleBodyPartsWithImage = ({ route, navigation }) => {
   const { selectedBodyParts } = route.params;
-//   const isSelected = selectedBodyParts.name === 'Chest' || selectedBodyParts.name === 'Chin' || 
-//   selectedBodyParts.name === 'Eyes' || selectedBodyParts.name === 'Eyebrows' || selectedBodyParts.name === 'Forehead' 
-//   || selectedBodyParts.name === 'Hairs' || selectedBodyParts.name === 'Lips' || selectedBodyParts.name === 'Teeth'
+  //   const isSelected = selectedBodyParts.name === 'Chest' || selectedBodyParts.name === 'Chin' || 
+  //   selectedBodyParts.name === 'Eyes' || selectedBodyParts.name === 'Eyebrows' || selectedBodyParts.name === 'Forehead' 
+  //   || selectedBodyParts.name === 'Hairs' || selectedBodyParts.name === 'Lips' || selectedBodyParts.name === 'Teeth'
 
   useEffect(() => {
     // Initialize Tts when the component mounts
@@ -64,6 +65,13 @@ const MaleBodyPartsWithImage = ({ route, navigation }) => {
           </View>
         </View>
         <Container>
+          <LottieView
+            source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
+            autoPlay
+            loop
+
+            style={{ position: 'absolute', zIndex: 100, pointerEvents: 'none' }}
+          />
           <View style={styles.outer}>
             <View style={styles.box1}>
               <TouchableOpacity

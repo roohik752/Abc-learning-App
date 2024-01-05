@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList }
 import LinearGradient from 'react-native-linear-gradient';
 import Tts from 'react-native-tts';
 import styled from 'styled-components/native';
+import LottieView from 'lottie-react-native';
 import {
   responsiveHeight,
   responsiveWidth,
@@ -28,7 +29,7 @@ const UrduProductWithImage = ({ route, navigation }) => {
     // Initialize Tts when the component mounts
 
     Tts.setDefaultRate(0.3);
-   Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
+    Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
     // Tts.setDefaultLanguage('');
     Tts.setDefaultLanguage('ur-PK');
 
@@ -76,15 +77,22 @@ const UrduProductWithImage = ({ route, navigation }) => {
           </View>
         </View>
         <Container>
+          <LottieView
+            source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
+            autoPlay
+            loop
+
+            style={{ position: 'absolute', zIndex: 100, pointerEvents: 'none' }}
+          />
           <View style={styles.outer}>
             <View style={styles.box1}>
-            <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-              <TouchableOpacity
-                onPress={() => navigation.goBack()}
-              >
-                <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
-              </TouchableOpacity>
-            </View>
+              <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                <TouchableOpacity
+                  onPress={() => navigation.goBack()}
+                >
+                  <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
+                </TouchableOpacity>
+              </View>
               <TouchableOpacity onPress={handleSpeak} >
                 <Image source={selectedAlphabet.img2} style={styles.image3} resizeMode='contain' />
               </TouchableOpacity>

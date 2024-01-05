@@ -94,13 +94,13 @@ const EnglishProductWithImage = ({ route, navigation }) => {
           </View>
         </View>
         <Container>
-        <LottieView
-        source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
-        autoPlay
-        loop
-       
-        style={{position:'absolute',zIndex:100, pointerEvents: 'none'}}
-      />
+          <LottieView
+            source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
+            autoPlay
+            loop
+
+            style={{ position: 'absolute', zIndex: 100, pointerEvents: 'none' }}
+          />
           {/* <PanGestureHandler onGestureEvent={handleBubblePress}>
             <Animated.View style={[styles.bubble, animatedStyle]} />
           </PanGestureHandler> */}
