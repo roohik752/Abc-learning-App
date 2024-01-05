@@ -7,16 +7,16 @@ import {
     responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-const MaleProfile = ({ navigation }) => {
+const FemaleProfile = ({ navigation }) => {
     const [selectedProfile, setSelectedProfile] = useState(null);
 
     const profiles = [
-        require('../assets/faces/b1.png'),
-        require('../assets/faces/b2.png'),
-        require('../assets/faces/b3.png'),
-        require('../assets/faces/b4.png'),
-        require('../assets/faces/b5.png'),
-        require('../assets/faces/b6.png'),
+        require('../assets/faces/g1.png'),
+        require('../assets/faces/g2.png'),
+        require('../assets/faces/g3.png'),
+        require('../assets/faces/g4.png'),
+        require('../assets/faces/g5.png'),
+        require('../assets/faces/g6.png'),
     ];
 
     const renderProfile = ({ item }) => {
@@ -81,7 +81,7 @@ const MaleProfile = ({ navigation }) => {
     )
 }
 
-export default MaleProfile;
+export default FemaleProfile;
 
 const Container = styled.View`
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Tts from 'react-native-tts';
 import styled from 'styled-components/native';
@@ -33,13 +33,30 @@ const TableWithSound = ({ route, navigation }) => {
     };
   }, []);
 
-  const handleSpeak = () => {
-    if (selectedTable) {
-      Tts.speak(selectedTable.name)
-        .then(() => console.log('Text-to-speech started'))
-        .catch((error) => console.log('Error starting text-to-speech:', error));
-    }
+  // const handleSpeak = () => {
+  //   if (selectedTable) {
+  //     Tts.speak(selectedTable.name)
+  //       .then(() => console.log('Text-to-speech started'))
+  //       .catch((error) => console.log('Error starting text-to-speech:', error));
+  //   }
+  // };
+
+  const handleSpeak = (text) => {
+    Tts.speak(text)
+      .then(() => console.log('Text-to-speech started'))
+      .catch((error) => console.log('Error starting text-to-speech:', error));
   };
+
+  const renderItem = ({ item }) => (
+    <TouchableOpacity
+      style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+      onPress={() => handleSpeak(item)}
+    >
+      <Text style={styles.text1}>{item}</Text>
+      <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+    </TouchableOpacity>
+  );
+
   return (
     <LinearGradient
       colors={['#FFFFFF', '#4CBB17']}
@@ -69,16 +86,91 @@ const TableWithSound = ({ route, navigation }) => {
               >
                 <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
               </TouchableOpacity>
-              <TouchableOpacity onPress={handleSpeak} >
-                <Image source={selectedTable.img1} style={styles.image3} resizeMode='contain' />
-              </TouchableOpacity>
+              <FlatList
+                data={[
+                  selectedTable.line1,
+                  selectedTable.line2,
+                  selectedTable.line3,
+                  selectedTable.line4,
+                  selectedTable.line5,
+                  selectedTable.line6,
+                  selectedTable.line7,
+                  selectedTable.line8,
+                  selectedTable.line9,
+                  selectedTable.line10,
+                ]}
+                renderItem={renderItem}
+                keyExtractor={(item, index) => index.toString()}
+              />
+              {/* <View>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line1}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line2}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line3}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line4}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line5}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line6}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line7}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line8}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line9}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                  onPress={handleSpeak} >
+                  <Text style={styles.text1}>{selectedTable.line10}</Text>
+                  <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+                </TouchableOpacity>
+              </View> */}
             </View>
-            <View style={styles.box2}>
+            {/* <View style={styles.box2}>
               <Text style={styles.text1}>{selectedTable.name}</Text>
               <TouchableOpacity onPress={handleSpeak} >
                 <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
               </TouchableOpacity>
-            </View>
+            </View> */}
           </View>
         </Container>
       </ScrollView>
@@ -129,11 +221,19 @@ const styles = StyleSheet.create({
     width: '93%'
   },
   box1: {
-    height: 500,
+    height: 630,
     backgroundColor: '#000',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    borderRadius: 20,
+    // borderTopLeftRadius: 20,
+    // borderTopRightRadius: 20,
     // paddingTop: 50
+  },
+  boxContainer: {
+    // justifyContent: 'space-around',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: -15,
+    padding: 15,
   },
   box2: {
     flexDirection: 'row',
@@ -154,13 +254,13 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: '#fff',
     fontWeight: '900',
-    lineHeight: 100,
+    // lineHeight: 100,
   },
   image4: {
     height: 50,
     width: 50,
-    alignSelf: 'center',
-    marginTop: 'auto',
-    marginBottom: 'auto',
+    // alignSelf: 'center',
+    // marginTop: 'auto',
+    // marginBottom: 'auto',
   },
 })

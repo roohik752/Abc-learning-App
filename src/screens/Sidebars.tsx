@@ -87,7 +87,7 @@ const Sidebar = ({ navigation }) => {
                             style={styles.row}
                         >
                             <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
-                            <Text style={styles.text}>Body Parts
+                            <Text style={styles.text}>Body Parts&nbsp;&nbsp;
                                 <Image source={require('../assets/img/nav.png')} style={styles.img2} />
                             </Text>
                         </TouchableOpacity>
@@ -95,7 +95,7 @@ const Sidebar = ({ navigation }) => {
                             style={styles.row}
                         >
                             <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
-                            <Text style={styles.text}>Questions & Answers
+                            <Text style={styles.text}>Questions & Answers&nbsp;&nbsp;
                                 <Image source={require('../assets/img/nav.png')} style={styles.img2} />
                             </Text>
                         </TouchableOpacity>

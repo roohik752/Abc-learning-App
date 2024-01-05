@@ -7,31 +7,39 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-
 const Profile = ({ navigation }) => {
   const [selectedProfile, setSelectedProfile] = useState(null);
 
   const profiles = [
-    require('../assets/faces/b3.png'),
-    require('../assets/faces/g4.png'),
+    {value: 'Male', pic:require('../assets/faces/b3.png')},
+    {value: 'Female', pic:require('../assets/faces/g4.png')}
   ];
 
   const renderProfile = ({ item }) => {
-    const isSelected = item === selectedProfile;
+    const isSelected = item.pic === selectedProfile;
 
     return (
-      <View>
+      <View style={{flexDirection: 'column',height:250}}>
         <TouchableOpacity
           style={[
             styles.box,
             isSelected && { borderColor: 'green', borderWidth: 3, }
           ]}
-          onPress={() => setSelectedProfile(item)}
+          onPress={() => setSelectedProfile(item.pic)}
         >
-          <Image source={item} style={styles.image2} resizeMode='contain' />
+          <Image source={item.pic} style={styles.image2} resizeMode='contain' />
+          <Text style={styles.text3}>{item.value}</Text>
         </TouchableOpacity>
       </View>
     );
+  };
+
+  const handleContinue = () => {
+    if (selectedProfile === profiles[0].pic) {
+      navigation.navigate('MaleProfile');
+    } else if (selectedProfile === profiles[1].pic) {
+      navigation.navigate('FemaleProfile');
+    }
   };
 
   return (
@@ -43,7 +51,6 @@ const Profile = ({ navigation }) => {
       <View style={{ flexDirection: 'row', padding: 15, marginTop: 40, justifyContent: 'space-between' }}>
         <TouchableOpacity
           style={{ flexDirection: 'row' }}
-        // onPress={() => navigation.navigate('Profile')}
         >
           <Image source={require('../assets/img/boy1.png')} style={styles.image} />
           <Text style={styles.text}>Hi</Text><Text style={styles.text1}>Charlie</Text>
@@ -64,19 +71,19 @@ const Profile = ({ navigation }) => {
             renderItem={renderProfile}
             keyExtractor={(item, index) => index.toString()}
             numColumns={2}
-            contentContainerStyle={{ marginTop: 30 }}
+            // contentContainerStyle={{ marginTop: 30 }}
           />
         </View>
       </Container>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('MaleProfile')}
+        onPress={handleContinue}
       >
         <Text style={styles.text2}>Continue</Text>
       </TouchableOpacity>
     </LinearGradient>
-  )
-}
+  );
+};
 
 export default Profile;
 
@@ -131,7 +138,10 @@ const styles = StyleSheet.create({
     height: 150,
     width: 150,
     backgroundColor: '#000',
-    borderRadius: 100
+    borderRadius: 100,
+    // margin: 10
+    marginHorizontal: 10,
+    marginVertical: 10,
   },
   image2: {
     height: 120,
@@ -153,5 +163,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#fff',
     fontWeight: '700'
+  },
+  text3: {
+    fontSize: 24,
+    color: '#000',
+    fontWeight: '700',
+    marginTop: 50,
+    textAlign: 'center'
   },
 });

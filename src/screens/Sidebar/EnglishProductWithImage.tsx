@@ -78,7 +78,7 @@ const EnglishProductWithImage = ({ route, navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      
+
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
           <TouchableOpacity
@@ -94,13 +94,12 @@ const EnglishProductWithImage = ({ route, navigation }) => {
           </View>
         </View>
         <Container>
-        <LottieView
-        source={require('../../assets/gif/purpleBubble.json')} // Replace with the correct path
-        autoPlay
-        loop
-       
-        style={{position:'absolute',zIndex:100, pointerEvents: 'none'}}
-      />
+          <LottieView
+            source={require('../../assets/gif/purpleBubble.json')} // Replace with the correct path
+            autoPlay
+            loop
+            style={{ position: 'absolute', zIndex: 100, pointerEvents: 'none' }}
+          />
           {/* <PanGestureHandler onGestureEvent={handleBubblePress}>
             <Animated.View style={[styles.bubble, animatedStyle]} />
           </PanGestureHandler> */}
