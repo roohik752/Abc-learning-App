@@ -95,7 +95,7 @@ const EnglishProductWithImage = ({ route, navigation }) => {
         </View>
         <Container>
         <LottieView
-        source={require('../../assets/gif/purpleBubble.json')} // Replace with the correct path
+        source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
         autoPlay
         loop
        
