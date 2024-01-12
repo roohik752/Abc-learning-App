@@ -16,7 +16,7 @@ const NumberProductWithImage = ({ route, navigation }) => {
     Tts.setDefaultRate(0.5);
     Tts.setDefaultPitch(1.0);
     // Tts.setDefaultLanguage('');
-    Tts.setDefaultLanguage('hi');
+    Tts.setDefaultLanguage('hi-IN');
 
     // Add event listener for TTS start
     const ttsStartListener = (event) => {
