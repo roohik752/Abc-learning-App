@@ -18,7 +18,7 @@ const Sidebar = ({ navigation }) => {
                         <Image source={require('../assets/img/close.png')} style={styles.icon} />
                     </TouchableOpacity>
                 </View>
-                <View style={{ flexDirection: 'row', marginTop: 25, justifyContent: 'space-between' }}>
+                <View style={{ flexDirection: 'row', marginTop: 25, justifyContent: 'space-around' }}>
                     <View>
                         <TouchableOpacity
                             onPress={() => navigation.navigate('EnglishProduct')}
@@ -49,6 +49,7 @@ const Sidebar = ({ navigation }) => {
                             <Text style={styles.text}>Alphabets 1 2 3</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
+                            onPress={() => navigation.navigate('TableList')}
                             style={styles.row}
                         >
                             <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
@@ -82,10 +83,11 @@ const Sidebar = ({ navigation }) => {
                             <Text style={styles.text}>Animals</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
+                            onPress={() => navigation.navigate('BodyParts')}
                             style={styles.row}
                         >
                             <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
-                            <Text style={styles.text}>Body Parts
+                            <Text style={styles.text}>Body Parts&nbsp;&nbsp;
                                 <Image source={require('../assets/img/nav.png')} style={styles.img2} />
                             </Text>
                         </TouchableOpacity>
@@ -93,7 +95,7 @@ const Sidebar = ({ navigation }) => {
                             style={styles.row}
                         >
                             <Image source={require('../assets/img/pin2.png')} style={styles.img1} />
-                            <Text style={styles.text}>Questions & Answers
+                            <Text style={styles.text}>Questions & Answers&nbsp;&nbsp;
                                 <Image source={require('../assets/img/nav.png')} style={styles.img2} />
                             </Text>
                         </TouchableOpacity>
@@ -174,7 +176,7 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
-        marginLeft: 8,
+        marginLeft: -8,
     },
     text: {
         fontSize: 18,
@@ -204,13 +206,13 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     box: {
-        height: 610, 
-        width: 157, 
+        height: 610,
+        width: 107,
         backgroundColor: 'rgba(217, 217, 217, 1)',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 4 },
         shadowRadius: 4,
-        shadowOpacity: 0.25, // Set the shadow opacity here
+        shadowOpacity: 1, // Set the shadow opacity here
         elevation: 5, // Required for Android
     }
 })

@@ -3,8 +3,18 @@ import {AnimationObject} from 'src/data/alphabets';
 export interface Animal {
     id: number;
     name: string;
-    img1?: any
-    img2?: any
+    img1?: any;
+    img2?: any;
+    line1?: any;
+    line2?: any;
+    line3?: any;
+    line4?: any;
+    line5?: any;
+    line6?: any;
+    line7?: any;
+    line8?: any;
+    line9?: any;
+    line10?: any;
 }
 
 const Animals: Array<Animal> = [
@@ -511,376 +521,576 @@ export const Shapes = [
     }, 
 ]
 
-export const Table = [
+export const Tables = [
     {
         id: 0,
         name: '1x',
         img1: require('../../assets/table/table1.png'),
+        line1: '1  X  1  =  1',
+        line2: '1  X  2  =  2',
+        line3: '1  X  3  =  3',
+        line4: '1  X  4  =  4',
+        line5: '1  X  5  =  5',
+        line6: '1  X  6  =  6',
+        line7: '1  X  7  =  7',
+        line8: '1  X  8  =  8',
+        line9: '1  X  9  =  9',
+        line10: '1  X 10 = 10',
     },
     {
         id: 1,
         name: '2x',
         img1: require('../../assets/table/table2.png'),
+        line1: '2  X  1  =  2',
+        line2: '2  X  2  =  4',
+        line3: '2  X  3  =  6',
+        line4: '2  X  4  =  8',
+        line5: '2  X  5  = 10',
+        line6: '2  X  6  = 12',
+        line7: '2  X  7  = 14',
+        line8: '2  X  8  = 16',
+        line9: '2  X  9  = 18',
+        line10: '2  X 10 = 20',
     },
     {
         id: 2,
         name: '3x',
         img1: require('../../assets/table/table3.png'),
+        line1: '3  X  1  =  3',
+        line2: '3  X  2  =  6',
+        line3: '3  X  3  =  9',
+        line4: '3  X  4  = 12',
+        line5: '3  X  5  = 15',
+        line6: '3  X  6  = 18',
+        line7: '3  X  7  = 21',
+        line8: '3  X  8  = 24',
+        line9: '3  X  9  = 27',
+        line10: '3  X 10 = 30',
     },
     {
         id: 3,
         name: '4x',
         img1: require('../../assets/table/table4.png'),
+        line1: '4  X  1  =  4',
+        line2: '4  X  2  =  8',
+        line3: '4  X  3  = 12',
+        line4: '4  X  4  = 16',
+        line5: '4  X  5  = 20',
+        line6: '4  X  6  = 24',
+        line7: '4  X  7  = 28',
+        line8: '4  X  8  = 32',
+        line9: '4  X  9  = 36',
+        line10: '4  X 10 = 40',
     },
     {
         id: 4,
         name: '5x',
         img1: require('../../assets/table/table5.png'),
+        line1: '5  X  1  =  5',
+        line2: '5  X  2  = 10',
+        line3: '5  X  3  = 15',
+        line4: '5  X  4  = 20',
+        line5: '5  X  5  = 25',
+        line6: '5  X  6  = 30',
+        line7: '5  X  7  = 35',
+        line8: '5  X  8  = 40',
+        line9: '5  X  9  = 45',
+        line10: '5  X 10 = 50',
     },
     {
         id: 5,
         name: '6x',
         img1: require('../../assets/table/table6.png'),
+        line1: '6  X  1  =  6',
+        line2: '6  X  2  = 12',
+        line3: '6  X  3  = 18',
+        line4: '6  X  4  = 24',
+        line5: '6  X  5  = 30',
+        line6: '6  X  6  = 36',
+        line7: '6  X  7  = 42',
+        line8: '6  X  8  = 48',
+        line9: '6  X  9  = 54',
+        line10: '6  X 10 = 60',
     },
     {
         id: 6,
         name: '7x',
         img1: require('../../assets/table/table7.png'),
+        line1: '7  X  1  =  7',
+        line2: '7  X  2  = 14',
+        line3: '7  X  3  = 21',
+        line4: '7  X  4  = 28',
+        line5: '7  X  5  = 35',
+        line6: '7  X  6  = 42',
+        line7: '7  X  7  = 49',
+        line8: '7  X  8  = 56',
+        line9: '7  X  9  = 63',
+        line10: '7  X 10 = 70',
     },
     {
         id: 7,
         name: '8x',
         img1: require('../../assets/table/table8.png'),
+        line1: '8  X  1  =  8',
+        line2: '8  X  2  = 16',
+        line3: '8  X  3  = 24',
+        line4: '8  X  4  = 32',
+        line5: '8  X  5  = 40',
+        line6: '8  X  6  = 48',
+        line7: '8  X  7  = 56',
+        line8: '8  X  8  = 64',
+        line9: '8  X  9  = 72',
+        line10: '8  X 10 = 80',
     },
     {
         id: 8,
         name: '9x',
         img1: require('../../assets/table/table9.png'),
+        line1: '9  X  1  =  9',
+        line2: '9  X  2  = 18',
+        line3: '9  X  3  = 27',
+        line4: '9  X  4  = 36',
+        line5: '9  X  5  = 45',
+        line6: '9  X  6  = 54',
+        line7: '9  X  7  = 63',
+        line8: '9  X  8  = 72',
+        line9: '9  X  9  = 81',
+        line10: '9  X 10 = 90',
     },
     {
         id: 9,
         name: '10x',
         img1: require('../../assets/table/table10.png'),
+        line1: '10  X  1  =  10',
+        line2: '10  X  2  =  20',
+        line3: '10  X  3  =  30',
+        line4: '10  X  4  =  40',
+        line5: '10  X  5  =  50',
+        line6: '10  X  6  =  60',
+        line7: '10  X  7  =  70',
+        line8: '10  X  8  =  80',
+        line9: '10  X  9  =  90',
+        line10: '10  X 10 = 100',
     },
     {
         id: 10,
         name: '11x',
         img1: require('../../assets/table/table11.png'),
+        line1: '11  X  1  =  11',
+        line2: '11  X  2  =  22',
+        line3: '11  X  3  =  33',
+        line4: '11  X  4  =  44',
+        line5: '11  X  5  =  55',
+        line6: '11  X  6  =  66',
+        line7: '11  X  7  =  77',
+        line8: '11  X  8  =  88',
+        line9: '11  X  9  =  99',
+        line10: '11  X 10 = 110',
     },
     {
         id: 11,
         name: '12x',
         img1: require('../../assets/table/table12.png'),
+        line1: '12  X  1  =  12',
+        line2: '12  X  2  =  24',
+        line3: '12  X  3  =  36',
+        line4: '12  X  4  =  48',
+        line5: '12  X  5  =  60',
+        line6: '12  X  6  =  72',
+        line7: '12  X  7  =  84',
+        line8: '12  X  8  =  96',
+        line9: '12  X  9  = 108',
+        line10: '12  X 10 = 120',
     },
     {
         id: 12,
         name: '13x',
         img1: require('../../assets/table/table13.png'),
+        line1: '13  X  1  =  13',
+        line2: '13  X  2  =  26',
+        line3: '13  X  3  =  39',
+        line4: '13  X  4  =  52',
+        line5: '13  X  5  =  65',
+        line6: '13  X  6  =  78',
+        line7: '13  X  7  =  91',
+        line8: '13  X  8  = 104',
+        line9: '13  X  9  = 117',
+        line10: '13  X 10 = 130',
     },
     {
         id: 13,
         name: '14x',
         img1: require('../../assets/table/table14.png'),
+        line1: '14  X  1  =  14',
+        line2: '14  X  2  =  28',
+        line3: '14  X  3  =  42',
+        line4: '14  X  4  =  56',
+        line5: '14  X  5  =  70',
+        line6: '14  X  6  =  84',
+        line7: '14  X  7  =  98',
+        line8: '14  X  8  = 112',
+        line9: '14  X  9  = 126',
+        line10: '14  X 10 = 140',
     },
     {
         id: 14,
         name: '15x',
         img1: require('../../assets/table/table15.png'),
+        line1: '15  X  1  =  15',
+        line2: '15  X  2  =  30',
+        line3: '15  X  3  =  45',
+        line4: '15  X  4  =  60',
+        line5: '15  X  5  =  75',
+        line6: '15  X  6  =  90',
+        line7: '15  X  7  = 105',
+        line8: '15  X  8  = 120',
+        line9: '15  X  9  = 135',
+        line10: '15  X 10 = 150',
     },
     {
         id: 15,
         name: '16x',
         img1: require('../../assets/table/table16.png'),
+        line1: '16  X  1  =  16',
+        line2: '16  X  2  =  32',
+        line3: '16  X  3  =  48',
+        line4: '16  X  4  =  64',
+        line5: '16  X  5  =  80',
+        line6: '16  X  6  =  96',
+        line7: '16  X  7  = 112',
+        line8: '16  X  8  = 128',
+        line9: '16  X  9  = 144',
+        line10: '16  X 10 = 160',
     },
     {
         id: 16,
         name: '17x',
         img1: require('../../assets/table/table17.png'),
+        line1: '17  X  1  =  17',
+        line2: '17  X  2  =  34',
+        line3: '17  X  3  =  51',
+        line4: '17  X  4  =  68',
+        line5: '17  X  5  =  85',
+        line6: '17  X  6  = 102',
+        line7: '17  X  7  = 119',
+        line8: '17  X  8  = 136',
+        line9: '17  X  9  = 153',
+        line10: '17  X 10 = 170',
     },
     {
         id: 17,
         name: '18x',
         img1: require('../../assets/table/table18.png'),
+        line1: '18  X  1  =  18',
+        line2: '18  X  2  =  36',
+        line3: '18  X  3  =  54',
+        line4: '18  X  4  =  72',
+        line5: '18  X  5  =  90',
+        line6: '18  X  6  = 108',
+        line7: '18  X  7  = 126',
+        line8: '18  X  8  = 144',
+        line9: '18  X  9  = 162',
+        line10: '18  X 10 = 180',
     },
     {
         id: 18,
         name: '19x',
         img1: require('../../assets/table/table19.png'),
+        line1: '19  X  1  =  19',
+        line2: '19  X  2  =  38',
+        line3: '19  X  3  =  57',
+        line4: '19  X  4  =  76',
+        line5: '19  X  5  =  95',
+        line6: '19  X  6  = 114',
+        line7: '19  X  7  = 133',
+        line8: '19  X  8  = 152',
+        line9: '19  X  9  = 171',
+        line10: '19  X 10 = 190',
     },
     {
         id: 19,
         name: '20x',
         img1: require('../../assets/table/table20.png'),
+        line1: '20  X  1  =  20',
+        line2: '20  X  2  =  40',
+        line3: '20  X  3  =  60',
+        line4: '20  X  4  =  80',
+        line5: '20  X  5  = 100',
+        line6: '20  X  6  = 120',
+        line7: '20  X  7  = 140',
+        line8: '20  X  8  = 160',
+        line9: '20  X  9  = 180',
+        line10: '20  X 10 = 200',
     },
 ];
 
-export const MaleBodyParts = [
+export const MaleBodyPart = [
     {
         id: 0,
         name: 'Hairs',
-        img1: require('../../assets/male body parts/hairs.png'),
-        img2: require('../../assets/male body parts/hairs1.png')
+        img1: require('../../assets/male_body_parts/hairs.png'),
+        img2: require('../../assets/male_body_parts/hairs1.png')
     },
     {
         id: 1,
         name: 'Eyes',
-        img1: require('../../assets/male body parts/eyes.png'),
-        img2: require('../../assets/male body parts/eyes1.png')
+        img1: require('../../assets/male_body_parts/eyes.png'),
+        img2: require('../../assets/male_body_parts/eyes1.png')
     },
     {
         id: 2,
         name: 'Forehead',
-        img1: require('../../assets/male body parts/forehead.png'),
-        img2: require('../../assets/male body parts/forehead1.png')
+        img1: require('../../assets/male_body_parts/forehead.png'),
+        img2: require('../../assets/male_body_parts/forehead1.png')
     },
     {
         id: 3,
         name: 'Nose',
-        img1: require('../../assets/male body parts/nose.png'),
-        img2: require('../../assets/male body parts/nose1.png')
+        img1: require('../../assets/male_body_parts/nose.png'),
+        img2: require('../../assets/male_body_parts/nose1.png')
     },
     {
         id: 4,
         name: 'Ear',
-        img1: require('../../assets/male body parts/ear.png'),
-        img2: require('../../assets/male body parts/ear1.png')
+        img1: require('../../assets/male_body_parts/ear.png'),
+        img2: require('../../assets/male_body_parts/ear1.png')
     },
     {
         id: 5,
         name: 'Teeth',
-        img1: require('../../assets/male body parts/teeth.png'),
-        img2: require('../../assets/male body parts/teeth1.png')
+        img1: require('../../assets/male_body_parts/teeth.png'),
+        img2: require('../../assets/male_body_parts/teeth1.png')
     },
     {
         id: 6,
         name: 'Tongue',
-        img1: require('../../assets/male body parts/tongue.png'),
-        img2: require('../../assets/male body parts/tongue1.png')
+        img1: require('../../assets/male_body_parts/tongue.png'),
+        img2: require('../../assets/male_body_parts/tongue1.png')
     },
     {
         id: 7,
         name: 'Chin',
-        img1: require('../../assets/male body parts/chin.png'),
-        img2: require('../../assets/male body parts/chin1.png')
+        img1: require('../../assets/male_body_parts/chin.png'),
+        img2: require('../../assets/male_body_parts/chin1.png')
     },
     {
         id: 8,
         name: 'Lips',
-        img1: require('../../assets/male body parts/lips.png'),
-        img2: require('../../assets/male body parts/lips1.png')
+        img1: require('../../assets/male_body_parts/lips.png'),
+        img2: require('../../assets/male_body_parts/lips1.png')
     },
     {
         id: 9,
         name: 'Chest',
-        img1: require('../../assets/male body parts/chest.png'),
-        img2: require('../../assets/male body parts/chest1.png')
+        img1: require('../../assets/male_body_parts/chest.png'),
+        img2: require('../../assets/male_body_parts/chest1.png')
     },
     {
         id: 10,
         name: 'Hips',
-        img1: require('../../assets/male body parts/hips.png'),
-        img2: require('../../assets/male body parts/hips1.png')
+        img1: require('../../assets/male_body_parts/hips.png'),
+        img2: require('../../assets/male_body_parts/hips1.png')
     },
     {
         id: 11,
         name: 'Hand',
-        img1: require('../../assets/male body parts/hand.png'),
-        img2: require('../../assets/male body parts/hand1.png')
+        img1: require('../../assets/male_body_parts/hand.png'),
+        img2: require('../../assets/male_body_parts/hand1.png')
     },
     {
         id: 12,
         name: 'Arm',
-        img1: require('../../assets/male body parts/arm.png'),
-        img2: require('../../assets/male body parts/arm1.png')
+        img1: require('../../assets/male_body_parts/arm.png'),
+        img2: require('../../assets/male_body_parts/arm1.png')
     },
     {
         id: 13,
         name: 'Legs',
-        img1: require('../../assets/male body parts/legs.png'),
-        img2: require('../../assets/male body parts/legs1.png')
+        img1: require('../../assets/male_body_parts/legs.png'),
+        img2: require('../../assets/male_body_parts/legs1.png')
     },
     {
         id: 14,
         name: 'Foot',
-        img1: require('../../assets/male body parts/foot.png'),
-        img2: require('../../assets/male body parts/foot1.png'),
+        img1: require('../../assets/male_body_parts/foot.png'),
+        img2: require('../../assets/male_body_parts/foot1.png'),
     },
     {
         id: 15,
         name: 'Eyebrow',
-        img1: require('../../assets/male body parts/eyebrow.png'),
-        img2: require('../../assets/male body parts/eyebrow1.png'),
+        img1: require('../../assets/male_body_parts/eyebrow.png'),
+        img2: require('../../assets/male_body_parts/eyebrow1.png'),
     },
     {
         id: 16,
         name: 'Thumb',
-        img1: require('../../assets/male body parts/thumb.png'),
-        img2: require('../../assets/male body parts/thumb1.png')
+        img1: require('../../assets/male_body_parts/thumb.png'),
+        img2: require('../../assets/male_body_parts/thumb1.png')
     },
     {
         id: 17,
         name: 'Knees',
-        img1: require('../../assets/male body parts/knees.png'),
-        img2: require('../../assets/male body parts/knees1.png')
+        img1: require('../../assets/male_body_parts/knees.png'),
+        img2: require('../../assets/male_body_parts/knees1.png')
     },
     {
         id: 18,
         name: 'Finger',
-        img1: require('../../assets/male body parts/finger.png'),
-        img2: require('../../assets/male body parts/finger1.png')
+        img1: require('../../assets/male_body_parts/finger.png'),
+        img2: require('../../assets/male_body_parts/finger1.png')
     },
     {
         id: 19,
         name: 'Neck',
-        img1: require('../../assets/male body parts/neck.png'),
-        img2: require('../../assets/male body parts/neck1.png')
+        img1: require('../../assets/male_body_parts/neck.png'),
+        img2: require('../../assets/male_body_parts/neck1.png')
     },
     {
         id: 20,
         name: 'Stomach',
-        img1: require('../../assets/male body parts/stomach.png'),
-        img2: require('../../assets/male body parts/stomach1.png')
+        img1: require('../../assets/male_body_parts/stomach.png'),
+        img2: require('../../assets/male_body_parts/stomach1.png')
     },
     {
         id: 21,
         name: 'Elbow',
-        img1: require('../../assets/male body parts/elbow.png'),
-        img2: require('../../assets/male body parts/elbow1.png')
+        img1: require('../../assets/male_body_parts/elbow.png'),
+        img2: require('../../assets/male_body_parts/elbow1.png')
     },
 ];
 
-export const FemaleBodyParts = [
+export const FemaleBodyPart = [
     {
         id: 0,
         name: 'Hairs',
-        img1: require('../../assets/female body parts/hairs.png'),
-        img2: require('../../assets/female body parts/hairs1.png')
+        img1: require('../../assets/female_body_parts/hairs.png'),
+        img2: require('../../assets/female_body_parts/hairs1.png')
     },
     {
         id: 1,
         name: 'Eyes',
-        img1: require('../../assets/female body parts/eyes.png'),
-        img2: require('../../assets/female body parts/eyes1.png')
+        img1: require('../../assets/female_body_parts/eyes.png'),
+        img2: require('../../assets/female_body_parts/eyes1.png')
     },
     {
         id: 2,
         name: 'Forehead',
-        img1: require('../../assets/female body parts/forehead.png'),
-        img2: require('../../assets/female body parts/forehead1.png')
+        img1: require('../../assets/female_body_parts/forehead.png'),
+        img2: require('../../assets/female_body_parts/forehead1.png')
     },
     {
         id: 3,
         name: 'Nose',
-        img1: require('../../assets/female body parts/nose.png'),
-        img2: require('../../assets/female body parts/nose1.png')
+        img1: require('../../assets/female_body_parts/nose.png'),
+        img2: require('../../assets/female_body_parts/nose1.png')
     },
     {
         id: 4,
         name: 'Ear',
-        img1: require('../../assets/female body parts/ear.png'),
-        img2: require('../../assets/female body parts/ear1.png')
+        img1: require('../../assets/female_body_parts/ear.png'),
+        img2: require('../../assets/female_body_parts/ear1.png')
     },
     {
         id: 5,
         name: 'Teeth',
-        img1: require('../../assets/female body parts/teeth.png'),
-        img2: require('../../assets/female body parts/teeth1.png')
+        img1: require('../../assets/female_body_parts/teeth.png'),
+        img2: require('../../assets/female_body_parts/teeth1.png')
     },
     {
         id: 6,
         name: 'Tongue',
-        img1: require('../../assets/female body parts/tongue.png'),
-        img2: require('../../assets/female body parts/tongue1.png')
+        img1: require('../../assets/female_body_parts/tongue.png'),
+        img2: require('../../assets/female_body_parts/tongue1.png')
     },
     {
         id: 7,
         name: 'Chin',
-        img1: require('../../assets/female body parts/chin.png'),
-        img2: require('../../assets/female body parts/chin1.png')
+        img1: require('../../assets/female_body_parts/chin.png'),
+        img2: require('../../assets/female_body_parts/chin1.png')
     },
     {
         id: 8,
         name: 'Lips',
-        img1: require('../../assets/female body parts/lips.png'),
-        img2: require('../../assets/female body parts/lips1.png')
+        img1: require('../../assets/female_body_parts/lips.png'),
+        img2: require('../../assets/female_body_parts/lips1.png')
     },
     {
         id: 9,
         name: 'Chest',
-        img1: require('../../assets/female body parts/chest.png'),
-        img2: require('../../assets/female body parts/chest1.png')
+        img1: require('../../assets/female_body_parts/chest.png'),
+        img2: require('../../assets/female_body_parts/chest1.png')
     },
     {
         id: 10,
         name: 'Cheeks',
-        img1: require('../../assets/female body parts/cheeks.png'),
-        img2: require('../../assets/female body parts/cheeks1.png')
+        img1: require('../../assets/female_body_parts/cheeks.png'),
+        img2: require('../../assets/female_body_parts/cheeks1.png')
     },
     {
         id: 11,
         name: 'Hand',
-        img1: require('../../assets/female body parts/hand.png'),
-        img2: require('../../assets/female body parts/hand1.png')
+        img1: require('../../assets/female_body_parts/hand.png'),
+        img2: require('../../assets/female_body_parts/hand1.png')
     },
     {
         id: 12,
         name: 'Arm',
-        img1: require('../../assets/female body parts/arm.png'),
-        img2: require('../../assets/female body parts/arm1.png')
+        img1: require('../../assets/female_body_parts/arm.png'),
+        img2: require('../../assets/female_body_parts/arm1.png')
     },
     {
         id: 13,
         name: 'Legs',
-        img1: require('../../assets/female body parts/legs.png'),
-        img2: require('../../assets/female body parts/legs1.png')
+        img1: require('../../assets/female_body_parts/legs.png'),
+        img2: require('../../assets/female_body_parts/legs1.png')
     },
     {
         id: 14,
         name: 'Foot',
-        img1: require('../../assets/female body parts/foot.png'),
-        img2: require('../../assets/female body parts/foot1.png'),
+        img1: require('../../assets/female_body_parts/foot.png'),
+        img2: require('../../assets/female_body_parts/foot1.png'),
     },
     {
         id: 15,
         name: 'Eyebrow',
-        img1: require('../../assets/female body parts/eyebrow.png'),
-        img2: require('../../assets/female body parts/eyebrow1.png'),
+        img1: require('../../assets/female_body_parts/eyebrow.png'),
+        img2: require('../../assets/female_body_parts/eyebrow1.png'),
     },
     {
         id: 16,
         name: 'Thumb',
-        img1: require('../../assets/female body parts/thumb.png'),
-        img2: require('../../assets/female body parts/thumb1.png')
+        img1: require('../../assets/female_body_parts/thumb.png'),
+        img2: require('../../assets/female_body_parts/thumb1.png')
     },
     {
         id: 17,
         name: 'Knees',
-        img1: require('../../assets/female body parts/knees.png'),
-        img2: require('../../assets/female body parts/knees1.png')
+        img1: require('../../assets/female_body_parts/knees.png'),
+        img2: require('../../assets/female_body_parts/knees1.png')
     },
     {
         id: 18,
         name: 'Finger',
-        img1: require('../../assets/female body parts/finger.png'),
-        img2: require('../../assets/female body parts/finger1.png')
+        img1: require('../../assets/female_body_parts/finger.png'),
+        img2: require('../../assets/female_body_parts/finger1.png')
     },
     {
         id: 19,
         name: 'Neck',
-        img1: require('../../assets/female body parts/neck.png'),
-        img2: require('../../assets/female body parts/neck1.png')
+        img1: require('../../assets/female_body_parts/neck.png'),
+        img2: require('../../assets/female_body_parts/neck1.png')
     },
     {
         id: 20,
         name: 'Stomach',
-        img1: require('../../assets/female body parts/stomach.png'),
-        img2: require('../../assets/female body parts/stomach1.png')
+        img1: require('../../assets/female_body_parts/stomach.png'),
+        img2: require('../../assets/female_body_parts/stomach1.png')
     },
     {
         id: 21,
         name: 'Elbow',
-        img1: require('../../assets/female body parts/elbow.png'),
-        img2: require('../../assets/female body parts/elbow1.png')
+        img1: require('../../assets/female_body_parts/elbow.png'),
+        img2: require('../../assets/female_body_parts/elbow1.png')
     },
 ];
 

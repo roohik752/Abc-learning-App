@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList }
 import LinearGradient from 'react-native-linear-gradient';
 import Tts from 'react-native-tts';
 import styled from 'styled-components/native';
+import LottieView from 'lottie-react-native';
 import {
   responsiveHeight,
   responsiveWidth,
@@ -62,24 +63,31 @@ const NumberProductWithImage = ({ route, navigation }) => {
           </View>
         </View>
         <Container>
+          <LottieView
+            source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
+            autoPlay
+            loop
+
+            style={{ position: 'absolute', zIndex: 100, pointerEvents: 'none' }}
+          />
           <View style={styles.outer}>
             <View style={styles.box1}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-              <View style={{flex: 1}}>
-              {!selectedNumber.img2? null:
-              <Text style={styles.text1}>{selectedNumber.text1}</Text>}
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
+                <View style={{ flex: 1 }}>
+                  {!selectedNumber.img2 ? null :
+                    <Text style={styles.text1}>{selectedNumber.text1}</Text>}
+                </View>
+                <TouchableOpacity
+                  style={{ alignSelf: 'flex-end' }}
+                  onPress={() => navigation.goBack()}
+                >
+                  <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
+                </TouchableOpacity>
               </View>
-              <TouchableOpacity
-              style={{alignSelf: 'flex-end'}}
-                onPress={() => navigation.goBack()}
-              >
-                <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
-              </TouchableOpacity>
-            </View>
               <TouchableOpacity onPress={handleSpeak} >
-                {selectedNumber.img2?
-                <Image source={selectedNumber.img2} style={styles.image3} resizeMode='contain' />
-                :<Text style={styles.text3}>{selectedNumber.text1}</Text>}
+                {selectedNumber.img2 ?
+                  <Image source={selectedNumber.img2} style={styles.image3} resizeMode='contain' />
+                  : <Text style={styles.text3}>{selectedNumber.text1}</Text>}
               </TouchableOpacity>
             </View>
             <View style={styles.box2}>

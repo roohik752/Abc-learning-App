@@ -46,7 +46,7 @@ const MaleProfile = ({ navigation }) => {
             <View style={{ flexDirection: 'row', padding: 15, marginTop: 40, justifyContent: 'space-between' }}>
                 <TouchableOpacity
                     style={{ flexDirection: 'row' }}
-                  onPress={() => navigation.navigate('Profile')}
+                  onPress={() => navigation.goBack('Profile')}
                 >
                     <Image source={require('../assets/img/boy1.png')} style={styles.image} />
                     <Text style={styles.text}>Hi</Text><Text style={styles.text1}>Charlie</Text>
@@ -67,7 +67,7 @@ const MaleProfile = ({ navigation }) => {
                         renderItem={renderProfile}
                         keyExtractor={(item, index) => index.toString()}
                         numColumns={2}
-                        contentContainerStyle={{ marginTop: 30 }}
+                        // contentContainerStyle={{ marginTop: 30 }}
                     />
                 </View>
             </Container>
@@ -134,7 +134,10 @@ const styles = StyleSheet.create({
         height: 150,
         width: 150,
         backgroundColor: '#000',
-        borderRadius: 100
+        borderRadius: 100,
+        // margin: 10
+        marginHorizontal: 10,
+        marginVertical: 10,
     },
     image2: {
         height: 120,

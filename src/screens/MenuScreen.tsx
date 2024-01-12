@@ -5,6 +5,7 @@ import Sidebar from './Sidebars';
 import Profile from './Profile';
 import MaleProfile from './MaleProfile';
 import { Dimensions } from 'react-native';
+import FemaleProfile from './FemaleProfile';
 
 const RightDrawer = createDrawerNavigator();
 
@@ -26,6 +27,7 @@ const MenuScreen = () => {
       <RightDrawer.Screen name="Home" component={Home} />
       <RightDrawer.Screen name="Profile" component={Profile} />
       <RightDrawer.Screen name="MaleProfile" component={MaleProfile} />
+      <RightDrawer.Screen name="FemaleProfile" component={FemaleProfile} />
     </RightDrawer.Navigator>
   );
 }

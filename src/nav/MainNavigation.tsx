@@ -152,6 +152,13 @@ import ColoursName from 'src/screens/Sidebar/ColoursName';
 import ColoursNameWithImage from 'src/screens/Sidebar/ColoursNameWithImage';
 import ShapesName from 'src/screens/Sidebar/ShapesName';
 import ShapesNameWithImage from 'src/screens/Sidebar/ShapesNameWithImage';
+import TableList from 'src/screens/Sidebar/TableList';
+import TableWithSound from 'src/screens/Sidebar/TableWithSound';
+import BodyParts from 'src/screens/Sidebar/BodyParts';
+import MaleBodyParts from 'src/screens/Sidebar/MaleBodyParts';
+import FemaleBodyParts from 'src/screens/Sidebar/FemaleBodyParts';
+import MaleBodyPartsWithImage from 'src/screens/Sidebar/MaleBodyPartsWithImage';
+import FemaleBodyPartsWithImage from 'src/screens/Sidebar/FemaleBodyPartsWithImage';
 
 const MainNavigation = () => {
   return (
@@ -193,6 +200,13 @@ const MainNavigation = () => {
           <Screen name={ROUTERS.ColoursNameWithImage} component={ColoursNameWithImage} options={{ headerShown: false }} />
           <Screen name={ROUTERS.ShapesName} component={ShapesName} options={{ headerShown: false }} />
           <Screen name={ROUTERS.ShapesNameWithImage} component={ShapesNameWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.TableList} component={TableList} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.TableWithSound} component={TableWithSound} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.BodyParts} component={BodyParts} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.MaleBodyParts} component={MaleBodyParts} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.MaleBodyPartsWithImage} component={MaleBodyPartsWithImage} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.FemaleBodyParts} component={FemaleBodyParts} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.FemaleBodyPartsWithImage} component={FemaleBodyPartsWithImage} options={{ headerShown: false }} />
         </Navigator>
       </NavigationContainer>
     </ApplicationProvider>

@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, } from 're
 import LinearGradient from 'react-native-linear-gradient';
 import Tts from 'react-native-tts';
 import styled from 'styled-components/native';
+import LottieView from 'lottie-react-native';
 import {
   responsiveHeight,
   responsiveWidth,
@@ -61,6 +62,13 @@ const AnimalsNameWithImage = ({ route, navigation }) => {
           </View>
         </View>
         <Container>
+          <LottieView
+            source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
+            autoPlay
+            loop
+
+            style={{ position: 'absolute', zIndex: 100, pointerEvents: 'none' }}
+          />
           <View style={styles.outer}>
             <View style={styles.box1}>
               <TouchableOpacity
