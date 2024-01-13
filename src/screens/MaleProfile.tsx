@@ -46,7 +46,7 @@ const MaleProfile = ({ navigation }) => {
             <View style={{ flexDirection: 'row', padding: 15, marginTop: 40, justifyContent: 'space-between' }}>
                 <TouchableOpacity
                     style={{ flexDirection: 'row' }}
-                  onPress={() => navigation.goBack('Profile')}
+                  onPress={() => navigation.navigate('Profile')}
                 >
                     <Image source={require('../assets/img/boy1.png')} style={styles.image} />
                     <Text style={styles.text}>Hi</Text><Text style={styles.text1}>Charlie</Text>

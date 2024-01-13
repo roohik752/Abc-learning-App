@@ -110,6 +110,6 @@ const BodyParts = ({navigation}) => {
         color: '#fff',
         fontWeight: '700',
         textAlign: 'center',
-        paddingVertical: 100
+        paddingTop: 100
       },
     })
