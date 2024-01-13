@@ -29,9 +29,9 @@ const HindiProductWithImage = ({ route, navigation }) => {
   useEffect(() => {
     // Initialize Tts when the component mounts
     Tts.setDefaultRate(0.3);
-    Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
+    // Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
     // Tts.setDefaultLanguage('');
-    // Tts.setDefaultLanguage('hi');
+    Tts.setDefaultLanguage('hi-IN');
 
     // Add event listener for TTS start
     const ttsStartListener = (event) => {

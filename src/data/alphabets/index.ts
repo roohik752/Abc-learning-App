@@ -413,7 +413,7 @@ export const HindiConsonant = [
   {
     id: 4,
     text1: 'घ',
-    text2: 'घ से घड़ीे',
+    text2: 'घ से घडी',
     colorActive: 'DD0000',
     isActive: false,
     img1: require('../../assets/img/घ.png'),

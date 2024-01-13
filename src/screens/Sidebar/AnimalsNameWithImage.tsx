@@ -14,10 +14,10 @@ const AnimalsNameWithImage = ({ route, navigation }) => {
 
   useEffect(() => {
     // Initialize Tts when the component mounts
-    Tts.setDefaultRate(0.5);
-    Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
+    Tts.setDefaultRate(0.3);
+    Tts.setDefaultPitch(1.0);
     // Tts.setDefaultLanguage('');
-    // Tts.setDefaultLanguage('en');
+    Tts.setDefaultLanguage('hi-IN');
 
     // Add event listener for TTS start
     const ttsStartListener = (event) => {
