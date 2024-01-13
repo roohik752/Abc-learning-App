@@ -14,7 +14,7 @@ const NumberProductWithImage = ({ route, navigation }) => {
 
   useEffect(() => {
     // Initialize Tts when the component mounts
-    Tts.setDefaultRate(0.5);
+    Tts.setDefaultRate(0.3);
     Tts.setDefaultPitch(1.0);
     // Tts.setDefaultLanguage('');
     Tts.setDefaultLanguage('hi-IN');
