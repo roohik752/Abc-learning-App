@@ -30,6 +30,7 @@ const ColoursNameWithImage = ({ route, navigation }) => {
 
     return () => {
       // Remove event listener when the component unmounts
+      Tts.stop();
       Tts.removeEventListener('tts-start', ttsStartListener);
     };
   }, []);
@@ -41,6 +42,14 @@ const ColoursNameWithImage = ({ route, navigation }) => {
         .catch((error) => console.log('Error starting text-to-speech:', error));
     }
   };
+
+  const handleBackPress = () => {
+    // Stop TTS when the back button is pressed
+    Tts.stop();
+    // Navigate back
+    navigation.goBack();
+  };
+
   return (
     <LinearGradient
       colors={['#FFFFFF', '#4CBB17']}
@@ -73,7 +82,7 @@ const ColoursNameWithImage = ({ route, navigation }) => {
             <View style={[styles.box1, { backgroundColor: selectedColour.name === 'Black' ? '#FFF' : '#000' }]}>
               <TouchableOpacity
                 style={{ alignSelf: 'flex-end' }}
-                onPress={() => navigation.goBack()}
+                onPress={handleBackPress}
               >
                 <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
               </TouchableOpacity>

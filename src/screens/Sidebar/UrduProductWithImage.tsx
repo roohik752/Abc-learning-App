@@ -44,6 +44,7 @@ const UrduProductWithImage = ({ route, navigation }) => {
 
     return () => {
       // Remove event listener when the component unmounts
+      Tts.stop();
       Tts.removeEventListener('tts-start', ttsStartListener);
     };
   }, []);
@@ -54,6 +55,13 @@ const UrduProductWithImage = ({ route, navigation }) => {
         .then(() => console.log('Text-to-speech started'))
         .catch((error) => console.log('Error starting text-to-speech:', error));
     }
+  };
+
+  const handleBackPress = () => {
+    // Stop TTS when the back button is pressed
+    Tts.stop();
+    // Navigate back
+    navigation.goBack();
   };
 
   return (
@@ -88,7 +96,7 @@ const UrduProductWithImage = ({ route, navigation }) => {
             <View style={styles.box1}>
               <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
                 <TouchableOpacity
-                  onPress={() => navigation.goBack()}
+                  onPress={handleBackPress}
                 >
                   <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
                 </TouchableOpacity>

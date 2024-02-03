@@ -1,7 +1,128 @@
-import React, { useState, useEffect } from 'react';
-import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
+// import React, { useEffect } from 'react';
+// import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
+// import LinearGradient from 'react-native-linear-gradient';
+// import Tts from 'react-native-tts';
+// import styled from 'styled-components/native';
+// import LottieView from 'lottie-react-native';
+// import {
+//   responsiveHeight,
+//   responsiveWidth,
+// } from 'react-native-responsive-dimensions';
+
+// const EnglishProductWithImage = ({ route, navigation }) => {
+//   const { selectedAlphabet } = route.params;
+
+//   useEffect(() => {
+//     // Initialize Tts when the component mounts
+//     Tts.setDefaultRate(0.3);
+//     // Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
+//     // Tts.setDefaultLanguage('zh-TW');
+//     // Tts.setDefaultLanguage('zh-CN');
+//     // Tts.setDefaultPitch(2);
+//     // Tts.setDefaultLanguage('');
+//     Tts.setDefaultLanguage('hi-IN');
+
+//     // Add event listener for TTS start
+//     const ttsStartListener = (event) => {
+//       if (event && event.eventName === 'tts-start') {
+//         console.log('TTS Engine Started');
+//         console.log('tts', Tts)
+//       }
+//     };
+
+//     Tts.addEventListener('tts-start', ttsStartListener);
+
+//     return () => {
+//       // Remove event listener when the component unmounts
+//       Tts.removeEventListener('tts-start', ttsStartListener);
+//     };
+//   }, []);
+
+//   const handleSpeak = () => {
+//     if (selectedAlphabet) {
+//       Tts.speak(selectedAlphabet.text2)
+//         .then(() => console.log('tts', Tts.voices))
+//         .catch((error) => console.log('Error starting text-to-speech:', error));
+//     }
+//   };
+
+//   async function fetchAndLogVoices() {
+//     try {
+//       const voices = await Tts.voices();
+//       const availableVoices = voices
+//         .filter(v => !v.networkConnectionRequired && !v.notInstalled)
+//         .map(v => {
+//           return { id: v.id, name: v.name, language: v.language };
+//         });
+
+//       console.log("Available Voices:", availableVoices);
+//     } catch (error) {
+//       console.error("Error fetching voices:", error);
+//     }
+//   }
+
+//   // Call the function
+//   fetchAndLogVoices();
+
+//   return (
+//     <LinearGradient
+//       colors={['#FFFFFF', '#4CBB17']}
+//       style={styles.linearGradient}
+//       start={{ x: 0.4, y: 0.4 }}
+//     >
+
+//       <ScrollView showsVerticalScrollIndicator={false}>
+//         <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+//           <TouchableOpacity
+//             onPress={() => navigation.goBack()}
+//             style={{ flexDirection: 'row' }}
+//           >
+//             <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
+//             <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+//             <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+//           </TouchableOpacity>
+//           <View style={{ alignSelf: 'center' }}>
+//             <Text style={styles.text}>Alphabets</Text>
+//           </View>
+//         </View>
+//         <Container>
+//           <LottieView
+//             source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
+//             autoPlay
+//             loop
+
+//             style={{ position: 'absolute', zIndex: 100, pointerEvents: 'none' }}
+//           />
+//           <View style={styles.outer}>
+//             <View style={styles.box1}>
+//               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+//                 <Text style={styles.text1}>{selectedAlphabet.text1}</Text>
+//                 <TouchableOpacity
+//                   onPress={() => navigation.goBack()}
+//                 >
+//                   <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
+//                 </TouchableOpacity>
+//               </View>
+//               <TouchableOpacity onPress={handleSpeak} >
+//                 <Image source={selectedAlphabet.img2} style={styles.image3} resizeMode='contain' />
+//               </TouchableOpacity>
+//             </View>
+//             <View style={styles.box2}>
+//               <Text style={styles.text2}>{selectedAlphabet.text2}</Text>
+//               <TouchableOpacity onPress={handleSpeak} >
+//                 <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
+//               </TouchableOpacity>
+//             </View>
+//           </View>
+//         </Container>
+//       </ScrollView>
+//     </LinearGradient>
+//   );
+// };
+
+import React, { useEffect } from 'react';
+import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Alphabets, { Alphabet } from '../../data/alphabets'; // Replace with the correct path
 import Tts from 'react-native-tts';
 import styled from 'styled-components/native';
 import LottieView from 'lottie-react-native';
@@ -10,57 +131,27 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-// import { PanGestureHandler, State } from 'react-native-gesture-handler';
-// import Animated, {
-//   useSharedValue,
-//   useAnimatedStyle,
-//   withSpring,
-// } from 'react-native-reanimated';
-
 const EnglishProductWithImage = ({ route, navigation }) => {
   const { selectedAlphabet } = route.params;
-
-  // // Animated values for bubble animation
-  // const translateX = useSharedValue(0);
-  // const translateY = useSharedValue(0);
-
-  // // Animated styles for bubble
-  // const animatedStyle = useAnimatedStyle(() => {
-  //   return {
-  //     transform: [
-  //       { translateX: translateX.value },
-  //       { translateY: translateY.value },
-  //     ],
-  //   };
-  // });
-
-  // // Function to handle bubble press
-  // const handleBubblePress = () => {
-  //   // Update the animated values
-  //   translateX.value = withSpring(Math.random() * 200 - 100);
-  //   translateY.value = withSpring(Math.random() * 200 - 100);
-  // };
 
   useEffect(() => {
     // Initialize Tts when the component mounts
     Tts.setDefaultRate(0.3);
-    // Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
     Tts.setDefaultLanguage('hi-IN');
-    // Tts.setDefaultPitch(2);
-    // Tts.setDefaultLanguage('');
-    // Tts.setDefaultLanguage('hi-IN');
 
     // Add event listener for TTS start
     const ttsStartListener = (event) => {
       if (event && event.eventName === 'tts-start') {
         console.log('TTS Engine Started');
+        console.log('tts', Tts);
       }
     };
 
     Tts.addEventListener('tts-start', ttsStartListener);
 
     return () => {
-      // Remove event listener when the component unmounts
+      // Stop TTS and remove event listener when the component unmounts
+      Tts.stop();
       Tts.removeEventListener('tts-start', ttsStartListener);
     };
   }, []);
@@ -68,9 +159,16 @@ const EnglishProductWithImage = ({ route, navigation }) => {
   const handleSpeak = () => {
     if (selectedAlphabet) {
       Tts.speak(selectedAlphabet.text2)
-        .then(() => console.log('Text-to-speech started'))
+        .then(() => console.log('tts', Tts.voices))
         .catch((error) => console.log('Error starting text-to-speech:', error));
     }
+  };
+
+  const handleBackPress = () => {
+    // Stop TTS when the back button is pressed
+    Tts.stop();
+    // Navigate back
+    navigation.goBack();
   };
 
   return (
@@ -79,11 +177,10 @@ const EnglishProductWithImage = ({ route, navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
           <TouchableOpacity
-            onPress={() => navigation.goBack()}
+            onPress={handleBackPress}
             style={{ flexDirection: 'row' }}
           >
             <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
@@ -99,18 +196,14 @@ const EnglishProductWithImage = ({ route, navigation }) => {
             source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path
             autoPlay
             loop
-
             style={{ position: 'absolute', zIndex: 100, pointerEvents: 'none' }}
           />
-          {/* <PanGestureHandler onGestureEvent={handleBubblePress}>
-            <Animated.View style={[styles.bubble, animatedStyle]} />
-          </PanGestureHandler> */}
           <View style={styles.outer}>
             <View style={styles.box1}>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text style={styles.text1}>{selectedAlphabet.text1}</Text>
                 <TouchableOpacity
-                  onPress={() => navigation.goBack()}
+                  onPress={handleBackPress}
                 >
                   <Image source={require('../../assets/img/back.png')} resizeMode='contain' />
                 </TouchableOpacity>
@@ -120,7 +213,6 @@ const EnglishProductWithImage = ({ route, navigation }) => {
               </TouchableOpacity>
             </View>
             <View style={styles.box2}>
-              {/* <Text style={styles.text2}>{selectedAlphabet.text1} for {selectedAlphabet.textEng}</Text> */}
               <Text style={styles.text2}>{selectedAlphabet.text2}</Text>
               <TouchableOpacity onPress={handleSpeak} >
                 <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
