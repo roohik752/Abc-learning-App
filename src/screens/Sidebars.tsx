@@ -92,6 +92,7 @@ const Sidebar = ({ navigation }) => {
                             </Text>
                         </TouchableOpacity>
                         <TouchableOpacity
+                            onPress={() => navigation.navigate('QuestionAnswer')}
                             style={styles.row}
                         >
                             <Image source={require('../assets/img/pin2.png')} style={styles.img1} />

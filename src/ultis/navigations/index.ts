@@ -54,6 +54,7 @@ const ROUTERS = {
   MaleBodyPartsWithImage: 'MaleBodyPartsWithImage',
   FemaleBodyParts: 'FemaleBodyParts',
   FemaleBodyPartsWithImage: 'FemaleBodyPartsWithImage',
+  // QuestionAnswer: 'QuestionAnswer',
 };
 
 export { Stack, NavigationContainer, Navigator, Screen, ROUTERS };

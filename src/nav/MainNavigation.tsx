@@ -159,6 +159,7 @@ import MaleBodyParts from 'src/screens/Sidebar/MaleBodyParts';
 import FemaleBodyParts from 'src/screens/Sidebar/FemaleBodyParts';
 import MaleBodyPartsWithImage from 'src/screens/Sidebar/MaleBodyPartsWithImage';
 import FemaleBodyPartsWithImage from 'src/screens/Sidebar/FemaleBodyPartsWithImage';
+// import QuestionAnswer from 'src/screens/Sidebar/QuestionAnswer';
 
 const MainNavigation = () => {
   return (
@@ -207,6 +208,7 @@ const MainNavigation = () => {
           <Screen name={ROUTERS.MaleBodyPartsWithImage} component={MaleBodyPartsWithImage} options={{ headerShown: false }} />
           <Screen name={ROUTERS.FemaleBodyParts} component={FemaleBodyParts} options={{ headerShown: false }} />
           <Screen name={ROUTERS.FemaleBodyPartsWithImage} component={FemaleBodyPartsWithImage} options={{ headerShown: false }} />
+          {/* <Screen name={ROUTERS.QuestionAnswer} component={QuestionAnswer} options={{ headerShown: false }} /> */}
         </Navigator>
       </NavigationContainer>
     </ApplicationProvider>
@@ -214,16 +216,3 @@ const MainNavigation = () => {
 };
 
 export default MainNavigation;
-
-// import React from 'react';
-// import { Text, View } from 'react-native';
-
-// const MainNavigation = () => {
-//   return (
-//     <View>
-//       <Text>helloooo</Text>
-//     </View>
-//   );
-// };
-
-// export default MainNavigation;

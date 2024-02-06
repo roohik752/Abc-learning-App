@@ -137,7 +137,8 @@ const EnglishProductWithImage = ({ route, navigation }) => {
   useEffect(() => {
     // Initialize Tts when the component mounts
     Tts.setDefaultRate(0.3);
-    Tts.setDefaultLanguage('hi-IN');
+    // Tts.setDefaultLanguage('hi-IN');
+    Tts.setDefaultLanguage('en-IE');
 
     // Add event listener for TTS start
     const ttsStartListener = (event) => {
@@ -163,6 +164,24 @@ const EnglishProductWithImage = ({ route, navigation }) => {
         .catch((error) => console.log('Error starting text-to-speech:', error));
     }
   };
+
+  async function fetchAndLogVoices() {
+    try {
+      const voices = await Tts.voices();
+      const availableVoices = voices
+        .filter(v => !v.networkConnectionRequired && !v.notInstalled)
+        .map(v => {
+          return { id: v.id, name: v.name, language: v.language };
+        });
+
+      console.log("Available Voices:", availableVoices);
+    } catch (error) {
+      console.error("Error fetching voices:", error);
+    }
+  }
+
+  // Call the function
+  fetchAndLogVoices();
 
   const handleBackPress = () => {
     // Stop TTS when the back button is pressed
