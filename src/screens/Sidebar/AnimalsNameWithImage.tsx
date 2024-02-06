@@ -17,6 +17,7 @@ const AnimalsNameWithImage = ({ route, navigation }) => {
     Tts.setDefaultRate(0.3);
     Tts.setDefaultPitch(1.0);
     // Tts.setDefaultLanguage('');
+    Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
     Tts.setDefaultLanguage('hi-IN');
 
     // Add event listener for TTS start

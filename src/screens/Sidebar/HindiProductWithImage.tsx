@@ -30,8 +30,9 @@ const HindiProductWithImage = ({ route, navigation }) => {
   useEffect(() => {
     // Initialize Tts when the component mounts
     Tts.setDefaultRate(0.3);
+    Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
     Tts.setDefaultLanguage('hi-IN');
-    Tts.setDucking(true);
+    // Tts.setDucking(true);
 
     // Add event listener for TTS start
     const ttsStartListener = (event) => {
@@ -43,12 +44,12 @@ const HindiProductWithImage = ({ route, navigation }) => {
     Tts.addEventListener('tts-start', ttsStartListener);
 
     // Check if the device is a Samsung device
-    const isSamsungDevice = DeviceInfo.getManufacturerSync() === 'Samsung';
+    const isSamsungDevice = DeviceInfo.getManufacturerSync() === 'OPPO';
 
     if (isSamsungDevice) {
       Alert.alert(
-        'Samsung Device Detected',
-        'Alert message related to voice problem on Samsung devices.'
+        'OPPO Device Detected',
+        'Alert message related to voice problem on OPPO devices.'
       );
     }
 
