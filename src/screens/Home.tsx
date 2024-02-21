@@ -1,6 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import styled from 'styled-components/native';
+import {
+    responsiveHeight,
+    responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 const Home = ({ navigation }) => {
 
@@ -70,11 +75,23 @@ const Home = ({ navigation }) => {
                     </ImageBackground>
                 </TouchableOpacity>
             </View>
+
         </LinearGradient>
     )
 }
 
 export default Home;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
     linearGradient: {

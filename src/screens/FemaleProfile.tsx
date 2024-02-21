@@ -73,7 +73,7 @@ const FemaleProfile = ({ navigation }) => {
             </Container>
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('MaleProfile')}
+                onPress={() => navigation.navigate('FemaleProfile')}
             >
                 <Text style={styles.text2}>Continue</Text>
             </TouchableOpacity>
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'center',
         marginBottom: 40,
-        marginTop: -200
+        marginTop: -180
     },
     text2: {
         fontSize: 18,

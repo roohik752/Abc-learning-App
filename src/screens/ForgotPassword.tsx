@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
+import styled from 'styled-components/native';
+import {
+    responsiveHeight,
+    responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 const ForgotPassword = ({ navigation }) => {
 
@@ -14,38 +19,51 @@ const ForgotPassword = ({ navigation }) => {
             start={{ x: 0.4, y: 0.4 }}
         >
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
-                <Text style={styles.Heading}>MadeInIndiaBook</Text>
-                <Text style={styles.Heading}>LearningApp</Text>
-                <View style={{ marginTop: 50 }}>
-                    <Text style={styles.Heading1}>Enter the phone number on which OTP will be</Text>
-                    <Text style={styles.Heading1}>shared to reset your password</Text>
-                    <View style={styles.box}>
-                        <Image source={require('../assets/img/Phone.png')} style={styles.icon} />
-                        <TextInput
-                            style={styles.textInput}
-                            placeholder="Mobile Number"
-                            // placeholderTextColor='#000'
-                            placeholderTextColor='rgba(0,0,0,0.5)'
-                            onChangeText={(text) => setNumber(text)}
-                            value={number}
-                            keyboardType="numeric"
-                            maxLength={10}
-                        />
+                <Container>
+                    <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
+                    <Text style={styles.Heading}>MadeInIndiaBook</Text>
+                    <Text style={styles.Heading}>LearningApp</Text>
+                    <View style={{ marginTop: 50 }}>
+                        <Text style={styles.Heading1}>Enter the phone number on which OTP will be</Text>
+                        <Text style={styles.Heading1}>shared to reset your password</Text>
+                        <View style={styles.box}>
+                            <Image source={require('../assets/img/Phone.png')} style={styles.icon} />
+                            <TextInput
+                                style={styles.textInput}
+                                placeholder="Mobile Number"
+                                // placeholderTextColor='#000'
+                                placeholderTextColor='rgba(0,0,0,0.5)'
+                                onChangeText={(text) => setNumber(text)}
+                                value={number}
+                                keyboardType="numeric"
+                                maxLength={10}
+                            />
+                        </View>
                     </View>
-                </View>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => navigation.navigate('OTP')}
-                >
-                    <Text style={styles.text}>Send OTP</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => navigation.navigate('OTP')}
+                    >
+                        <Text style={styles.text}>Send OTP</Text>
+                    </TouchableOpacity>
+                </Container>
             </ScrollView>
         </LinearGradient>
     )
 }
 
 export default ForgotPassword;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
     linearGradient: {

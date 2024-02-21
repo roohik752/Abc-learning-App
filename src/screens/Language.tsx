@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import styled from 'styled-components/native';
+import {
+    responsiveHeight,
+    responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 const Language = ({ navigation }) => {
 
@@ -69,26 +74,39 @@ const Language = ({ navigation }) => {
             style={styles.linearGradient}
             start={{ x: 0.4, y: 0.4 }}
         >
-            <Text style={styles.Heading}>Select Language</Text>
-            <View style={{ marginTop: 50 }}>
-                <FlatList
-                    data={language}
-                    renderItem={renderItem}
-                    numColumns={2}
-                    keyExtractor={(item, index) => index.toString()}
-                />
-                <TouchableOpacity
-                    style={styles.button1}
-                    onPress={handleContinue}
-                >
-                    <Text style={styles.text1}>Continue</Text>
-                </TouchableOpacity>
-            </View>
+            <Container>
+                <Text style={styles.Heading}>Select Language</Text>
+                <View style={{ marginTop: 50 }}>
+                    <FlatList
+                        data={language}
+                        renderItem={renderItem}
+                        numColumns={2}
+                        keyExtractor={(item, index) => index.toString()}
+                    />
+                    <TouchableOpacity
+                        style={styles.button1}
+                        onPress={handleContinue}
+                    >
+                        <Text style={styles.text1}>Continue</Text>
+                    </TouchableOpacity>
+                </View>
+            </Container>
         </LinearGradient>
     )
 }
 
 export default Language;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
     linearGradient: {

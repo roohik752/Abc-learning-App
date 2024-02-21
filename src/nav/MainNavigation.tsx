@@ -159,7 +159,14 @@ import MaleBodyParts from 'src/screens/Sidebar/MaleBodyParts';
 import FemaleBodyParts from 'src/screens/Sidebar/FemaleBodyParts';
 import MaleBodyPartsWithImage from 'src/screens/Sidebar/MaleBodyPartsWithImage';
 import FemaleBodyPartsWithImage from 'src/screens/Sidebar/FemaleBodyPartsWithImage';
-// import QuestionAnswer from 'src/screens/Sidebar/QuestionAnswer';
+import QuestionAnswer from 'src/screens/Sidebar/QuestionAnswer';
+import VehicleQuestionAnswer from 'src/screens/Sidebar/VehicleQuestionAnswer';
+import AnimalQuestionAnswer from 'src/screens/Sidebar/AnimalQuestionAnswer';
+import FruitQuestionAnswer from 'src/screens/Sidebar/FruitQuestionAnswer';
+import ColourQuestionAnswer from 'src/screens/Sidebar/ColourQuestionAnswer';
+import VegetableQuestionAnswer from 'src/screens/Sidebar/VegetableQuestionAnswer';
+import ShapeQuestionAnswer from 'src/screens/Sidebar/ShapeQuestionAnswer';
+
 
 const MainNavigation = () => {
   return (
@@ -208,7 +215,13 @@ const MainNavigation = () => {
           <Screen name={ROUTERS.MaleBodyPartsWithImage} component={MaleBodyPartsWithImage} options={{ headerShown: false }} />
           <Screen name={ROUTERS.FemaleBodyParts} component={FemaleBodyParts} options={{ headerShown: false }} />
           <Screen name={ROUTERS.FemaleBodyPartsWithImage} component={FemaleBodyPartsWithImage} options={{ headerShown: false }} />
-          {/* <Screen name={ROUTERS.QuestionAnswer} component={QuestionAnswer} options={{ headerShown: false }} /> */}
+          <Screen name={ROUTERS.QuestionAnswer} component={QuestionAnswer} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.VehicleQuestionAnswer} component={VehicleQuestionAnswer} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.AnimalQuestionAnswer} component={AnimalQuestionAnswer} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.FruitQuestionAnswer} component={FruitQuestionAnswer} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.ColourQuestionAnswer} component={ColourQuestionAnswer} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.VegetableQuestionAnswer} component={VegetableQuestionAnswer} options={{ headerShown: false }} />
+          <Screen name={ROUTERS.ShapeQuestionAnswer} component={ShapeQuestionAnswer} options={{ headerShown: false }} />
         </Navigator>
       </NavigationContainer>
     </ApplicationProvider>

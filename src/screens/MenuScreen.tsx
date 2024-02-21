@@ -6,6 +6,11 @@ import Profile from './Profile';
 import MaleProfile from './MaleProfile';
 import { Dimensions } from 'react-native';
 import FemaleProfile from './FemaleProfile';
+import styled from 'styled-components/native';
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 const RightDrawer = createDrawerNavigator();
 
@@ -33,5 +38,16 @@ const MenuScreen = () => {
 }
 
 export default MenuScreen;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 

@@ -17,6 +17,11 @@ import axios from 'axios';
 import Geolocation from '@react-native-community/geolocation';
 import AsyncStorage from '@react-native-community/async-storage';
 import { encode, decode } from 'base-64';
+import styled from 'styled-components/native';
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 const API_BASE_URL = 'https://api.maple.com';
 const CITY_API_ENDPOINT = '/city';
@@ -81,38 +86,38 @@ const Registration = ({ navigation }) => {
     generateToken()
   }, [location])
 
-useEffect(()=>{
-       if(data){
-        if(data.locality){
-          setCity(`${data.locality}`)
-        }else{
-          setCity(`${data.city}`)
-        }
-        setDistrict(data.district);
-        setPincode(data.pincode);
-        setState(data.state);
-        setCountry(data.area)
+  useEffect(() => {
+    if (data) {
+      if (data.locality) {
+        setCity(`${data.locality}`)
+      } else {
+        setCity(`${data.city}`)
       }
-},[data])
+      setDistrict(data.district);
+      setPincode(data.pincode);
+      setState(data.state);
+      setCountry(data.area)
+    }
+  }, [data])
 
-useEffect(()=>{
-  if(searchData){
-  console.log(">>>>>>>>>>>>>>>>>>>>copResults",searchData.copResults[0])
+  useEffect(() => {
+    if (searchData) {
+      console.log(">>>>>>>>>>>>>>>>>>>>copResults", searchData.copResults[0])
 
-    setCity(`${searchData.copResults[0].locality}`);
-  setDistrict(searchData.copResults[0].district);
-  setPincode(searchData.copResults[0].pincode);
-  setState(searchData.copResults[0].state);
-  // setState(searchData.copResults[0].state);
-}
-},[searchData])
+      setCity(`${searchData.copResults[0].locality}`);
+      setDistrict(searchData.copResults[0].district);
+      setPincode(searchData.copResults[0].pincode);
+      setState(searchData.copResults[0].state);
+      // setState(searchData.copResults[0].state);
+    }
+  }, [searchData])
 
   const reverseGeocode = async () => {
-console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
+    console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
     const apiKey = '1fd297cf-9586-4d48-a5f7-09e009761c15';
     // // ======my credentials======
     // const apiUrl = `https://apis.mappls.com/advancedmaps/v1/2d149d9a7b304e5aab5ce470bc6f8512/rev_geocode?lat=${location.latitude}&lng=${location.longitude}`
-    
+
     // // ======Sandhya's credentials======
     const apiUrl = `https://apis.mappls.com/advancedmaps/v1/7be3c6c9f3c138c7f6fe9f0d7f0746c2/rev_geocode?lat=${location.latitude}&lng=${location.longitude}`
 
@@ -122,7 +127,7 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
       if (response.data.results.length > 0) {
         setData(response.data.results[0])
 
-        console.log(pincode,'formattedAddress', response.data.results[0].pincode)
+        console.log(pincode, 'formattedAddress', response.data.results[0].pincode)
       } else {
         console.log('No results found');
       }
@@ -143,7 +148,7 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
         }
       );
       const data = await response.json();
-  
+
       if (data.copResults) {
         // setDistrict(data.copResults.district);
         // setPincode(data.copResults.pincode);
@@ -156,7 +161,7 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
       console.error('Error fetching geocode data:', error);
     }
   };
-  
+
 
   const fetchCityData = async () => {
     try {
@@ -202,7 +207,7 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
       }
 
       // Set both city and district
-     setSearchData(districtData)
+      setSearchData(districtData)
 
       // Fetch other information if needed
       await fetchData();
@@ -317,7 +322,7 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
     />
   );
 
- 
+
   const generateToken = async () => {
     try {
       const storedToken = '1fd297cf-9586-4d48-a5f7-09e009761c15'
@@ -394,7 +399,7 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
       console.error('Error fetching pincode suggestions:', error);
     }
   };
-  
+
   const handleStateChange = async (text) => {
     setState(text);
     try {
@@ -408,7 +413,7 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
         }
       );
       const data = await response.json();
-  
+
       if (data.suggestedLocations && data.suggestedLocations.length > 0) {
         setCountry(data.suggestedLocations[0].country);
       }
@@ -424,149 +429,162 @@ console.log(">>>>>>>>>>>>>>>>>Called<<<<<<<<<<<<<")
       start={{ x: 0.4, y: 0.4 }}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={styles.Heading}>Registration</Text>
-        <View style={{ marginTop: 40 }}>
-          <View style={styles.box}>
-            <Image
-              source={require('../assets/img/User.png')}
-              style={styles.icon}
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="Name"
-              // placeholderTextColor="#000"
-              placeholderTextColor='rgba(0,0,0,0.5)'
-              onChangeText={(text) => setName(text)}
-              value={name}
-            />
-          </View>
-          <View style={styles.box}>
-            <Image
-              source={require('../assets/img/Phone.png')}
-              style={styles.icon}
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="Mobile Number"
-              // placeholderTextColor="#000"
-              placeholderTextColor='rgba(0,0,0,0.5)'
-              onChangeText={(number) => setNumber(number)}
-              value={number}
-              keyboardType="numeric"
-              maxLength={10}
-            />
-          </View>
-          <View style={styles.box}>
-            <Image
-              source={require('../assets/img/Key.png')}
-              style={styles.icon}
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="Password"
-              // placeholderTextColor="#000"
-              placeholderTextColor='rgba(0,0,0,0.5)'
-              onChangeText={(text) => setPassword(text)}
-              value={password}
-              secureTextEntry={!isVisible}
-            />
-            <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
+        <Container>
+          <Text style={styles.Heading}>Registration</Text>
+          <View style={{ marginTop: 40 }}>
+            <View style={styles.box}>
               <Image
-                source={
-                  isVisible
-                    ? require('../assets/img/hide.png')
-                    : require('../assets/img/Eye.png')
-                }
+                source={require('../assets/img/User.png')}
                 style={styles.icon}
               />
-            </TouchableOpacity>
-          </View>
-          <View>
-            <GenderSelection />
-          </View>
-          <View style={styles.box}>
-            <Image
-              source={require('../assets/img/City.png')}
-              style={styles.icon}
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="City"
-              // placeholderTextColor="#000"
-              placeholderTextColor='rgba(0,0,0,0.5)'
-              onChangeText={handleCityChange}
-              value={city}
-            />
-          </View>
-          {/* {suggestions.length > 0 && renderSuggestions()} */}
-          {renderSuggestions()}
-          {districtSuggestions.length > 0 && renderDistrictSuggestions()}
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <View style={styles.box1}>
               <TextInput
-                style={styles.textInput1}
-                placeholder="District"
+                style={styles.textInput}
+                placeholder="Name"
                 // placeholderTextColor="#000"
                 placeholderTextColor='rgba(0,0,0,0.5)'
-                onChangeText={handleDistrictChange}
-                value={district}
+                onChangeText={(text) => setName(text)}
+                value={name}
               />
             </View>
-
-            <View style={styles.box1}>
+            <View style={styles.box}>
+              <Image
+                source={require('../assets/img/Phone.png')}
+                style={styles.icon}
+              />
               <TextInput
-                style={styles.textInput1}
-                placeholder="Pin Code"
+                style={styles.textInput}
+                placeholder="Mobile Number"
                 // placeholderTextColor="#000"
                 placeholderTextColor='rgba(0,0,0,0.5)'
-                onChangeText={handlePincodeChange}
-                value={pincode}
+                onChangeText={(number) => setNumber(number)}
+                value={number}
                 keyboardType="numeric"
-                maxLength={6}
+                maxLength={10}
+              />
+            </View>
+            <View style={styles.box}>
+              <Image
+                source={require('../assets/img/Key.png')}
+                style={styles.icon}
+              />
+              <TextInput
+                style={styles.textInput}
+                placeholder="Password"
+                // placeholderTextColor="#000"
+                placeholderTextColor='rgba(0,0,0,0.5)'
+                onChangeText={(text) => setPassword(text)}
+                value={password}
+                secureTextEntry={!isVisible}
+              />
+              <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
+                <Image
+                  source={
+                    isVisible
+                      ? require('../assets/img/hide.png')
+                      : require('../assets/img/Eye.png')
+                  }
+                  style={styles.icon}
+                />
+              </TouchableOpacity>
+            </View>
+            <View>
+              <GenderSelection />
+            </View>
+            <View style={styles.box}>
+              <Image
+                source={require('../assets/img/City.png')}
+                style={styles.icon}
+              />
+              <TextInput
+                style={styles.textInput}
+                placeholder="City"
+                // placeholderTextColor="#000"
+                placeholderTextColor='rgba(0,0,0,0.5)'
+                onChangeText={handleCityChange}
+                value={city}
+              />
+            </View>
+            {/* {suggestions.length > 0 && renderSuggestions()} */}
+            {renderSuggestions()}
+            {districtSuggestions.length > 0 && renderDistrictSuggestions()}
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <View style={styles.box1}>
+                <TextInput
+                  style={styles.textInput1}
+                  placeholder="District"
+                  // placeholderTextColor="#000"
+                  placeholderTextColor='rgba(0,0,0,0.5)'
+                  onChangeText={handleDistrictChange}
+                  value={district}
+                />
+              </View>
+
+              <View style={styles.box1}>
+                <TextInput
+                  style={styles.textInput1}
+                  placeholder="Pin Code"
+                  // placeholderTextColor="#000"
+                  placeholderTextColor='rgba(0,0,0,0.5)'
+                  onChangeText={handlePincodeChange}
+                  value={pincode}
+                  keyboardType="numeric"
+                  maxLength={6}
+                />
+              </View>
+            </View>
+            <View style={styles.box}>
+              <Image
+                source={require('../assets/img/State.png')}
+                style={styles.icon}
+              />
+              <TextInput
+                style={styles.textInput}
+                placeholder="State"
+                // placeholderTextColor="#000"
+                placeholderTextColor='rgba(0,0,0,0.5)'
+                onChangeText={handleStateChange}
+                value={state}
+              />
+            </View>
+            <View style={styles.box}>
+              <Image
+                source={require('../assets/img/Country2.png')}
+                style={styles.icon}
+              />
+              <TextInput
+                style={styles.textInput}
+                placeholder="Country"
+                // placeholderTextColor="#000"
+                placeholderTextColor='rgba(0,0,0,0.5)'
+                onChangeText={(text) => setCountry(text)}
+                value={country}
               />
             </View>
           </View>
-          <View style={styles.box}>
-            <Image
-              source={require('../assets/img/State.png')}
-              style={styles.icon}
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="State"
-              // placeholderTextColor="#000"
-              placeholderTextColor='rgba(0,0,0,0.5)'
-              onChangeText={handleStateChange}
-              value={state}
-            />
-          </View>
-          <View style={styles.box}>
-            <Image
-              source={require('../assets/img/Country2.png')}
-              style={styles.icon}
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="Country"
-              // placeholderTextColor="#000"
-              placeholderTextColor='rgba(0,0,0,0.5)'
-              onChangeText={(text) => setCountry(text)}
-              value={country}
-            />
-          </View>
-        </View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('OTP2')}
-        >
-          <Text style={styles.text}>Submit</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('OTP2')}
+          >
+            <Text style={styles.text}>Submit</Text>
+          </TouchableOpacity>
+        </Container>
       </ScrollView>
     </LinearGradient>
   );
 };
 
 export default Registration;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
   linearGradient: {

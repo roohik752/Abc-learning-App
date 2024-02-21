@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import styled from 'styled-components/native';
+import {
+    responsiveHeight,
+    responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 
 const Sidebar = ({ navigation }) => {
@@ -152,7 +157,8 @@ const Sidebar = ({ navigation }) => {
                     </View>
                     <View style={styles.box}></View>
                 </View>
-                <View style={{ marginTop: 15, marginBottom: 15, paddingHorizontal: 15 }}>
+                {/* <View style={{ marginTop: 15, marginBottom: 15, paddingHorizontal: 15 }}> */}
+                <View style={{ justifyContent: 'space-around', marginBottom: 15, marginLeft: 15, }}>
                     <TouchableOpacity style={styles.row}>
                         <Image source={require('../assets/img/logout1.png')} style={styles.img3} resizeMode='contain' />
                         <Text style={styles.text1}>Log out</Text>
@@ -164,6 +170,21 @@ const Sidebar = ({ navigation }) => {
 };
 
 export default Sidebar;
+
+const Container = styled.View`
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
+const Container1 = styled.View`
+  width:100%
+  padding-right: ${responsiveWidth(1)}px;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
     linearGradient: {

@@ -30,7 +30,7 @@ const HindiProductWithImage = ({ route, navigation }) => {
   useEffect(() => {
     // Initialize Tts when the component mounts
     Tts.setDefaultRate(0.3);
-    Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
+    // Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
     Tts.setDefaultLanguage('hi-IN');
     // Tts.setDucking(true);
 

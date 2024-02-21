@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Checkbox from './Components/Checkbox';
+import styled from 'styled-components/native';
+import {
+    responsiveHeight,
+    responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 
 const Login = ({ navigation }) => {
@@ -21,72 +26,85 @@ const Login = ({ navigation }) => {
             start={{ x: 0.4, y: 0.4 }}
         >
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
-                <Text style={styles.Heading}>MadeInIndiaBook</Text>
-                <Text style={styles.Heading}>LearningApp</Text>
-                <View style={{ marginTop: 10 }}>
-                    <Text style={styles.Heading1}>Log In</Text>
-                    <View style={styles.box}>
-                        <Image source={require('../assets/img/Phone.png')} style={styles.icon} />
-                        <TextInput
-                            style={styles.textInput}
-                            placeholder="Mobile Number"
-                            // placeholderTextColor='#000'
-                            placeholderTextColor='rgba(0,0,0,0.5)'
-                            onChangeText={(text) => setNumber(text)}
-                            value={number}
-                            keyboardType="numeric"
-                            maxLength={10}
-                        />
+                <Container>
+                    <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
+                    <Text style={styles.Heading}>MadeInIndiaBook</Text>
+                    <Text style={styles.Heading}>LearningApp</Text>
+                    <View style={{ marginTop: 10 }}>
+                        <Text style={styles.Heading1}>Log In</Text>
+                        <View style={styles.box}>
+                            <Image source={require('../assets/img/Phone.png')} style={styles.icon} />
+                            <TextInput
+                                style={styles.textInput}
+                                placeholder="Mobile Number"
+                                // placeholderTextColor='#000'
+                                placeholderTextColor='rgba(0,0,0,0.5)'
+                                onChangeText={(text) => setNumber(text)}
+                                value={number}
+                                keyboardType="numeric"
+                                maxLength={10}
+                            />
+                        </View>
+                        <View style={styles.box}>
+                            <Image source={require('../assets/img/Key.png')} style={styles.icon} />
+                            <TextInput
+                                style={styles.textInput}
+                                placeholder="Password"
+                                // placeholderTextColor='#000'
+                                placeholderTextColor='rgba(0,0,0,0.5)'
+                                onChangeText={(text) => setPassword(text)}
+                                value={password}
+                                secureTextEntry={!isVisible}
+                            />
+                            <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
+                                <Image source={isVisible ? require('../assets/img/hide.png') : require('../assets/img/Eye.png')} style={styles.icon} />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Checkbox
+                                label="Always Login"
+                                checked={isChecked}
+                                onToggle={handleCheckboxToggle}
+                            />
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('ForgotPassword')}
+                            >
+                                <Text style={styles.text1}>Forgot Password ?</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    <View style={styles.box}>
-                        <Image source={require('../assets/img/Key.png')} style={styles.icon} />
-                        <TextInput
-                            style={styles.textInput}
-                            placeholder="Password"
-                            // placeholderTextColor='#000'
-                            placeholderTextColor='rgba(0,0,0,0.5)'
-                            onChangeText={(text) => setPassword(text)}
-                            value={password}
-                            secureTextEntry={!isVisible}
-                        />
-                        <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
-                            <Image source={isVisible ? require('../assets/img/hide.png') : require('../assets/img/Eye.png')} style={styles.icon} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Checkbox
-                            label="Always Login"
-                            checked={isChecked}
-                            onToggle={handleCheckboxToggle}
-                        />
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('ForgotPassword')}
-                        >
-                            <Text style={styles.text1}>Forgot Password ?</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => navigation.navigate('Congo')}
-                >
-                    <Text style={styles.text}>Log in</Text>
-                </TouchableOpacity>
-                <View style={{ flexDirection: 'row', alignSelf: 'flex-end', marginRight: 17 }}>
-                    <Text style={styles.text3}>Don't have an Account ? </Text>
-                    <TouchableOpacity style={{ borderBottomWidth: 1.8, borderColor: '#000' }}
-                        onPress={() => navigation.navigate('Registration')}
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => navigation.navigate('Congo')}
                     >
-                        <Text style={styles.text2}> SignUp</Text>
+                        <Text style={styles.text}>Log in</Text>
                     </TouchableOpacity>
-                </View>
+                    <View style={{ flexDirection: 'row', alignSelf: 'flex-end', marginRight: 17 }}>
+                        <Text style={styles.text3}>Don't have an Account ? </Text>
+                        <TouchableOpacity style={{ borderBottomWidth: 1.8, borderColor: '#000' }}
+                            onPress={() => navigation.navigate('Registration')}
+                        >
+                            <Text style={styles.text2}> SignUp</Text>
+                        </TouchableOpacity>
+                    </View>
+                </Container>
             </ScrollView>
         </LinearGradient>
     )
 }
 
 export default Login;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
     linearGradient: {

@@ -3,11 +3,16 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native-gesture-handler';
 import OTPTextInput from 'react-native-otp-textinput';
+import styled from 'styled-components/native';
+import {
+    responsiveHeight,
+    responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
-const OTP = ({navigation}) => {
+const OTP = ({ navigation }) => {
 
     const [otp, setOtp] = useState('');
-    
+
     return (
         <LinearGradient
             colors={['#FFFFFF', '#4CBB17']}
@@ -15,34 +20,47 @@ const OTP = ({navigation}) => {
             start={{ x: 0.4, y: 0.4 }}
         >
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
-                <Text style={styles.Heading}>MadeInIndiaBook</Text>
-                <Text style={styles.Heading}>LearningApp</Text>
-                <View style={{ marginTop: 50 }}>
-                    <Text style={styles.Heading1}>Please check your phone inbox and</Text>
-                    <Text style={styles.Heading1}>enter the OTP below</Text>
-                </View>
-                <View style={{flexDirection: 'row', marginLeft:50, marginRight:50, marginTop: 20,}}>
-                <OTPTextInput
-                    style={styles.otpBox}
-                    tintColor="gray"
-                    offTintColor="lightgray"
-                    autoFocus={true}
-                    handleTextChange={(text) => setOtp(text)}
-                />
-                </View>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => navigation.navigate('Login')}
-                >
-                    <Text style={styles.text}>Verify</Text>
-                </TouchableOpacity>
+                <Container>
+                    <Image source={require('../assets/img/logo-removebg-preview.png')} style={styles.image} />
+                    <Text style={styles.Heading}>MadeInIndiaBook</Text>
+                    <Text style={styles.Heading}>LearningApp</Text>
+                    <View style={{ marginTop: 50 }}>
+                        <Text style={styles.Heading1}>Please check your phone inbox and</Text>
+                        <Text style={styles.Heading1}>enter the OTP below</Text>
+                    </View>
+                    <View style={{ flexDirection: 'row', marginLeft: 50, marginRight: 50, marginTop: 20, }}>
+                        <OTPTextInput
+                            style={styles.otpBox}
+                            tintColor="gray"
+                            offTintColor="lightgray"
+                            autoFocus={true}
+                            handleTextChange={(text) => setOtp(text)}
+                        />
+                    </View>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => navigation.navigate('Login')}
+                    >
+                        <Text style={styles.text}>Verify</Text>
+                    </TouchableOpacity>
+                </Container>
             </ScrollView>
         </LinearGradient>
     )
 }
 
 export default OTP;
+
+const Container = styled.View`
+
+  width:100%
+  padding-left: ${responsiveWidth(1)}px;
+  padding-right: ${responsiveWidth(1)}px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${responsiveHeight(3)}px;
+  padding-top: 5px;
+`;
 
 const styles = StyleSheet.create({
     linearGradient: {
@@ -80,7 +98,7 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 20,
         justifyContent: 'space-evenly',
-        margin:10,
+        margin: 10,
     },
     button: {
         height: 40,

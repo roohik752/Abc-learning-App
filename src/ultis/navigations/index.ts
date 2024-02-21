@@ -54,7 +54,13 @@ const ROUTERS = {
   MaleBodyPartsWithImage: 'MaleBodyPartsWithImage',
   FemaleBodyParts: 'FemaleBodyParts',
   FemaleBodyPartsWithImage: 'FemaleBodyPartsWithImage',
-  // QuestionAnswer: 'QuestionAnswer',
+  QuestionAnswer: 'QuestionAnswer',
+  VehicleQuestionAnswer: 'VehicleQuestionAnswer',
+  AnimalQuestionAnswer: 'AnimalQuestionAnswer',
+  FruitQuestionAnswer: 'FruitQuestionAnswer',
+  ColourQuestionAnswer: 'ColourQuestionAnswer',
+  VegetableQuestionAnswer: 'VegetableQuestionAnswer',
+  ShapeQuestionAnswer: 'ShapeQuestionAnswer',
 };
 
 export { Stack, NavigationContainer, Navigator, Screen, ROUTERS };

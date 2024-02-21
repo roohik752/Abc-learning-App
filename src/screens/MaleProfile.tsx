@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'center',
         marginBottom: 40,
-        marginTop: -200
+        marginTop: -180
     },
     text2: {
         fontSize: 18,
