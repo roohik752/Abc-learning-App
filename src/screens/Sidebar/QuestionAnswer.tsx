@@ -40,7 +40,7 @@ const QuestionAnswer = ({ route, navigation }) => {
     <View style={styles.box}>
       <TouchableOpacity onPress={() => handleQuizClick(item)} >
         {/* <Image source={item.img2} style={styles.image3} /> */}
-        <Text style={{ fontSize: 20, color: '#000', fontWeight: 700 }}>{item.id + 1}. {item.name}</Text>
+        <Text style={{ fontSize: 30, color: '#000', fontWeight: 700,margintop:10 }}>{item.id + 1}. {item.name}</Text>
       </TouchableOpacity>
     </View>
   );

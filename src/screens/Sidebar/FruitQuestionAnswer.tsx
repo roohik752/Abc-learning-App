@@ -51,6 +51,7 @@ const FruitQuestionAnswer = ({ route, navigation }) => {
   };
 
   const handleOptionSelect = (option) => {
+    handleSpeak(option);
     setSelectedOption(option);
   };
 
@@ -146,7 +147,7 @@ const FruitQuestionAnswer = ({ route, navigation }) => {
               </TouchableOpacity>
               <View>
                 <View style={{ flexDirection: 'row' }} >
-                  <Text style={styles.text2}>{`Q${currentQuestion.id + 1} : ${currentQuestion.ques}`}</Text>
+                  <Text style={styles.text2}>{`Q${currentQuestion.id + 1} : ${currentQuestion.ques}?`}</Text>
                   <TouchableOpacity onPress={() => handleSpeak(currentQuestion.ques)} >
                     <Image source={require('../../assets/img/speaker.png')} style={styles.image5} resizeMode='contain'/>
                   </TouchableOpacity>
