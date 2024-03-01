@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { Animal, MaleBodyPart} from 'src/data/animals';
+import { Animal, MaleBodyPart } from 'src/data/animals';
 import styled from 'styled-components/native';
 import {
   responsiveHeight,
@@ -10,22 +10,22 @@ import {
 
 const MaleBodyParts = ({ route, navigation }) => {
 
-    const [showOuter, setShowOuter] = useState(false); // State to manage visibility
-    const [selectedBodyParts, setSelectedBodyParts] = useState<Animal | null>(null);
-  
-    const handleBodyPartsClick = (bodyParts : Animal) => {
-      setShowOuter(!showOuter);
-      setSelectedBodyParts(bodyParts);
-      navigation.navigate('MaleBodyPartsWithImage', { selectedBodyParts: bodyParts });
-    };
-  
-    const renderBodyParts = ({ item }: { item: Animal }) => (
-      <View style={styles.box}>
-        <TouchableOpacity onPress={() => handleBodyPartsClick(item)}>
-          <Image source={item.img1} style={styles.image3} />
-        </TouchableOpacity>
-      </View>
-    );
+  const [showOuter, setShowOuter] = useState(false); // State to manage visibility
+  const [selectedBodyParts, setSelectedBodyParts] = useState<Animal | null>(null);
+
+  const handleBodyPartsClick = (bodyParts: Animal) => {
+    setShowOuter(!showOuter);
+    setSelectedBodyParts(bodyParts);
+    navigation.navigate('MaleBodyPartsWithImage', { selectedBodyParts: bodyParts });
+  };
+
+  const renderBodyParts = ({ item }: { item: Animal }) => (
+    <View style={styles.box}>
+      <TouchableOpacity onPress={() => handleBodyPartsClick(item)}>
+        <Image source={item.img1} style={styles.image3} />
+      </TouchableOpacity>
+    </View>
+  );
 
   return (
     <LinearGradient
@@ -33,22 +33,22 @@ const MaleBodyParts = ({ route, navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={{ flexDirection: 'row' }}
-          >
-            <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-          </TouchableOpacity>
-          <View style={{ alignSelf: 'center' }}>
-            <Text style={styles.text}>Male's Body Parts</Text>
-          </View>
+      <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{ flexDirection: 'row' }}
+        >
+          <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+        </TouchableOpacity>
+        <View style={{ alignSelf: 'center' }}>
+          <Text style={styles.text}>Male's Body Parts</Text>
         </View>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
-        <View style={styles.boxContainer}>
+          <View style={styles.boxContainer}>
             <FlatList
               data={MaleBodyPart}
               renderItem={renderBodyParts}

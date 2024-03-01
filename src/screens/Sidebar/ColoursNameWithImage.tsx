@@ -56,20 +56,20 @@ const ColoursNameWithImage = ({ route, navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={{ flexDirection: 'row' }}
-          >
-            <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-          </TouchableOpacity>
-          <View style={{ alignSelf: 'center' }}>
-            <Text style={styles.text}>Colours</Text>
-          </View>
+      <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{ flexDirection: 'row' }}
+        >
+          <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+        </TouchableOpacity>
+        <View style={{ alignSelf: 'center' }}>
+          <Text style={styles.text}>Colours</Text>
         </View>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
           <LottieView
             source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path

@@ -15,33 +15,33 @@ const Urdu = ({ navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack('Home')}
-            style={{ flexDirection: 'row' }}
-          >
-            <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-          </TouchableOpacity>
-          <View style={{ alignSelf: 'center' }}>
-            <Text style={styles.text}>Urdu</Text>
-          </View>
+      <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack('Home')}
+          style={{ flexDirection: 'row' }}
+        >
+          <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+        </TouchableOpacity>
+        <View style={{ alignSelf: 'center' }}>
+          <Text style={styles.text}>Urdu</Text>
         </View>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
           <View style={styles.outer}>
             <TouchableOpacity onPress={() => navigation.navigate('UrduAlphabets')} >
-                <View style={styles.box1}>
-                    <Text style={styles.text1}>Urdu</Text>
-                    <Text style={styles.text1}>Alphabets</Text>
-                </View>
+              <View style={styles.box1}>
+                <Text style={styles.text1}>Urdu</Text>
+                <Text style={styles.text1}>Alphabets</Text>
+              </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('UrduNumbers')} >
-                <View style={styles.box2}>
-                    <Text style={styles.text1}>Urdu</Text>
-                    <Text style={styles.text1}>Numbers</Text>
-                </View>
+              <View style={styles.box2}>
+                <Text style={styles.text1}>Urdu</Text>
+                <Text style={styles.text1}>Numbers</Text>
+              </View>
             </TouchableOpacity>
           </View>
         </Container>

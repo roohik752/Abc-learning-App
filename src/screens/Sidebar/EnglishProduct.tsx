@@ -33,8 +33,7 @@ const EnglishProduct = ({ navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+      <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
           <TouchableOpacity
             onPress={() => navigation.goBack('Home')}
             style={{ flexDirection: 'row' }}
@@ -47,6 +46,7 @@ const EnglishProduct = ({ navigation }) => {
             <Text style={styles.text}>Alphabets</Text>
           </View>
         </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
           <View style={styles.boxContainer}>
             <FlatList

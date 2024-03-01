@@ -14,20 +14,7 @@ import { VehicleQuiz, QuestionsAnswers } from '../../data/ques-ans1';
 const VehicleQuestionAnswer = ({ route, navigation }) => {
   const [currentQuestionId, setCurrentQuestionId] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
-
-  // const getCurrentQuestion = (): QuestionsAnswers => {
-  //   return VehicleQuiz.find((question) => question.id === currentQuestionId);
-  // };
-
-  // const goToNextQuestion = () => {
-  //   setCurrentQuestionId((prevId) => prevId + 1);
-  //   setSelectedOption(null);
-  // };
-
-  // const goToPreviousQuestion = () => {
-  //   setCurrentQuestionId((prevId) => prevId - 1);
-  //   setSelectedOption(null);
-  // };
+  const [optionsEnabled, setOptionsEnabled] = useState(false); // State variable to track option enable/disable
 
   const minQuestionId = 0;
   const maxQuestionId = VehicleQuiz.length - 1;
@@ -40,6 +27,7 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
     if (currentQuestionId < maxQuestionId) {
       setCurrentQuestionId((prevId) => prevId + 1);
       setSelectedOption(null);
+      setOptionsEnabled(false); // Disable options when navigating to next question
     }
   };
 
@@ -47,12 +35,31 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
     if (currentQuestionId > minQuestionId) {
       setCurrentQuestionId((prevId) => prevId - 1);
       setSelectedOption(null);
+      setOptionsEnabled(false); // Disable options when navigating to previous question
     }
   };
 
+  // const handleOptionSelect = (option) => {
+  //   setSelectedOption(option);
+  // };
   const handleOptionSelect = (option) => {
-    handleSpeak(option);
     setSelectedOption(option);
+
+    if (option === currentQuestion.ans) {
+      // Correct answer selected, play sound1
+      if (currentQuestion.sound1) {
+        Tts.speak(currentQuestion.sound1)
+          .then(() => console.log('Correct answer sound played'))
+          .catch((error) => console.log('Error playing correct answer sound:', error));
+      }
+    } else {
+      // Wrong answer selected, play sound2
+      if (currentQuestion.sound2) {
+        Tts.speak(currentQuestion.sound2)
+          .then(() => console.log('Wrong answer sound played'))
+          .catch((error) => console.log('Error playing wrong answer sound:', error));
+      }
+    }
   };
 
   const currentQuestion = getCurrentQuestion();
@@ -60,14 +67,10 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
   const isAnswerCorrect = selectedOption === currentQuestion.ans;
 
   useEffect(() => {
-    // Initialize Tts when the component mounts
     Tts.setDefaultRate(0.3);
     Tts.setDefaultPitch(1.0);
-    // Tts.setDefaultLanguage('');
-    // Tts.setDefaultVoice('com.apple.voice.compact.hi-IN.Lekha')
     Tts.setDefaultLanguage('hi-IN');
 
-    // Add event listener for TTS start
     const ttsStartListener = (event) => {
       if (event && event.eventName === 'tts-start') {
         console.log('TTS Engine Started');
@@ -77,31 +80,25 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
     Tts.addEventListener('tts-start', ttsStartListener);
 
     return () => {
-      // Remove event listener when the component unmounts
       Tts.stop();
       Tts.removeEventListener('tts-start', ttsStartListener);
     };
   }, []);
 
-  // const handleSpeak = () => {
-  //   if (selectedOption) {
-  //     Tts.speak(selectedOption)
-  //       .then(() => console.log('Text-to-speech started'))
-  //       .catch((error) => console.log('Error starting text-to-speech:', error));
-  //   }
-  // };
-
-  const handleSpeak = (option) => {
-    Tts.speak(option)
-      .then(() => console.log('Text-to-speech started'))
-      .catch((error) => console.log('Error starting text-to-speech:', error));
+  const handleSpeak = () => {
+    setOptionsEnabled(true); // Enable options when image5 is clicked
+    setSelectedOption(null); // Reset selected option
+    if (currentQuestion) {
+      Tts.speak(currentQuestion.ques)
+        .then(() => console.log('Text-to-speech started'))
+        .catch((error) => console.log('Error starting text-to-speech:', error));
+    }
   };
 
-
   const handleBackPress = () => {
-    // Stop TTS when the back button is pressed
+    setSelectedOption(null); // Reset selected option when back button is clicked
+    setOptionsEnabled(false); // Disable options when back button is clicked
     Tts.stop();
-    // Navigate back
     navigation.goBack();
   };
 
@@ -111,20 +108,20 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={{ flexDirection: 'row' }}
-          >
-            <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-          </TouchableOpacity>
-          <View style={{ alignSelf: 'center' }}>
-            <Text style={styles.text}>Question & Answer</Text>
-          </View>
+      <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{ flexDirection: 'row' }}
+        >
+          <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+        </TouchableOpacity>
+        <View style={{ alignSelf: 'center' }}>
+          <Text style={styles.text}>Question & Answer</Text>
         </View>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
           <LottieView
             source={require('../../assets/gif/greenSparkles.json')}
@@ -144,12 +141,12 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                 </TouchableOpacity>
               </View>
               <TouchableOpacity>
-                <Image source={currentQuestion.img1} style={{alignSelf: 'center'}} resizeMode='contain' />
+                <Image source={currentQuestion.img1} style={{ alignSelf: 'center' }} resizeMode='contain' />
               </TouchableOpacity>
               <View>
                 <View style={{ flexDirection: 'row' }} >
                   <Text style={styles.text2}>{`Q${currentQuestion.id + 1} : ${currentQuestion.ques}?`}</Text>
-                  <TouchableOpacity onPress={() => handleSpeak(currentQuestion.ques)} >
+                  <TouchableOpacity onPress={handleSpeak}>
                     <Image source={require('../../assets/img/speaker.png')} style={styles.image5} resizeMode='contain' />
                   </TouchableOpacity>
                 </View>
@@ -160,8 +157,9 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                       status={selectedOption === currentQuestion.opt1 ? 'checked' : 'unchecked'}
                       onPress={() => handleOptionSelect(currentQuestion.opt1)}
                       color="#FFF"
+                      disabled={!optionsEnabled} // Disable based on optionsEnabled state
                     />
-                    <Text style={styles.textOption} onPress={() => handleSpeak(currentQuestion.opt1)}>{`${currentQuestion.opt1}`}</Text>
+                    <Text style={styles.textOption} >{`${currentQuestion.opt1}`}</Text>
                   </View>
                   <View style={{ flexDirection: 'row' }}>
                     <View style={{ marginRight: 15 }}>
@@ -173,7 +171,7 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                       )}
                     </View>
                     <View>
-                      <TouchableOpacity onPress={() => handleSpeak(currentQuestion.opt1)} >
+                      <TouchableOpacity >
                         <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
                       </TouchableOpacity>
                     </View>
@@ -186,8 +184,9 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                       status={selectedOption === currentQuestion.opt2 ? 'checked' : 'unchecked'}
                       onPress={() => handleOptionSelect(currentQuestion.opt2)}
                       color="#FFF"
+                      disabled={!optionsEnabled} // Disable based on optionsEnabled state
                     />
-                    <Text style={styles.textOption} onPress={() => handleSpeak(currentQuestion.opt2)}>{`${currentQuestion.opt2}`}</Text>
+                    <Text style={styles.textOption} >{`${currentQuestion.opt2}`}</Text>
                   </View>
                   <View style={{ flexDirection: 'row' }}>
                     <View style={{ marginRight: 15 }}>
@@ -199,7 +198,7 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                       )}
                     </View>
                     <View>
-                      <TouchableOpacity onPress={() => handleSpeak(currentQuestion.opt2)} >
+                      <TouchableOpacity >
                         <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
                       </TouchableOpacity>
                     </View>
@@ -212,8 +211,9 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                       status={selectedOption === currentQuestion.opt3 ? 'checked' : 'unchecked'}
                       onPress={() => handleOptionSelect(currentQuestion.opt3)}
                       color="#FFF"
+                      disabled={!optionsEnabled} // Disable based on optionsEnabled state
                     />
-                    <Text style={styles.textOption} onPress={() => handleSpeak(currentQuestion.opt3)}>{`${currentQuestion.opt3}`}</Text>
+                    <Text style={styles.textOption} >{`${currentQuestion.opt3}`}</Text>
                   </View>
                   <View style={{ flexDirection: 'row' }}>
                     <View style={{ marginRight: 15 }}>
@@ -225,7 +225,7 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                       )}
                     </View>
                     <View>
-                      <TouchableOpacity onPress={() => handleSpeak(currentQuestion.opt3)} >
+                      <TouchableOpacity >
                         <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
                       </TouchableOpacity>
                     </View>
@@ -238,8 +238,9 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                       status={selectedOption === currentQuestion.opt4 ? 'checked' : 'unchecked'}
                       onPress={() => handleOptionSelect(currentQuestion.opt4)}
                       color="#FFF"
+                      disabled={!optionsEnabled} // Disable based on optionsEnabled state
                     />
-                    <Text style={styles.textOption} onPress={() => handleSpeak(currentQuestion.opt4)}>{`${currentQuestion.opt4}`}</Text>
+                    <Text style={styles.textOption} >{`${currentQuestion.opt4}`}</Text>
                   </View>
                   <View style={{ flexDirection: 'row' }}>
                     <View style={{ marginRight: 15 }}>
@@ -251,28 +252,21 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
                       )}
                     </View>
                     <View>
-                      <TouchableOpacity onPress={() => handleSpeak(currentQuestion.opt4)} >
+                      <TouchableOpacity >
                         <Image source={require('../../assets/img/speaker.png')} style={styles.image4} />
                       </TouchableOpacity>
                     </View>
                   </View>
                 </View>
-              </View>
-              {/* <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 30 }} >
-                <TouchableOpacity onPress={goToPreviousQuestion}>
-                  <Image source={require('../../assets/ques-ans/left.png')} resizeMode='contain' />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={goToNextQuestion}>
-                  <Image source={require('../../assets/ques-ans/right.png')} resizeMode='contain' />
-                </TouchableOpacity>
-              </View> */}
-              <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 30 }} >
-                <TouchableOpacity onPress={goToPreviousQuestion} disabled={currentQuestionId === minQuestionId}>
-                  <Image source={require('../../assets/ques-ans/left.png')} resizeMode='contain' />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={goToNextQuestion} disabled={currentQuestionId === maxQuestionId}>
-                  <Image source={require('../../assets/ques-ans/right.png')} resizeMode='contain' />
-                </TouchableOpacity>
+                {/* Buttons for navigation */}
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 30 }} >
+                  <TouchableOpacity onPress={goToPreviousQuestion} disabled={currentQuestionId === minQuestionId}>
+                    <Image source={require('../../assets/ques-ans/left.png')} resizeMode='contain' />
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={goToNextQuestion} disabled={currentQuestionId === maxQuestionId}>
+                    <Image source={require('../../assets/ques-ans/right.png')} resizeMode='contain' />
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           </View>
@@ -285,14 +279,14 @@ const VehicleQuestionAnswer = ({ route, navigation }) => {
 export default VehicleQuestionAnswer;
 
 const Container = styled.View`
-  width: 100%;
-  padding-left: ${responsiveWidth(1)}px;
-  padding-right: ${responsiveWidth(1)}px;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: ${responsiveHeight(3)}px;
-  padding-top: 5px;
-`;
+        width: 100%;
+        padding-left: ${responsiveWidth(1)}px;
+        padding-right: ${responsiveWidth(1)}px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: ${responsiveHeight(3)}px;
+        padding-top: 5px;
+        `;
 
 const styles = StyleSheet.create({
   linearGradient: {
@@ -345,7 +339,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
-    // marginLeft: 15,
     justifyContent: 'space-between',
     marginHorizontal: 15
   },
@@ -358,7 +351,6 @@ const styles = StyleSheet.create({
   answerIcon: {
     height: 25,
     width: 25,
-    // marginLeft: 20,
     marginTop: 5,
   },
   image4: {
@@ -366,7 +358,6 @@ const styles = StyleSheet.create({
     width: 30,
     alignSelf: 'center',
     marginTop: 5,
-    // marginBottom: 'auto',
   },
   image5: {
     height: 30,
@@ -374,6 +365,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 42,
     marginLeft: -220
-    // marginBottom: 'auto',
   },
 });
+

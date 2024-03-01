@@ -10,22 +10,22 @@ import {
 
 const AnimalsName = ({ route, navigation }) => {
 
-    const [showOuter, setShowOuter] = useState(false); // State to manage visibility
-    const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
-  
-    const handleAnimalClick = (animal: Animal) => {
-      setShowOuter(!showOuter);
-      setSelectedAnimal(animal);
-      navigation.navigate('AnimalsNameWithImage', { selectedAnimal: animal });
-    };
-  
-    const renderAnimalItem = ({ item }: { item: Animal }) => (
-      <View style={styles.box}>
-        <TouchableOpacity onPress={() => handleAnimalClick(item)} >
+  const [showOuter, setShowOuter] = useState(false); // State to manage visibility
+  const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
+
+  const handleAnimalClick = (animal: Animal) => {
+    setShowOuter(!showOuter);
+    setSelectedAnimal(animal);
+    navigation.navigate('AnimalsNameWithImage', { selectedAnimal: animal });
+  };
+
+  const renderAnimalItem = ({ item }: { item: Animal }) => (
+    <View style={styles.box}>
+      <TouchableOpacity onPress={() => handleAnimalClick(item)} >
         <Image source={item.img2} style={styles.image3} />
-        </TouchableOpacity>
-      </View>
-    );
+      </TouchableOpacity>
+    </View>
+  );
 
   return (
     <LinearGradient
@@ -33,22 +33,22 @@ const AnimalsName = ({ route, navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={{ flexDirection: 'row' }}
-          >
-            <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-          </TouchableOpacity>
-          <View style={{ alignSelf: 'center' }}>
-            <Text style={styles.text}>Animals</Text>
-          </View>
+      <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{ flexDirection: 'row' }}
+        >
+          <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+        </TouchableOpacity>
+        <View style={{ alignSelf: 'center' }}>
+          <Text style={styles.text}>Animals</Text>
         </View>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
-        <View style={styles.boxContainer}>
+          <View style={styles.boxContainer}>
             <FlatList
               data={Animals}
               renderItem={renderAnimalItem}

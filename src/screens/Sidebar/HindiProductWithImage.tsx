@@ -43,13 +43,23 @@ const HindiProductWithImage = ({ route, navigation }) => {
 
     Tts.addEventListener('tts-start', ttsStartListener);
 
+    // // Check if the device is a Samsung device
+    // const isSamsungDevice = DeviceInfo.getManufacturerSync() === 'OPPO';
+
+    // if (isSamsungDevice) {
+    //   Alert.alert(
+    //     'OPPO Device Detected',
+    //     'Alert message related to voice problem on OPPO devices.'
+    //   );
+    // }
+
     // Check if the device is a Samsung device
-    const isSamsungDevice = DeviceInfo.getManufacturerSync() === 'OPPO';
+    const isSamsungDevice = DeviceInfo.getManufacturerSync() === 'Samsung'; // Check for Samsung
 
     if (isSamsungDevice) {
       Alert.alert(
-        'OPPO Device Detected',
-        'Alert message related to voice problem on OPPO devices.'
+        'Samsung Device Detected',
+        'Alert message related to voice problem on Samsung devices.'
       );
     }
 
@@ -81,20 +91,20 @@ const HindiProductWithImage = ({ route, navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
-          <TouchableOpacity
-            onPress={handleGoBack}
-            style={{ flexDirection: 'row' }}
-          >
-            <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-          </TouchableOpacity>
-          <View style={{ alignSelf: 'center' }}>
-            <Text style={styles.text}>वर्णमाला</Text>
-          </View>
+      <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+        <TouchableOpacity
+          onPress={handleGoBack}
+          style={{ flexDirection: 'row' }}
+        >
+          <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+        </TouchableOpacity>
+        <View style={{ alignSelf: 'center' }}>
+          <Text style={styles.text}>वर्णमाला</Text>
         </View>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
           <LottieView
             source={require('../../assets/gif/greenSparkles.json')} // Replace with the correct path

@@ -15,8 +15,7 @@ const Hindi = ({ navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+       <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
           <TouchableOpacity
             onPress={() => navigation.goBack('Home')}
             style={{ flexDirection: 'row' }}
@@ -29,6 +28,7 @@ const Hindi = ({ navigation }) => {
             <Text style={styles.text}>वर्णमाला</Text>
           </View>
         </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
           <View style={styles.outer}>
             <TouchableOpacity onPress={() => navigation.navigate('HindiConsonants')} >

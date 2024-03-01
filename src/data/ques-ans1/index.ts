@@ -8,6 +8,8 @@ export interface QuestionsAnswers {
     opt3?: any;
     opt4?: any;
     ans?: any;
+    sound1?: any;
+    sound2?: any;
 }
 
 const Quizzes: Array<QuestionsAnswers> = [
@@ -23,10 +25,10 @@ const Quizzes: Array<QuestionsAnswers> = [
         id: 2,
         name: "Fruit",
     },
-    // {
-    //     id: 3,
-    //     name: "Colour",
-    // },
+    {
+        id: 3,
+        name: "Colour",
+    },
     // {
     //     id: 4,
     //     name: "Vegetable",
@@ -47,7 +49,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Bike',
         opt4: 'Bicycle',
-        ans: 'Car'
+        ans: 'Car',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 1,
@@ -58,7 +62,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Bus',
         opt4: 'Bicycle',
-        ans: 'Bus'
+        ans: 'Bus',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 2,
@@ -69,7 +75,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Bike',
         opt4: 'Bicycle',
-        ans: 'Boat'
+        ans: 'Boat',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 3,
@@ -80,7 +88,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Bike',
         opt4: 'Bicycle',
-        ans: 'Bicycle'
+        ans: 'Bicycle',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 4,
@@ -91,7 +101,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Bike',
         opt4: 'Car',
-        ans: 'Aeroplane'
+        ans: 'Aeroplane',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 5,
@@ -102,7 +114,9 @@ export const VehicleQuiz = [
         opt2: 'Truck',
         opt3: 'Bike',
         opt4: 'Ship',
-        ans: 'Truck'
+        ans: 'Truck',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 6,
@@ -113,7 +127,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Ship',
         opt4: 'Bicycle',
-        ans: 'Ship'
+        ans: 'Ship',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 7,
@@ -124,7 +140,9 @@ export const VehicleQuiz = [
         opt2: 'Boat',
         opt3: 'Truck',
         opt4: 'Train',
-        ans: 'Train'
+        ans: 'Train',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 8,
@@ -135,7 +153,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Bus',
         opt4: 'Car',
-        ans: 'Helicopter'
+        ans: 'Helicopter',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 9,
@@ -146,7 +166,9 @@ export const VehicleQuiz = [
         opt2: 'Van',
         opt3: 'Bike',
         opt4: 'Bicycle',
-        ans: 'Van'
+        ans: 'Van',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 10,
@@ -157,7 +179,9 @@ export const VehicleQuiz = [
         opt2: 'Helicopter',
         opt3: 'Aeroplan',
         opt4: 'Bike',
-        ans: 'Bike'
+        ans: 'Bike',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 11,
@@ -168,7 +192,9 @@ export const VehicleQuiz = [
         opt2: 'Van',
         opt3: 'Bike',
         opt4: 'Boat',
-        ans: 'Crane'
+        ans: 'Crane',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 12,
@@ -179,7 +205,9 @@ export const VehicleQuiz = [
         opt2: 'Tractor',
         opt3: 'Truck',
         opt4: 'Bicycle',
-        ans: 'Tractor'
+        ans: 'Tractor',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 13,
@@ -190,7 +218,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Bike',
         opt4: 'Bicycle',
-        ans: 'Taxi'
+        ans: 'Taxi',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
     {
         id: 14,
@@ -201,7 +231,9 @@ export const VehicleQuiz = [
         opt2: 'Train',
         opt3: 'Bike',
         opt4: 'Bulldozer',
-        ans: 'Bulldozer'
+        ans: 'Bulldozer',
+        sound1: 'This is correct answer',
+        sound2: 'This is wrong answer',
     },
 ];
 
@@ -545,7 +577,7 @@ export const ColourQuiz = [
     {
         id: 0,
         name: 'Red',
-        img1: require('../../assets/ques-ans/Cat.png'),
+        img1: require('../../assets/ques-ans/Apple.png'),
         ques: 'What colour is the Apple ', 
         opt1: 'Red',
         opt2: 'Blue',
@@ -556,7 +588,7 @@ export const ColourQuiz = [
     {
         id: 1,
         name: 'Yellow',
-        img1: require('../../assets/ques-ans/Dog.png'),
+        img1: require('../../assets/ques-ans/Taxi.png'),
         ques: 'What colour is the car ', 
         opt1: 'Cyan',
         opt2: 'Yellow',
@@ -567,7 +599,7 @@ export const ColourQuiz = [
     {
         id: 2,
         name: 'Green',
-        img1: require('../../assets/ques-ans/Goat.png'),
+        img1: require('../../assets/ques-ans/Frog.png'),
         ques: 'What colour is the frog ', 
         opt1: 'Pink',
         opt2: 'White',
@@ -578,7 +610,7 @@ export const ColourQuiz = [
     {
         id: 3,
         name: 'Cyan',
-        img1: require('../../assets/ques-ans/Horse.png'),
+        img1: require('../../assets/ques-ans/Umbrella.png'),
         ques: 'What colour is the  Umbrella ', 
         opt1: 'Black',
         opt2: 'White',
@@ -589,7 +621,7 @@ export const ColourQuiz = [
     {
         id: 4,
         name: 'White',
-        img1: require('../../assets/ques-ans/Lion.png'),
+        img1: require('../../assets/ques-ans/Table.png'),
         ques: 'What colour is the table ', 
         opt1: 'White',
         opt2: 'Pink',
@@ -600,7 +632,7 @@ export const ColourQuiz = [
     {
         id: 5,
         name: 'Blue',
-        img1: require('../../assets/ques-ans/Buffalo.png'),
+        img1: require('../../assets/ques-ans/Pen.png'),
         ques: 'What colour is the pen ', 
         opt1: 'Blue',
         opt2: 'Red',
@@ -611,7 +643,7 @@ export const ColourQuiz = [
     {
         id: 6,
         name: 'Cream',
-        img1: require('../../assets/ques-ans/Monkey.png'),
+        img1: require('../../assets/ques-ans/Teddy.png'),
         ques: 'What Colour is the teddy Bear ', 
         opt1: 'Pink',
         opt2: 'Black',
@@ -622,7 +654,7 @@ export const ColourQuiz = [
     {
         id: 7,
         name: 'Golden',
-        img1: require('../../assets/ques-ans/Rat.png'),
+        img1: require('../../assets/ques-ans/Bicycle1.png'),
         ques: 'What colour is the cycle ', 
         opt1: 'Golden',
         opt2: 'Black',
@@ -633,7 +665,7 @@ export const ColourQuiz = [
     {
         id: 8,
         name: 'Pink',
-        img1: require('../../assets/ques-ans/Tiger.png'),
+        img1: require('../../assets/ques-ans/Ice-cream.png'),
         ques: 'What colour is the ice cream ', 
         opt1: 'Olive',
         opt2: 'Pink',
@@ -643,19 +675,19 @@ export const ColourQuiz = [
     },
     {
         id: 9,
-        name: 'Green',
-        img1: require('../../assets/ques-ans/Zebra.png'),
-        ques: 'What colour is the parrot  ', 
+        name: 'Maroon',
+        img1: require('../../assets/ques-ans/T-shirt.png'),
+        ques: 'What colour is the T-shirt  ', 
         opt1: 'Cyan',
         opt2: 'Blue',
         opt3: 'Yellow',
-        opt4: 'Green',
-        ans: 'Green'
+        opt4: 'Maroon',
+        ans: 'Maroon'
     },
     {
         id: 10,
         name: 'Navy Blue',
-        img1: require('../../assets/ques-ans/Elephant.png'),
+        img1: require('../../assets/ques-ans/Pencil.png'),
         ques: 'What colour is the pencil ', 
         opt1: 'Navy Blue',
         opt2: 'Pink',
@@ -666,7 +698,7 @@ export const ColourQuiz = [
     {
         id: 11,
         name: 'Brown',
-        img1: require('../../assets/ques-ans/Owl.png'),
+        img1: require('../../assets/ques-ans/Chocolate.png'),
         ques: 'What colour is the chocolate ', 
         opt1: 'Brown',
         opt2: 'Yellow',
@@ -677,7 +709,7 @@ export const ColourQuiz = [
     {
         id: 12,
         name: 'Black',
-        img1: require('../../assets/ques-ans/Wolf.png'),
+        img1: require('../../assets/ques-ans/Black-board.png'),
         ques: 'What colour is the board  ', 
         opt1: 'Grey',
         opt2: 'Black',
@@ -688,7 +720,7 @@ export const ColourQuiz = [
     {
         id: 13,
         name: 'Purple',
-        img1: require('../../assets/ques-ans/Yak.png'),
+        img1: require('../../assets/ques-ans/Doll.png'),
         ques: 'What colour is the Doll ', 
         opt1: 'Green',
         opt2: 'Cyan',
@@ -699,7 +731,7 @@ export const ColourQuiz = [
     {
         id: 14,
         name: 'Grey',
-        img1: require('../../assets/ques-ans/Jaguar.png'),
+        img1: require('../../assets/ques-ans/House.png'),
         ques: 'What colour is the house ', 
         opt1: 'Orange',
         opt2: 'Navy Blue',

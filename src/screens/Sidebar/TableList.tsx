@@ -9,22 +9,22 @@ import {
 } from 'react-native-responsive-dimensions';
 
 const TableList = ({ navigation }) => {
-    const [showOuter, setShowOuter] = useState(false);
-    const [selectedTable, setSelectedTable] = useState<Animal | null>(null);
-  
-    const handleTableClick = (table  : Animal) => {
-      setShowOuter(!showOuter);
-      setSelectedTable(table);
-      navigation.navigate('TableWithSound', { selectedTable: table });
-    };
-  
-    const renderTableItem = ({ item }) => (
-      <View style={styles.box}>
-        <TouchableOpacity onPress={() => handleTableClick(item)}>
-          <Image source={item.img1} style={styles.image3} />
-        </TouchableOpacity>
-      </View>
-    );
+  const [showOuter, setShowOuter] = useState(false);
+  const [selectedTable, setSelectedTable] = useState<Animal | null>(null);
+
+  const handleTableClick = (table: Animal) => {
+    setShowOuter(!showOuter);
+    setSelectedTable(table);
+    navigation.navigate('TableWithSound', { selectedTable: table });
+  };
+
+  const renderTableItem = ({ item }) => (
+    <View style={styles.box}>
+      <TouchableOpacity onPress={() => handleTableClick(item)}>
+        <Image source={item.img1} style={styles.image3} />
+      </TouchableOpacity>
+    </View>
+  );
 
   return (
     <LinearGradient
@@ -32,20 +32,20 @@ const TableList = ({ navigation }) => {
       style={styles.linearGradient}
       start={{ x: 0.4, y: 0.4 }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack('Home')}
-            style={{ flexDirection: 'row' }}
-          >
-            <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-            <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
-          </TouchableOpacity>
-          <View style={{ alignSelf: 'center' }}>
-            <Text style={styles.text}>Math's Tables</Text>
-          </View>
+      <View style={{ flexDirection: 'row', padding: 15, marginTop: 40 }}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack('Home')}
+          style={{ flexDirection: 'row' }}
+        >
+          <Image source={require('../../assets/img/Arrow.png')} style={styles.image1} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+          <Image source={require('../../assets/img/bar1.png')} style={styles.image2} />
+        </TouchableOpacity>
+        <View style={{ alignSelf: 'center' }}>
+          <Text style={styles.text}>Math's Tables</Text>
         </View>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
           <View style={styles.boxContainer}>
             <FlatList
