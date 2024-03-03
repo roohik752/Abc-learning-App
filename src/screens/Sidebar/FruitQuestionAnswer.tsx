@@ -279,14 +279,14 @@ const FruitQuestionAnswer = ({ route, navigation }) => {
 export default FruitQuestionAnswer;
 
 const Container = styled.View`
-  width: 100%;
-  padding-left: ${responsiveWidth(1)}px;
-  padding-right: ${responsiveWidth(1)}px;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: ${responsiveHeight(3)}px;
-  padding-top: 5px;
-`;
+        width: 100%;
+        padding-left: ${responsiveWidth(1)}px;
+        padding-right: ${responsiveWidth(1)}px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: ${responsiveHeight(3)}px;
+        padding-top: 5px;
+        `;
 
 const styles = StyleSheet.create({
   linearGradient: {
@@ -339,7 +339,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
-    // marginLeft: 15,
     justifyContent: 'space-between',
     marginHorizontal: 15
   },
@@ -352,7 +351,6 @@ const styles = StyleSheet.create({
   answerIcon: {
     height: 25,
     width: 25,
-    // marginLeft: 20,
     marginTop: 5,
   },
   image4: {
@@ -360,14 +358,12 @@ const styles = StyleSheet.create({
     width: 30,
     alignSelf: 'center',
     marginTop: 5,
-    // marginBottom: 'auto',
   },
   image5: {
     height: 30,
     width: 30,
     alignSelf: 'center',
     marginTop: 42,
-    marginLeft: -280
-    // marginBottom: 'auto',
+    marginLeft: -220
   },
 });

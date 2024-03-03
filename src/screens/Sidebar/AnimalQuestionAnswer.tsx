@@ -23,6 +23,8 @@ const AnimalQuestionAnswer = ({ route, navigation }) => {
     return AnimalQuiz.find((question) => question.id === currentQuestionId);
   };
 
+  const currentQuestion = getCurrentQuestion();
+
   const goToNextQuestion = () => {
     if (currentQuestionId < maxQuestionId) {
       setCurrentQuestionId((prevId) => prevId + 1);
@@ -42,27 +44,40 @@ const AnimalQuestionAnswer = ({ route, navigation }) => {
   // const handleOptionSelect = (option) => {
   //   setSelectedOption(option);
   // };
+
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
 
-    if (option === currentQuestion.ans) {
-      // Correct answer selected, play sound1
-      if (currentQuestion.sound1) {
-        Tts.speak(currentQuestion.sound1)
-          .then(() => console.log('Correct answer sound played'))
-          .catch((error) => console.log('Error playing correct answer sound:', error));
-      }
-    } else {
-      // Wrong answer selected, play sound2
-      if (currentQuestion.sound2) {
-        Tts.speak(currentQuestion.sound2)
-          .then(() => console.log('Wrong answer sound played'))
-          .catch((error) => console.log('Error playing wrong answer sound:', error));
-      }
+    // if (option === currentQuestion.ans) {
+    //   // Correct answer selected, play sound1
+    //   if (currentQuestion.sound1) {
+    //     Tts.speak(currentQuestion.sound1)
+    //       .then(() => console.log('Correct answer sound played'))
+    //       .catch((error) => console.log('Error playing correct answer sound:', error));
+    //   }
+    // } else {
+    //   // Wrong answer selected, play sound2
+    //   if (currentQuestion.sound2) {
+    //     Tts.speak(currentQuestion.sound2)
+    //       .then(() => console.log('Wrong answer sound played'))
+    //       .catch((error) => console.log('Error playing wrong answer sound:', error));
+    //   }
+    // }
+
+    // Check if the selected option is correct
+    const isCorrect = option === currentQuestion.ans;
+
+    // Play sound1 for correct answer or sound2 for wrong answer
+    if (isCorrect && currentQuestion.sound1) {
+      Tts.speak(currentQuestion.sound1)
+        .then(() => console.log('Correct answer sound played'))
+        .catch((error) => console.log('Error playing correct answer sound:', error));
+    } else if (!isCorrect && currentQuestion.sound2) {
+      Tts.speak(currentQuestion.sound2)
+        .then(() => console.log('Wrong answer sound played'))
+        .catch((error) => console.log('Error playing wrong answer sound:', error));
     }
   };
-
-  const currentQuestion = getCurrentQuestion();
 
   const isAnswerCorrect = selectedOption === currentQuestion.ans;
 
@@ -279,14 +294,14 @@ const AnimalQuestionAnswer = ({ route, navigation }) => {
 export default AnimalQuestionAnswer;
 
 const Container = styled.View`
-  width: 100%;
-  padding-left: ${responsiveWidth(1)}px;
-  padding-right: ${responsiveWidth(1)}px;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: ${responsiveHeight(3)}px;
-  padding-top: 5px;
-`;
+        width: 100%;
+        padding-left: ${responsiveWidth(1)}px;
+        padding-right: ${responsiveWidth(1)}px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: ${responsiveHeight(3)}px;
+        padding-top: 5px;
+        `;
 
 const styles = StyleSheet.create({
   linearGradient: {
@@ -339,7 +354,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
-    // marginLeft: 15,
     justifyContent: 'space-between',
     marginHorizontal: 15
   },
@@ -352,7 +366,6 @@ const styles = StyleSheet.create({
   answerIcon: {
     height: 25,
     width: 25,
-    // marginLeft: 20,
     marginTop: 5,
   },
   image4: {
@@ -360,7 +373,6 @@ const styles = StyleSheet.create({
     width: 30,
     alignSelf: 'center',
     marginTop: 5,
-    // marginBottom: 'auto',
   },
   image5: {
     height: 30,
@@ -368,6 +380,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 42,
     marginLeft: -220
-    // marginBottom: 'auto',
   },
 });
